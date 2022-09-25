@@ -16,7 +16,7 @@ return require('packer').startup(function(use)
   use "onsails/lspkind-nvim"
   use 'rcarriga/nvim-notify'
   use "nvim-telescope/telescope-file-browser.nvim"
- --use "mfussenegger/nvim-jdtls"
+  use "mfussenegger/nvim-jdtls"
   use 'nvim-telescope/telescope-ui-select.nvim'
   use {
     "ThePrimeagen/refactoring.nvim",
