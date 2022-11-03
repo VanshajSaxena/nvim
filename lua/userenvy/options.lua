@@ -9,6 +9,7 @@ o.swapfile = false
 o.incsearch = true
 o.autoindent = true
 o.termguicolors = true
+o.shiftwidth = 4
 o.tabstop = 4
 o.softtabstop = 2
 o.undofile = true

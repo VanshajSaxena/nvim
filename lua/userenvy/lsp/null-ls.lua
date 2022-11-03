@@ -7,6 +7,7 @@ require("null-ls").setup({
 		require("null-ls").builtins.diagnostics.clang_check,
 		require("null-ls").builtins.diagnostics.zsh,
 		require("null-ls").builtins.formatting.beautysh,
+		require("null-ls").builtins.formatting.google_java_format,
 		require("null-ls").builtins.diagnostics.shellcheck,
     },
 })

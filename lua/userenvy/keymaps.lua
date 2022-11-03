@@ -7,7 +7,7 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 --vim.g.maplocalleader = " "
 
-keymap("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files({hidden=true})<CR>", opts)
+keymap("n", "<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<CR>", opts)
 keymap("n", "<leader>fc", "<cmd>lua require('telescope.builtin').find_files({cwd = vim.fn.expand('/home/userenvy/.config/nvim')})<CR>", opts)
 keymap("n", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep({hidden=true},{cwd = vim.fn.expand('/home/userenvy/')})<CR>", opts)
 keymap("n", "<leader>fb", "<cmd>lua require('telescope.builtin').buffers()<CR>", opts)

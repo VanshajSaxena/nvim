@@ -9,7 +9,7 @@ return require('packer').startup(function(use)
   use 'github/copilot.vim'
   use 'nvim-lua/plenary.nvim'
   use 'nvim-lua/popup.nvim'
-  use 'ellisonleao/gruvbox.nvim'
+  use 'morhetz/gruvbox'
   use 'christoomey/vim-tmux-navigator'
   use 'dhruvasagar/vim-zoom'
   use 'lukas-reineke/indent-blankline.nvim'
