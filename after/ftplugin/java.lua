@@ -1,7 +1,7 @@
 vim.opt.formatoptions = vim.opt.formatoptions - "o" - "r" - "c"
 local workspace_dir = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
 local	capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 local config = {
   cmd = {

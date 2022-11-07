@@ -3,6 +3,7 @@ local o = vim.opt
 
 o.number = true
 o.relativenumber = true
+o.clipboard = "unnamedplus"
 o.hidden = true
 o.encoding = "UTF-8"
 o.swapfile = false
