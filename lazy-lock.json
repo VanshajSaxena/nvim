@@ -1,0 +1,6 @@
+{
+  "lazy.nvim": { "branch": "main", "commit": "67ae8bbbe3985e380b98abeaf6c567c422b29746" },
+  "neodev.nvim": { "branch": "main", "commit": "ffa5f73f243954afb96fc19a512a24d7b8b0bb63" },
+  "nvim-cmp": { "branch": "main", "commit": "8a3d2dd7641f75c1b6291311f56454adba79a196" },
+  "nvim-lspconfig": { "branch": "master", "commit": "570aae82f8c6bc15fb6e559ed7d5a3fd85374329" }
+}
