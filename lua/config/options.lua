@@ -14,14 +14,15 @@ set.ignorecase = true
 set.smartcase = true --override ignorecase when pattern contains uppercase
 set.inccommand = "split" --preview incremental substitutes
 set.mouse = "nv"     -- n=normal v=visual i=insert
-set.pumblend = 10 -- Popup blend
+set.pumblend = 25 -- Popup blend
+set.winblend = 25 -- Float-windows blend
 set.pumheight = 40 -- Maximum number of entries in a popup
 set.scrolloff = 8
 set.sidescrolloff = 8 -- Columns of context
 set.sessionoptions = { "buffers", "curdir", "tabpages", "winsize" } -- Changes the effect of :mksession cmd --test
 set.shiftround = true
-set.shiftwidth = 2 -- Size of an (auto)indent << >>
-set.shortmess:append({ m = true, I = true})
+set.shiftwidth = 4 -- Size of an (auto)indent << >>
+set.shortmess:append({ m = true, I = true}) -- m- Modified, I- Intro
 set.showmode = false -- Dont show mode since theres a statusline
 set.signcolumn = "yes:1"
 set.smartindent = true -- Insert indents automatically
