@@ -13,6 +13,7 @@ return{
 					lualine_a = { "mode" },
 					lualine_b = { "branch" },
 					lualine_c = {
+						{ 'filename' },
 						{
 							'diagnostics',
 							-- Table of diagnostic sources, available sources are:
@@ -38,10 +39,10 @@ return{
 						},
 						{ require("lazy.status").updates, cond = require("lazy.status").has_updates },
 						{ "fileformat", icon_only = true, icon = {align = 'right'}},
-						{"filetype", icon_only = true}
+						{"filetype", icon_only = false}
 					},
 				},
-				extensions = { "neo-tree", "lazy" },
+				extensions = {  "lazy" },
 			}
 		end,
 	},

@@ -26,3 +26,7 @@ Benchmark 1: nvim --headless +qa #05/29/2023
   Time (mean ± σ):      15.6 ms ±   1.6 ms    [User: 10.9 ms, System: 4.8 ms]
   Range (min … max):    14.2 ms …  24.5 ms    193 runs
  
+Benchmark 1: nvim --headless +qa
+  Time (mean ± σ):      17.1 ms ±   3.4 ms    [User: 12.9 ms, System: 4.4 ms]
+  Range (min … max):    14.7 ms …  32.4 ms    168 runs
+ 
