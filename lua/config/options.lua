@@ -13,6 +13,8 @@ set.formatoptions = "jcqt,ron" -- Overridden after comma
 set.ignorecase = true
 set.smartcase = true --override ignorecase when pattern contains uppercase
 set.inccommand = "split" --preview incremental substitutes
+set.incsearch = true
+set.hlsearch = false
 set.mouse = "nv"     -- n=normal v=visual i=insert
 set.pumblend = 25 -- Popup blend
 set.winblend = 25 -- Float-windows blend
@@ -35,6 +37,8 @@ set.undolevels = 10000 -- Overridden from 1000
 set.updatetime = 1000 -- Trigger CursorHold
 set.winminwidth = 5 -- Minimum window width
 set.wrap = false -- Disable line wrap
+--set.syntax = "enable"
+set.background = "dark"
 
 set.termguicolors=true -- True color support 
 
