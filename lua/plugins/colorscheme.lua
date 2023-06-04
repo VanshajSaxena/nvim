@@ -1,6 +1,7 @@
 return {
   {
     'ellisonleao/gruvbox.nvim',
+	enabled = true,
     lazy = false,
     priority = 1000,
     config = function()
@@ -23,8 +24,8 @@ return {
     lazy = false,
     priority = 1000,
     config = function()
-      vim.cmd([[ hi Normal guibg=NONE ctermbg=NONE]])
       vim.cmd([[colorscheme tokyonight-night ]])
+	  vim.cmd([[ hi Normal guibg=NONE ctermbg=NONE]])
     end
   }
 }

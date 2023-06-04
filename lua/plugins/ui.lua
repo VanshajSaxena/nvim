@@ -37,12 +37,7 @@ return {
 							cond = function() return package.loaded['dap'] and require('dap').status() ~= '' end,
 						},
 						{ require('lazy.status').updates, cond = require('lazy.status').has_updates },
-						{
-							'fileformat',
-							icon_only = true,
-							icon = { align = 'right' }
-						},
-						{ 'filetype',                     icon_only = false }
+						{ 'filetype' }
 					},
 				},
 				extensions = { 'lazy' },

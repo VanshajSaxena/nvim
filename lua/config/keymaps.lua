@@ -12,6 +12,10 @@ keymap("n", "<leader>gg", ":silent !tmux display-popup -d '\\#{pane_current_path
 keymap("n", "<leader>*", ":silent !tmux display-popup -d '\\#{pane_current_path}' -w80\\% -h80\\% -E<CR>", opts)
 keymap("n", "<leader>H", ":silent !tmux display-popup -d '\\#{pane_current_path}' -w80\\% -h80\\% -E htop<CR>", opts)
 
+
+keymap("n", "<Tab>", "<C-w>w", opts)
+keymap("n", "<S-Tab>", "<C-w>W", opts)
+
 vim.keymap.set("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
 vim.keymap.set("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move up" })
 vim.keymap.set("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down" })

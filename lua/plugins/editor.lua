@@ -141,7 +141,7 @@ return {
 		version = false, -- telescope did only one release, so use HEAD for now
 		keys = {
 			{ '<leader>,',  '<cmd>Telescope buffers show_all_buffers=true<cr>',      desc = 'Switch Buffer' },
-			{ '<leader>sg', "<cmd>lua require('telescope.builtin').live_grep()<cr>", desc = 'Grep cwd' },
+			{ '<leader>fg', "<cmd>lua require('telescope.builtin').live_grep()<cr>", desc = 'Grep cwd' },
 			{ '<leader>/', "<cmd>lua require('telescope.builtin').live_grep()<cr>", desc = 'Grep cwd' },
 			--{ "<leader>/", Util.telescope("live_grep"), desc = "Grep (root dir)" },
 			{ '<leader>:',  '<cmd>Telescope command_history<cr>',                    desc = 'Command History' },
@@ -213,5 +213,14 @@ return {
 				},
 			},
 		},
-	}
+	},
+  {
+    "ggandor/leap.nvim",
+	config = function ()
+		  require('leap').add_default_mappings(true)
+		  require('leap').init_highlight(true)
+		  --vim.cmd([[ hi LeapBackdrop guifg=#928374 ]])
+		  vim.cmd([[ hi link LeapBackdrop GruvboxGray]])
+	end
+  }
 }

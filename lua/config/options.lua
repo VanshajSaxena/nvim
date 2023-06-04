@@ -19,8 +19,8 @@ set.mouse = "nv"     -- n=normal v=visual i=insert
 set.pumblend = 25 -- Popup blend
 set.winblend = 25 -- Float-windows blend
 set.pumheight = 40 -- Maximum number of entries in a popup
-set.scrolloff = 8
-set.sidescrolloff = 8 -- Columns of context
+set.scrolloff = 16
+set.sidescrolloff = 16 -- Columns of context
 set.sessionoptions = { "buffers", "curdir", "tabpages", "winsize" } -- Changes the effect of :mksession cmd --test
 set.shiftround = true
 set.shiftwidth = 4 -- Size of an (auto)indent << >>
