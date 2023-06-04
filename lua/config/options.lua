@@ -38,7 +38,7 @@ set.updatetime = 1000 -- Trigger CursorHold
 set.winminwidth = 5 -- Minimum window width
 set.wrap = false -- Disable line wrap
 --set.syntax = "enable"
-set.background = "dark"
+--set.background = "dark"
 
 set.termguicolors=true -- True color support 
 
