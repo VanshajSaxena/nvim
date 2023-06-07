@@ -2,7 +2,7 @@ local stdpath_data = vim.fn.stdpath('data')
 --print(vim.fn.stdpath('data')) = /home/ArchEnvy/.local/share/nvim/mason/packages/jdtls/bin/
 local jdtls_path = vim.fn.expand(stdpath_data .. '/mason/packages/jdtls/')
 local root_dir = require('jdtls.setup').find_root({ 'gradlew' })
-local workspace_dir = stdpath_data .. '/edlipse-workspace-dir/' .. vim.fn.fnamemodify(root_dir, ':p:h:t')
+local workspace_dir = stdpath_data .. '/eclipse-workspace-dir/' .. vim.fn.fnamemodify(root_dir, ':p:h:t')
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
