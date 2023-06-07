@@ -16,7 +16,7 @@ set.inccommand = "split" --preview incremental substitutes
 set.incsearch = true
 set.hlsearch = false
 set.mouse = "nv"     -- n=normal v=visual i=insert
-set.pumblend = 25 -- Popup blend
+set.pumblend = 00 -- Popup blend
 set.winblend = 25 -- Float-windows blend
 set.pumheight = 40 -- Maximum number of entries in a popup
 set.scrolloff = 16

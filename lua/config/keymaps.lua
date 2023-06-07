@@ -16,6 +16,11 @@ keymap("n", "<leader>H", ":silent !tmux display-popup -d '\\#{pane_current_path}
 keymap("n", "<Tab>", "<C-w>w", opts)
 keymap("n", "<S-Tab>", "<C-w>W", opts)
 
+-- highlights under cursor
+if vim.fn.has("nvim-0.9.0") == 1 then
+  vim.keymap.set("n", "<leader>ui", vim.show_pos, { desc = "Inspect Pos" })
+end
+
 vim.keymap.set("n", "<A-j>", "<cmd>m .+1<cr>==", { desc = "Move down" })
 vim.keymap.set("n", "<A-k>", "<cmd>m .-2<cr>==", { desc = "Move up" })
 vim.keymap.set("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move down" })
