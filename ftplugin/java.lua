@@ -12,13 +12,13 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 local bundles = {
 	vim.fn.glob(stdpath_data ..
-		"/mason/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar"),
+		'/mason/packages/java-debug-adapter/extension/server/com.microsoft.java.debug.plugin-*.jar'),
 }
 
 vim.list_extend(bundles,
 	vim.split(
-		vim.fn.glob(stdpath_data .. "/mason/packages/java-test/extension/server/*.jar"),
-		"\n"))
+		vim.fn.glob(stdpath_data .. '/mason/packages/java-test/extension/server/*.jar'),
+		'\n'))
 local config = {
 	-- The command that starts the language server
 	-- See: https://github.com/eclipse/eclipse.jdt.ls#running-from-the-command-line

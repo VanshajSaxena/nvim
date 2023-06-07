@@ -25,7 +25,7 @@ return {
 							sections = { 'error', 'warn', 'info' },
 
 							symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
-							colored = true,    -- Displays diagnostics status in color if set to true.
+							colored = true, -- Displays diagnostics status in color if set to true.
 							update_in_insert = false, -- Update diagnostics in insert mode.
 							always_visible = false, -- Show diagnostics even if there are none.
 						},
@@ -57,7 +57,7 @@ return {
 			bufferline.setup({
 				options = {
 					--numbers = function(opts)
-						--return string.format('%s·%s', opts.ordinal, opts.lower(opts.id))
+					--return string.format('%s·%s', opts.ordinal, opts.lower(opts.id))
 					--end,
 					--style_preset = bufferline.style_preset.minimal, -- or bufferline.style_preset.minimal,
 					diagnostics = 'nvim_lsp',
