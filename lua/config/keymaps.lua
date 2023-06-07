@@ -28,6 +28,7 @@ vim.keymap.set('v', '<A-j>', ":m '>+1<cr>gv=gv", { desc = 'Move down' })
 vim.keymap.set('v', '<A-k>', ":m '<-2<cr>gv=gv", { desc = 'Move up' })
 
 vim.keymap.set('i', '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+vim.keymap.set('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
 vim.keymap.set('n', 'gb', '<cmd>BufferLinePick<CR>')
 vim.keymap.set('n', 'gD', '<cmd>BufferLinePickClose<CR>')
 vim.keymap.set('n', '<leader>F', vim.lsp.buf.format)
