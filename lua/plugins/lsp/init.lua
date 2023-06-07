@@ -66,6 +66,10 @@ return {
 	},
   },
   config = true
-}
+},
+  {
+  "mfussenegger/nvim-jdtls",
+	lazy = true
+  }
 }
 
