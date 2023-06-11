@@ -149,6 +149,7 @@ return {
 			-- find
 			{ '<leader>fb', '<cmd>Telescope buffers<cr>',                            desc = 'Buffers' },
 			{ "<leader>ff", "<cmd>lua require('telescope.builtin').find_files({hidded = true})<cr>", desc = "Find Files (root dir -> cwd)" },
+			{"<leader>fc", "<cmd> lua require('telescope.builtin').find_files({cwd = vim.fn.stdpath('config')})<cr>", desc = 'Find Files (cwd to vim.fn.stdpath("config"))'},
 			--{ "<leader>fF", Util.telescope("files", { cwd = false }), desc = "Find Files (cwd)" },
 			{ '<leader>fr', '<cmd>Telescope oldfiles<cr>',                           desc = 'Recent' },
 			{ "<leader>fR", "<cmd>lua require('telescope.builtin).oldfiles({cwd = vim.loop.cwd()})<cr>", desc = "Recent (cwd)" },

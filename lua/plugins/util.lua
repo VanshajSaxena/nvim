@@ -5,6 +5,6 @@ return {
 	{
 		'tpope/vim-repeat',
 		lazy = true,
-		event = 'VeryLazy'
+		event = 'InsertEnter'
 	},
 }
