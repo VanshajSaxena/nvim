@@ -17,12 +17,13 @@ return {
 		version = false, -- last release is way too old
 		event = 'InsertEnter',
 		dependencies = {
-			'hrsh7th/cmp-nvim-lsp',
-			'hrsh7th/cmp-buffer',
-			'hrsh7th/cmp-path',
-			'hrsh7th/cmp-cmdline',       --cmdline Completion -- Doesn't work
-			'saadparwaiz1/cmp_luasnip',
-			'hrsh7th/cmp-nvim-lsp-signature-help' -- Doesn't work
+			'hrsh7th/cmp-nvim-lsp',      --Works
+			'hrsh7th/cmp-buffer',        --Works
+			'hrsh7th/cmp-path',          --Works
+			'hrsh7th/cmp-calc',          --Works
+			'hrsh7th/cmp-cmdline',       --Cmdline Completion
+			'saadparwaiz1/cmp_luasnip',  -- Works
+			'hrsh7th/cmp-nvim-lsp-signature-help' -- Works after completing paran opening, inside paran
 		},
 		opts = function()
 			local cmp = require('cmp')
@@ -67,20 +68,25 @@ return {
 					}),
 					sources = cmp.config.sources({
 						{ name = 'nvim_lsp' },
-						--{ name = 'nvim_lsp_signature_help' },
+						{ name = 'nvim_lsp_signature_help' },
 						{ name = 'luasnip' }, -- For luasnip users.
 						{ name = 'buffer' }, -- Working
-						--{ name = 'calc' }, -- Working
+						{ name = 'calc' }, -- Working
 						{ name = 'path' }, -- Working
 					})
-
 				},
-
+				cmp.setup.cmdline(':', {
+					mapping = cmp.mapping.preset.cmdline(),
+					sources = {
+						{ name = 'cmdline' }, -- Good
+						{ name = 'path' } -- Good
+					}
+				}),
 				cmp.setup.cmdline('/', {
 					mapping = cmp.mapping.preset.cmdline(),
 					sources = {
-						{ name = 'buffer' },
-						{ name = 'path' }
+						{ name = 'buffer' }, -- Good
+						{ name = 'path' } -- Good
 					}
 				})
 		end,

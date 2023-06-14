@@ -8,8 +8,4 @@ return {
 			{ '<c-l>', desc = 'Move right' },
 		}
 	},
-	{
-		'nanotee/zoxide.vim',
-		cmd = 'Z'
-	}
 }
