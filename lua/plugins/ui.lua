@@ -80,13 +80,12 @@ return {
 		'j-hui/fidget.nvim',
 		tag = 'legacy',
 		event = 'VeryLazy',
-		config = function ()
-			require"fidget".setup({
+		opts = {
 				text = {
-					spinner = 'dots_negative',
+					spinner = 'dots',
 					done = '',
-					commenced = 'Started',
-					completed = 'Completed'
+					commenced = 'Initializing',
+					completed = 'Done'
 				},
 				window = {
 					blend = 00,
@@ -97,7 +96,6 @@ return {
 					max_width = 45,
 					stack_upwards = false
 				}
-			})
-		end
+			},
 	}
 }
