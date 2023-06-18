@@ -1,3 +1,4 @@
+
 local stdpath_data = vim.fn.stdpath('data')
 --print(vim.fn.stdpath('data')) = /home/ArchEnvy/.local/share/nvim/mason/packages/jdtls/bin/
 local jdtls_path = vim.fn.expand(stdpath_data .. '/mason/packages/jdtls/')

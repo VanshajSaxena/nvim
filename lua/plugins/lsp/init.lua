@@ -1,4 +1,5 @@
 return {
+
 	{
 		'neovim/nvim-lspconfig',
 		event = { 'BufReadPre', 'BufNewFile' },
@@ -6,7 +7,7 @@ return {
 			{ 'folke/neodev.nvim', opts = {} },
 			'mason.nvim',
 			{
-				'williamboman/mason-lspconfig.nvim', --Works as expected
+				'williamboman/mason-lspconfig.nvim', -- Works as expected
 				opts = {
 					ensure_installed = { 'jdtls' },
 					automatic_installation = { 'lua-language-server' }
@@ -71,8 +72,9 @@ return {
 				})
 			end,
 	},
+
 	{
-		'williamboman/mason.nvim', --Works as expected
+		'williamboman/mason.nvim', -- Works as expected
 		cmd = 'Mason',
 		build = ':MasonUpdate',
 		opts = {
@@ -86,11 +88,10 @@ return {
 		},
 		config = true
 	},
+
 	{
-		'mfussenegger/nvim-jdtls',
+		'mfussenegger/nvim-jdtls', -- Java Language Server
 		lazy = true
 	},
-	{
 
-	}
 }

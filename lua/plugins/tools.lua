@@ -11,7 +11,7 @@ return {
 	},
 
 	{
-		'glacambre/firenvim',
+		'glacambre/firenvim', -- Firenvim for browser integration
 		lazy = false,
 		build = function()
 			require('lazy').load({ plugins = 'firenvim', wait = true })
@@ -47,7 +47,7 @@ return {
 			--AutoWrite Function
 			function Autowrite_buf_content()
 				vim.api.nvim_create_autocmd({ 'TextChanged', 'TextChangedI' }, {
-					callback = function(e)
+					callback = function()
 						if vim.g.timer_started == true then
 							return
 						end

@@ -1,4 +1,5 @@
 return {
+
 	{
 		'nvim-lualine/lualine.nvim',
 		event = 'VeryLazy',
@@ -20,10 +21,8 @@ return {
 							-- or a function that returns a table as such:
 							--   { error=error_cnt, warn=warn_cnt, info=info_cnt, hint=hint_cnt }
 							sources = { 'nvim_lsp' },
-
 							-- Displays diagnostics for the defined severity types
 							sections = { 'error', 'warn', 'info' },
-
 							symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
 							colored = true, -- Displays diagnostics status in color if set to true.
 							update_in_insert = false, -- Update diagnostics in insert mode.
@@ -98,4 +97,5 @@ return {
 				}
 			},
 	}
+
 }

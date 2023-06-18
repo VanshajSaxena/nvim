@@ -1,4 +1,5 @@
 return {
+
 	{
 		'echasnovski/mini.pairs',
 		version = false,
@@ -7,7 +8,5 @@ return {
 			modes = { command = true }
 		}
 	},
-	{
 
-	}
 }

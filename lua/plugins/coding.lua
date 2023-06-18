@@ -1,4 +1,5 @@
 return {
+
 	{
 		'L3MON4D3/LuaSnip',
 		event = 'InsertEnter',
@@ -12,6 +13,7 @@ return {
 		-- install jsregexp (optional!).
 		build = 'make install_jsregexp'
 	},
+
 	{
 		'hrsh7th/nvim-cmp',
 		version = false, -- last release is way too old
@@ -91,4 +93,5 @@ return {
 				})
 		end,
 	}
+
 }

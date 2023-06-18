@@ -1,4 +1,5 @@
 return {
+
 	{
 		'ellisonleao/gruvbox.nvim',
 		enabled = true,
@@ -20,6 +21,7 @@ return {
 			vim.cmd([[hi link @keyword.return.lua @keyword ]])
 		end
 	},
+
 	{
 		'folke/tokyonight.nvim',
 		enabled = true,
@@ -30,4 +32,5 @@ return {
 			vim.cmd([[ hi Normal guibg=NONE ctermbg=NONE]])
 		end
 	}
+
 }
