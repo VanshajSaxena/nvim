@@ -61,7 +61,6 @@ return {
 					--end,
 					--style_preset = bufferline.style_preset.minimal, -- or bufferline.style_preset.minimal,
 					diagnostics = 'nvim_lsp',
-					themable = false,
 					offsets = {
 						{
 							filetype = 'NvimTree',
@@ -69,10 +68,35 @@ return {
 							text = 'FileExplorer',
 						}
 					},
-					always_show_bufferline = true,
+					always_show_bufferline = false,
 					separator_style = 'thick' --thick,slope looks good
 				},
 
+			})
+		end
+	},
+
+	{
+		'j-hui/fidget.nvim',
+		tag = 'legacy',
+		event = 'VeryLazy',
+		config = function ()
+			require"fidget".setup({
+				text = {
+					spinner = 'dots_negative',
+					done = '',
+					commenced = 'Started',
+					completed = 'Completed'
+				},
+				window = {
+					blend = 00,
+					relative = 'editor'
+				},
+				fmt = {
+					leftpad = false,
+					max_width = 45,
+					stack_upwards = false
+				}
 			})
 		end
 	}
