@@ -38,3 +38,15 @@ Benchmark 1: nvim --headless +qa
   Time (mean ± σ):      15.7 ms ±   0.7 ms    [User: 11.7 ms, System: 4.3 ms]
   Range (min … max):    14.5 ms …  19.7 ms    174 runs
  
+Benchmark 1: nvim --headless +qa #06/21/2023
+  Time (mean ± σ):      18.1 ms ±   0.9 ms    [User: 14.4 ms, System: 3.9 ms]
+  Range (min … max):    16.8 ms …  21.7 ms    146 runs
+ 
+Benchmark 1: nvim --headless +qa
+  Time (mean ± σ):      18.0 ms ±   2.5 ms    [User: 13.5 ms, System: 4.8 ms]
+  Range (min … max):    16.1 ms …  31.3 ms    150 runs
+ 
+Benchmark 1: nvim --headless +qa
+  Time (mean ± σ):      18.1 ms ±   0.9 ms    [User: 13.6 ms, System: 4.8 ms]
+  Range (min … max):    16.7 ms …  22.0 ms    149 runs
+ 
