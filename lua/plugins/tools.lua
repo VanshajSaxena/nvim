@@ -14,8 +14,10 @@ return {
 		'glacambre/firenvim', -- Firenvim for browser integration
 		lazy = false,
 		build = function()
+			if os.getenv('OS') == 'Windows_NT' then
 			require('lazy').load({ plugins = 'firenvim', wait = true })
 			vim.fn['firenvim#install'](0)
+			end
 		end,
 		cond = not not vim.g.started_by_firenvim,
 		config = function()
@@ -44,7 +46,7 @@ return {
 					}
 				}
 			}
-			--AutoWrite Function
+			-- AutoWrite Function
 			function Autowrite_buf_content()
 				vim.api.nvim_create_autocmd({ 'TextChanged', 'TextChangedI' }, {
 					callback = function()
