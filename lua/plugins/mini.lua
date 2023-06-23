@@ -12,7 +12,7 @@ return {
 	{
 		'echasnovski/mini.ai', -- a,i textobjects
 		version = false,
-		event = 'VeryLazy',
+		event = { 'BufReadPre', 'BufNewFile' },
 		opts = {
 			-- Number of lines within which textobject is searched
 			n_lines = 500
@@ -22,7 +22,6 @@ return {
 	{
 		'echasnovski/mini.surround',
 		version = false,
-		--event = 'VeryLazy',
 		keys = {
 			{ 'gza' },
 			{ 'gzd' },
@@ -42,9 +41,7 @@ return {
 				replace = 'gzr', -- Replace surrounding
 				update_n_lines = 'gzn', -- Update `n_lines`
 			},
-
 			search_method = 'cover_or_next',
-
 			-- Number of lines within which surrounding is searched
 			n_lines = 500
 		},
