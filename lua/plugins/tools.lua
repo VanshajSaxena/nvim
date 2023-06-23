@@ -67,8 +67,8 @@ return {
 			--Keymap for Autowrite_buf_content
 			vim.api.nvim_set_keymap('n', '<leader>aw', '<cmd>lua Autowrite_buf_content()<CR>',
 				{ noremap = true, silent = true })
-			vim.api.nvim_set_keymap('n', '<leader><leader>', '<Cmd>wqall<CR>', {})
-			vim.api.nvim_set_keymap('n', '<esc><leader>', '<Cmd>qall!<CR>', {})
+			vim.api.nvim_set_keymap('n', '<leader>w', '<cmd>w<CR>', {})
+			vim.api.nvim_set_keymap('n', '<esc><esc>', '<cmd>qall!<CR>', {})
 		end
 	}
 
