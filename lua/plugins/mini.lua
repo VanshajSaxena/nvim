@@ -9,4 +9,14 @@ return {
 		}
 	},
 
+	{
+		'echasnovski/mini.ai', -- a,i textobjects
+		version = false,
+		event = 'VeryLazy',
+		opts = {
+			-- Number of lines within which textobject is searched
+			n_lines = 500
+		},
+	},
+
 }

@@ -6,7 +6,7 @@ keymap('', '<Space>', '<Nop>', opts)
 vim.g.mapleader = ' '
 --vim.g.maplocalleader = " "
 
---Tmux open-float mappings
+-- Tmux open-float mappings
 keymap('n', '<leader>gg', ":silent !tmux display-popup -d '\\#{pane_current_path}' -w80\\% -h80\\% -E lazygit<CR>", opts)
 keymap('n', '<leader>*', ":silent !tmux display-popup -d '\\#{pane_current_path}' -w80\\% -h80\\% -E<CR>", opts)
 keymap('n', '<leader>H', ":silent !tmux display-popup -d '\\#{pane_current_path}' -w80\\% -h80\\% -E htop<CR>", opts)
@@ -15,7 +15,7 @@ keymap('n', '<leader>H', ":silent !tmux display-popup -d '\\#{pane_current_path}
 keymap('n', '<Tab>', '<C-w>w', opts)
 keymap('n', '<S-Tab>', '<C-w>W', opts)
 
--- highlights under cursor
+-- Highlights under cursor
 if vim.fn.has('nvim-0.9.0') == 1 then
 	vim.keymap.set('n', '<leader>ui', vim.show_pos, { desc = 'Inspect Pos' })
 end
