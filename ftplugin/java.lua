@@ -1,6 +1,5 @@
-
 local stdpath_data = vim.fn.stdpath('data')
---print(vim.fn.stdpath('data')) = /home/ArchEnvy/.local/share/nvim/mason/packages/jdtls/bin/
+--print(vim.fn.stdpath('data')) = /home/ArchEnvy/.local/share/nvim
 local jdtls_path = vim.fn.expand(stdpath_data .. '/mason/packages/jdtls/')
 local root_dir = require('jdtls.setup').find_root({ 'gradlew' })
 local workspace_dir = stdpath_data .. '/eclipse-workspace-dir/' .. vim.fn.fnamemodify(root_dir, ':p:h:t')
@@ -63,9 +62,11 @@ local config = {
 	-- One dedicated LSP server & client will be started per unique root_dir
 	root_dir = root_dir,
 	capabilities = capabilities,
+
 	-- Here you can configure eclipse.jdt.ls specific settings
 	-- See https://github.com/eclipse/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
 	-- for a list of options
+
 	settings = {
 		java = {
 			autobuild = { enabled = true, },
@@ -101,4 +102,43 @@ local config = {
 	},
 	--	enable_format_on_save(),
 }
+
+config['on_attach'] = function()
+	vim.keymap.set('n', '<leader>tc', function() require('jdtls').test_class() end)
+	vim.keymap.set('n', '<leader>tm', function() require('jdtls').test_nearest_method() end)
+
+	local dap  = require('dap')
+	--local dapui = require('dapui')
+
+	--dap.listeners.after.event_initialized['dapui_config'] = function()
+		--dapui.open()
+	--end
+	--dap.listeners.before.event_terminated['dapui_config'] = function()
+		--dapui.close()
+	--end
+	--dap.listeners.before.event_exited['dapui_config'] = function()
+		--dapui.close()
+	--end
+
+	function Attach_to_debug()
+		dap.configurations.java = {
+			{
+				type = 'java',
+				request = 'attach',
+				name = 'Attach to the process',
+				hostName = 'localhost',
+				port = '5005',
+			},
+		}
+		dap.continue()
+	end
+
+	-- With `hotcodereplace = 'auto' the debug adapter will try to apply code changes
+	-- you make during a debug session immediately.
+	-- Remove the option if you do not want that.
+	-- You can use the `JdtHotcodeReplace` command to trigger it manually
+	require('jdtls').setup_dap({ hotcodereplace = 'auto' })
+	require('jdtls.dap').setup_dap_main_class_configs()
+end
+
 require('jdtls').start_or_attach(config)
