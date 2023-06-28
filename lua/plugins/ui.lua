@@ -68,7 +68,7 @@ return {
 						}
 					},
 					always_show_bufferline = false,
-					separator_style = 'thick' --thick,slope looks good
+					separator_style = 'thin' --thick,slope looks good
 				},
 
 			})

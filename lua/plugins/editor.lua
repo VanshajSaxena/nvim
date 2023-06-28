@@ -327,6 +327,7 @@ return {
 			defaults = {
 				prompt_prefix = ' ',
 				selection_caret = ' ',
+				selection_strategy = "follow",
 				mappings = {
 					i = {
 						['<c-t>'] = function(...)
@@ -351,6 +352,12 @@ return {
 					n = {
 						['q'] = function(...)
 							return require('telescope.actions').close(...)
+						end,
+						['s'] = function(...)
+							return require('telescope.actions').file_vsplit(...)
+						end,
+						['h'] = function(...)
+							return require('telescope.actions').file_split(...)
 						end,
 					},
 				},
