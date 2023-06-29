@@ -19,14 +19,16 @@ return {
 		version = false, -- last release is way too old
 		event = 'InsertEnter',
 		dependencies = {
-			'hrsh7th/cmp-nvim-lsp',      --Works
-			'hrsh7th/cmp-buffer',        --Works
-			'hrsh7th/cmp-path',          --Works
-			'hrsh7th/cmp-calc',          --Works
-			'hrsh7th/cmp-cmdline',       --Cmdline Completion
-			'saadparwaiz1/cmp_luasnip',  -- Works
-			'hrsh7th/cmp-nvim-lsp-signature-help' -- Works after completing paran opening, inside paran
+			'hrsh7th/cmp-nvim-lsp',       --Works
+			'hrsh7th/cmp-buffer',         --Works
+			'hrsh7th/cmp-path',           --Works
+			'hrsh7th/cmp-calc',           --Works
+			'hrsh7th/cmp-cmdline',        --Cmdline Completion
+			'saadparwaiz1/cmp_luasnip',   -- Works
+			'onsails/lspkind.nvim',       -- vs_code like pictograms for nvim-cmp
+			'hrsh7th/cmp-nvim-lsp-signature-help', -- Works after completing paran opening, inside paran
 		},
+
 		opts = function()
 			local cmp = require('cmp')
 			local luasnip = require('luasnip')
@@ -42,6 +44,26 @@ return {
 						expand = function(args)
 							require('luasnip').lsp_expand(args.body)
 						end,
+					},
+					formatting = {
+						format = require('lspkind').cmp_format({
+							mode = 'symbol', -- show only symbol annotations --
+							maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+							ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+
+							-- The function below will be called before any actual modifications from lspkind
+							-- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+							menu = ({
+								buffer = '[Buffer]',
+								nvim_lsp = '[LSP]',
+								luasnip = '[Luasnip]',
+								nvim_lua = '[Lua]',
+								latex_symbols = '[Latex]',
+							}),
+							before = function(entry, vim_item)
+								return vim_item
+							end
+						})
 					},
 					mapping = cmp.mapping.preset.insert({
 						['<C-k>'] = cmp.mapping.scroll_docs(-1),
@@ -69,10 +91,10 @@ return {
 						end, { 'i', 's' }),
 					}),
 					sources = cmp.config.sources({
-						{ name = 'nvim_lsp' },
-						{ name = 'nvim_lsp_signature_help' },
 						{ name = 'luasnip' }, -- For luasnip users.
 						{ name = 'buffer' }, -- Working
+						{ name = 'nvim_lsp' },
+						{ name = 'nvim_lsp_signature_help' },
 						{ name = 'calc' }, -- Working
 						{ name = 'path' }, -- Working
 					})
@@ -92,6 +114,6 @@ return {
 					}
 				})
 		end,
-	}
+	},
 
 }
