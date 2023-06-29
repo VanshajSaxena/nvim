@@ -47,7 +47,7 @@ return {
 					},
 					formatting = {
 						format = require('lspkind').cmp_format({
-							mode = 'symbol', -- show only symbol annotations --
+							mode = 'symbol_text', -- show only symbol annotations -- opts: text, text_symbol, symbol_text, symbol
 							maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
 							ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
 
@@ -57,8 +57,6 @@ return {
 								buffer = '[Buffer]',
 								nvim_lsp = '[LSP]',
 								luasnip = '[Luasnip]',
-								nvim_lua = '[Lua]',
-								latex_symbols = '[Latex]',
 							}),
 							before = function(entry, vim_item)
 								return vim_item
