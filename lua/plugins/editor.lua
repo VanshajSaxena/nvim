@@ -182,6 +182,12 @@ return {
 				'Find Files (root dir -> cwd)'
 			},
 			{
+				'<leader>fC',
+				"<cmd> lua require('telescope.builtin').live_grep({cwd = vim.fn.stdpath('config')})<cr>",
+				desc =
+				'live grep (cwd to vim.fn.stdpath("config"))'
+			},
+			{
 				'<leader>fc',
 				"<cmd> lua require('telescope.builtin').find_files({cwd = vim.fn.stdpath('config')})<cr>",
 				desc =
