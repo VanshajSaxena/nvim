@@ -14,6 +14,7 @@ return {
 		build = 'make install_jsregexp'
 	},
 
+
 	{
 		'hrsh7th/nvim-cmp',
 		version = false, -- last release is way too old
@@ -31,9 +32,10 @@ return {
 		opts = function()
 			local cmp = require('cmp')
 			local luasnip = require('luasnip')
+			-- local select_opts = { behavior = cmp.SelectBehavior.Insert } -- select_opts to have insert behavior while using tab
 			return {
 					completion = {
-						completeopt = 'menu,menuone,noinsert'
+						completeopt = 'menu,menuone'
 					},
 					window = {
 						completion = cmp.config.window.bordered(),
@@ -45,6 +47,8 @@ return {
 						end,
 					},
 					formatting = {
+						fields = { 'abbr', 'menu', 'kind' }, -- these fiels decide the members of cmp-pmenu; see help cmp-config.formatting.fields
+						--  fields = { 'abbr', 'menu', 'kind'}, -- is a working sequence of fields for jdtls and lua_ls
 					},
 					mapping = cmp.mapping.preset.insert({
 						['<C-k>'] = cmp.mapping.scroll_docs(-1),
@@ -54,7 +58,7 @@ return {
 						['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 						['<Tab>'] = cmp.mapping(function(fallback) -- Tab completion
 							if cmp.visible() then
-								cmp.select_next_item()
+								cmp.select_next_item()   -- set select_opts
 							elseif luasnip.expand_or_jumpable() then
 								luasnip.expand_or_jump()
 							else
@@ -63,7 +67,7 @@ return {
 						end, { 'i', 's' }),
 						['<S-Tab>'] = cmp.mapping(function(fallback)
 							if cmp.visible() then
-								cmp.select_prev_item()
+								cmp.select_prev_item() -- set select_opts
 							elseif luasnip.jumpable(-1) then
 								luasnip.jump(-1)
 							else
@@ -72,12 +76,12 @@ return {
 						end, { 'i', 's' }),
 					}),
 					sources = cmp.config.sources({
-						{ name = 'luasnip' }, -- For luasnip users.
-						{ name = 'buffer' }, -- Working
-						{ name = 'nvim_lsp' },
+						{ name = 'nvim_lsp',               keyword_length = 1 }, --keyword_length to specify no. of characters to begin querying the source
+						{ name = 'luasnip',                keyword_length = 2 }, -- For luasnip users.
+						{ name = 'buffer',                 keyword_length = 3 }, -- Working
+						{ name = 'calc' },                     -- Working
+						{ name = 'path' },                     -- Working
 						{ name = 'nvim_lsp_signature_help' },
-						{ name = 'calc' }, -- Working
-						{ name = 'path' }, -- Working
 					})
 				},
 				cmp.setup.cmdline(':', {
