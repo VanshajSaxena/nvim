@@ -29,6 +29,7 @@ local opts = {
 				'tohtml',
 				'tutor',
 				'zipPlugin',
+				'spellfile',
 			},
 		}
 	}

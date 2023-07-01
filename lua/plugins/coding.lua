@@ -14,18 +14,17 @@ return {
 		build = 'make install_jsregexp'
 	},
 
-
 	{
 		'hrsh7th/nvim-cmp',
 		version = false, -- last release is way too old
-		event = 'InsertEnter',
+		event = { 'InsertEnter' },
 		dependencies = {
 			'hrsh7th/cmp-nvim-lsp',       --Works
 			'hrsh7th/cmp-buffer',         --Works
 			'hrsh7th/cmp-path',           --Works
 			'hrsh7th/cmp-calc',           --Works
 			'hrsh7th/cmp-cmdline',        --Cmdline Completion
-			'saadparwaiz1/cmp_luasnip',   -- Works
+			'saadparwaiz1/cmp_luasnip',   --Works
 			'hrsh7th/cmp-nvim-lsp-signature-help', -- Works after completing paran opening, inside paran
 		},
 

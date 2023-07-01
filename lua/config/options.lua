@@ -28,7 +28,6 @@ set.shortmess:append({ m = true, I = true}) -- m- Modified, I- Intro
 set.showmode = false -- Dont show mode since theres a statusline
 set.signcolumn = "yes:1"
 set.smartindent = true -- Insert indents automatically
-set.spelllang = { "en", "en-rare" }
 set.splitbelow = true -- Put new windows below current
 set.splitright = true -- Put new windows right of current
 set.tabstop = 4 -- Number of spaces tabs count for
