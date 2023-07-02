@@ -141,6 +141,22 @@ return {
 		commit = vim.fn.has('nvim-0.9.0') == 0 and '057ee0f8783' or nil,
 		cmd = 'Telescope',
 		version = false, -- telescope did only one release, so use HEAD for now
+
+		dependencies = {
+			'nvim-telescope/telescope-ui-select.nvim',
+			config = function()
+				require('telescope').setup {
+					extensions = {
+						['ui-select'] = {
+							require('telescope.themes').get_dropdown {
+							}
+						}
+					}
+				}
+				require('telescope').load_extension('ui-select')
+			end
+		},
+
 		keys = {
 			{
 				'<leader>,',
@@ -313,7 +329,7 @@ return {
 				'Options'
 			},
 			{
-				'<leader>sR',
+				'<leader>sr',
 				'<cmd>Telescope resume<cr>',
 				desc =
 				'Resume'
@@ -329,6 +345,7 @@ return {
 			--{ "<leader>ss", Util.telescope("lsp_document_symbols", { symbols = { "Class", "Function", "Method", "Constructor", "Interface", "Module", "Struct", "Trait", "Field", "Property", }, }), desc = "Goto Symbol", },
 			--{ "<leader>sS", Util.telescope("lsp_dynamic_workspace_symbols", { symbols = { "Class", "Function", "Method", "Constructor", "Interface", "Module", "Struct", "Trait", "Field", "Property", }, }), desc = "Goto Symbol (Workspace)", },
 		},
+
 		opts = {
 			defaults = {
 				prompt_prefix = ' ',
