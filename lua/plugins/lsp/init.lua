@@ -6,6 +6,7 @@ return {
 		dependencies = {
 			{ 'folke/neodev.nvim', opts = {} },
 			'mason.nvim',
+			'nvim-telescope/telescope-ui-select.nvim',
 			{
 				'williamboman/mason-lspconfig.nvim', -- Works as expected
 				opts = {
@@ -67,7 +68,7 @@ return {
 					},
 					signs = true,
 					underline = true,
-					update_in_insert = false,
+					update_in_insert = true,
 					severity_sort = true,
 				})
 			end,
