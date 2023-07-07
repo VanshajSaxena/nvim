@@ -15,8 +15,8 @@ return {
 		lazy = false,
 		build = function()
 			if os.getenv('OS') == 'Windows_NT' then
-			require('lazy').load({ plugins = 'firenvim', wait = true })
-			vim.fn['firenvim#install'](0)
+				require('lazy').load({ plugins = 'firenvim', wait = true })
+				vim.fn['firenvim#install'](0)
 			end
 		end,
 		cond = not not vim.g.started_by_firenvim,
@@ -70,6 +70,10 @@ return {
 			vim.api.nvim_set_keymap('n', '<leader>w', '<cmd>w<CR>', {})
 			vim.api.nvim_set_keymap('n', '<esc><esc>', '<cmd>qall!<CR>', {})
 		end
-	}
+	},
 
+	{
+		'ray-x/guihua.lua', -- GUI lib for ray-x/navigator.lua
+		build = 'cd lua/fzy && make'
+	}
 }
