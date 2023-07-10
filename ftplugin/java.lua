@@ -103,21 +103,22 @@ local config = {
 	--	enable_format_on_save(),
 }
 
-config['on_attach'] = function()
+config['on_attach'] = function(client, bufnr)
 	vim.keymap.set('n', '<leader>tc', function() require('jdtls').test_class() end)
 	vim.keymap.set('n', '<leader>tm', function() require('jdtls').test_nearest_method() end)
+	require('navigator.lspclient.mapping').setup({ bufnr = bufnr, client = client })
 
-	local dap  = require('dap')
+	local dap = require('dap')
 	--local dapui = require('dapui')
 
 	--dap.listeners.after.event_initialized['dapui_config'] = function()
-		--dapui.open()
+	--dapui.open()
 	--end
 	--dap.listeners.before.event_terminated['dapui_config'] = function()
-		--dapui.close()
+	--dapui.close()
 	--end
 	--dap.listeners.before.event_exited['dapui_config'] = function()
-		--dapui.close()
+	--dapui.close()
 	--end
 
 	function Attach_to_debug()

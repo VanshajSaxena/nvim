@@ -1,9 +1,11 @@
 return {
 	'ray-x/navigator.lua',
-	event = {'BufReadPre','BufReadPost'},
+	event = { 'BufReadPre', 'BufReadPost' },
 	config = function()
 		require('navigator').setup({
-			mason = true
+			lsp = {
+				disable_lsp = 'all'
+			}
 		})
 	end
 }
