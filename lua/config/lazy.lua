@@ -13,7 +13,10 @@ vim.opt.rtp:prepend(lazypath)
 require('config.init')
 
 local opts = {
-	spec = { import = 'plugins' },
+	spec = {
+		{ import = 'plugins' },
+		{ import = 'plugins.lsp' }
+	},
 	defaults = {
 		lazy = true
 	},
