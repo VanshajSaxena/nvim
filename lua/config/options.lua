@@ -42,7 +42,8 @@ set.wrap = false -- Disable line wrap
 
 set.termguicolors=true -- True color support 
 
-vim.cmd [[ let g:clipboard = { 
+if os.getenv('USER') ~= "termux" then
+vim.cmd [[ let g:clipboard = {
 \ 'name': 'win32yank',
 \ 'copy': {
 \    '+': 'win32yank.exe -i --crlf',
@@ -55,4 +56,5 @@ vim.cmd [[ let g:clipboard = {
 \ 'cache_enabled': 0,
 \ }
 ]]
+end
 set.clipboard = "unnamedplus"
