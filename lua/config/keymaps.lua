@@ -7,9 +7,17 @@ vim.g.mapleader = ' '
 --vim.g.maplocalleader = " "
 
 -- Tmux open-float mappings
-keymap('n', '<leader>gg', ":silent !tmux display-popup -d '\\#{pane_current_path}' -w80\\% -h80\\% -E lazygit<CR>", opts)
-keymap('n', '<leader>*', ":silent !tmux display-popup -d '\\#{pane_current_path}' -w80\\% -h80\\% -E<CR>", opts)
-keymap('n', '<leader>H', ":silent !tmux display-popup -d '\\#{pane_current_path}' -w80\\% -h80\\% -E htop<CR>", opts)
+if os.getenv('OS') == 'Windows_NT' then
+	keymap('n', '<leader>gg', "<cmd>lua print('you are not under tmux')<cr>", opts)
+	keymap('n', '<leader>*', "<cmd>lua print('you are not under tmux')<cr>", opts)
+	keymap('n', '<leader>H', "<cmd>lua print('you are not under tmux')<cr>", opts)
+else
+	keymap('n', '<leader>gg', ":silent !tmux display-popup -d '\\#{pane_current_path}' -w80\\% -h80\\% -E lazygit<CR>",
+		opts)
+	keymap('n', '<leader>*', ":silent !tmux display-popup -d '\\#{pane_current_path}' -w80\\% -h80\\% -E<CR>", opts)
+	keymap('n', '<leader>H', ":silent !tmux display-popup -d '\\#{pane_current_path}' -w80\\% -h80\\% -E htop<CR>", opts)
+end
+
 
 
 keymap('n', '<Tab>', '<C-w>w', opts)
@@ -28,6 +36,7 @@ vim.keymap.set('v', '<A-j>', ":m '>+1<cr>gv=gv", { desc = 'Move down' })
 vim.keymap.set('v', '<A-k>', ":m '<-2<cr>gv=gv", { desc = 'Move up' })
 vim.keymap.set('n', 'gb', '<cmd>BufferLinePick<CR>')
 vim.keymap.set('n', 'gD', '<cmd>BufferLinePickClose<CR>')
+vim.keymap.set('n', 'q:', '<cmd>lua print("pressed "q:", aborting")<CR>')
 
 vim.keymap.set('n', '<leader>F', vim.lsp.buf.format)
 vim.keymap.set('i', '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
