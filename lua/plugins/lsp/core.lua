@@ -23,6 +23,7 @@ return {
 		config =
 			function()
 				local capabilities = require('cmp_nvim_lsp').default_capabilities()
+				-- lua_ls server configuration
 				require('lspconfig')['lua_ls'].setup {
 					capabilities = capabilities,
 					on_attach = function()
@@ -49,6 +50,17 @@ return {
 						},
 					},
 				}
+
+				-- clangd server configuration
+				require 'lspconfig'.clangd.setup {
+					cmd = { 'clangd' },
+					root_dir = require('lspconfig').util.find_git_ancestor,
+					capabilities = capabilities,
+					on_attach = function()
+					end,
+					single_file_support = true
+				}
+
 				-- Diagnostic symbols in the sign column (gutter)
 				local
 				signs = { Error = ' ', Warn = ' ', Hint = ' ', Info = ' ' }
