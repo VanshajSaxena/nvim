@@ -6,19 +6,23 @@ keymap('', '<Space>', '<Nop>', opts)
 vim.g.mapleader = ' '
 --vim.g.maplocalleader = " "
 
--- Tmux open-float mappings
-if os.getenv('OS') == 'Windows_NT' then
-	keymap('n', '<leader>gg', "<cmd>lua print('you are not under tmux')<cr>", opts)
-	keymap('n', '<leader>*', "<cmd>lua print('you are not under tmux')<cr>", opts)
-	keymap('n', '<leader>H', "<cmd>lua print('you are not under tmux')<cr>", opts)
-else
+local function keymaps()
 	keymap('n', '<leader>gg', ":silent !tmux display-popup -d '\\#{pane_current_path}' -w80\\% -h80\\% -E lazygit<CR>",
 		opts)
+	keymap('n', '<leader>ti', ":silent !tmux display-popup -d '\\#{pane_current_path}' -w80\\% -h80\\% -E tig<CR>", opts)
 	keymap('n', '<leader>*', ":silent !tmux display-popup -d '\\#{pane_current_path}' -w80\\% -h80\\% -E<CR>", opts)
 	keymap('n', '<leader>H', ":silent !tmux display-popup -d '\\#{pane_current_path}' -w80\\% -h80\\% -E htop<CR>", opts)
 end
 
-
+-- Tmux open-float mappings
+if os.getenv('OS') == 'Windows_NT' then
+	keymap('n', '<leader>gg', "<cmd>lua print('you are not under tmux')<cr>", opts)
+	keymap('n', '<leader>ti', "<cmd>lua print('you are not under tmux')<cr>", opts)
+	keymap('n', '<leader>*', "<cmd>lua print('you are not under tmux')<cr>", opts)
+	keymap('n', '<leader>H', "<cmd>lua print('you are not under tmux')<cr>", opts)
+else
+	keymaps()
+end
 
 keymap('n', '<Tab>', '<C-w>w', opts)
 keymap('n', '<S-Tab>', '<C-w>W', opts)
