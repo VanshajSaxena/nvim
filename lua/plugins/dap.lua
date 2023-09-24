@@ -6,8 +6,8 @@ return {
 			'rcarriga/nvim-dap-ui',
 			-- stylua: ignore
 			keys = {
-				{ '<leader>du', function() require('dapui').toggle({}) end, desc = 'Dap UI' },
-				{ '<leader>de', function() require('dapui').eval() end,     desc = 'Eval',  mode = { 'n', 'v' } },
+				{ '<leader>du', function() require('dapui').toggle({}) end, desc = 'dap ui' },
+				{ '<leader>de', function() require('dapui').eval() end,     desc = 'dap eval',  mode = { 'n', 'v' } },
 			},
 			opts = {},
 			config = function(_, opts)
@@ -59,92 +59,92 @@ return {
 			'<leader>dB',
 			function() require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: ')) end,
 			desc =
-			'Breakpoint Condition'
+			'dap breakpoint condition'
 		},
 		{
 			'<leader>db',
 			function() require('dap').toggle_breakpoint() end,
 			desc =
-			'Toggle Breakpoint'
+			'dap toggle breakpoint'
 		},
 		{
 			'<leader>dc',
 			function() require('dap').continue() end,
 			desc =
-			'Continue'
+			'dap continue'
 		},
 		{
 			'<leader>dC',
 			function() require('dap').run_to_cursor() end,
 			desc =
-			'Run to Cursor'
+			'dap run to cursor'
 		},
 		{
 			'<leader>dg',
 			function() require('dap').goto_() end,
 			desc =
-			'Go to line (no execute)'
+			'dap go to line (no execute)'
 		},
 		{
 			'<leader>di',
 			function() require('dap').step_into() end,
 			desc =
-			'Step Into'
+			'dap step Into'
 		},
 		{
 			'<leader>dj',
 			function() require('dap').down() end,
 			desc =
-			'Down'
+			'dap down'
 		},
-		{ '<leader>dk', function() require('dap').up() end, desc = 'Up' },
+		{ '<leader>dk', function() require('dap').up() end, desc = 'dap up' },
 		{
 			'<leader>dl',
 			function() require('dap').run_last() end,
 			desc =
-			'Run Last'
+			'dap run last'
 		},
 		{
 			'<leader>do',
 			function() require('dap').step_out() end,
 			desc =
-			'Step Out'
+			'dap step out'
 		},
 		{
 			'<leader>dO',
 			function() require('dap').step_over() end,
 			desc =
-			'Step Over'
+			'dap step over'
 		},
 		{
 			'<leader>dp',
 			function() require('dap').pause() end,
 			desc =
-			'Pause'
+			'dap pause'
 		},
 		{
 			'<leader>dr',
 			function() require('dap').repl.toggle() end,
 			desc =
-			'Toggle REPL'
+			'dap toggle repl'
 		},
 		{
 			'<leader>ds',
 			function() require('dap').session() end,
 			desc =
-			'Session'
+			'dap session'
 		},
 		{
 			'<leader>dt',
 			function() require('dap').terminate() end,
 			desc =
-			'Terminate'
+			'dap terminate'
 		},
 		{
 			'<leader>dw',
 			function() require('dap.ui.widgets').hover() end,
 			desc =
-			'Widgets'
+			'dap widgets'
 		},
 	},
 }
