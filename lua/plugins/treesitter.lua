@@ -8,8 +8,8 @@ return {
 		end,
 		event = { 'BufReadPost', 'BufNewFile' },
 		keys = {
-			{ '<c-space>', desc = 'Increment selection' },
-			{ '<bs>',      desc = 'Decrement selection', mode = 'x' },
+			{ '<c-space>', desc = 'increment selection' },
+			{ '<bs>',      desc = 'decrement selection', mode = 'x' },
 		},
 		config = function()
 			local config_opts = {

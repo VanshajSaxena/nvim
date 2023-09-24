@@ -3,10 +3,10 @@ return {
 	{
 		'christoomey/vim-tmux-navigator',
 		keys = {
-			{ '<c-h>', desc = 'Move left' },
-			{ '<c-j>', desc = 'Move down' },
-			{ '<c-k>', desc = 'Move up' },
-			{ '<c-l>', desc = 'Move right' },
+			{ '<c-h>', desc = 'move left' },
+			{ '<c-j>', desc = 'move down' },
+			{ '<c-k>', desc = 'move up' },
+			{ '<c-l>', desc = 'move right' },
 		}
 	},
 
