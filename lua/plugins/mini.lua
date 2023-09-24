@@ -23,13 +23,13 @@ return {
 		'echasnovski/mini.surround',
 		version = false,
 		keys = {
-			{ 'gza' },
-			{ 'gzd' },
-			{ 'gzf' },
-			{ 'gzF' },
-			{ 'gzh' },
-			{ 'gzr' },
-			{ 'gzn' },
+			{ 'gza' , desc = 'surround add'},
+			{ 'gzd' , desc = 'surround delete'},
+			{ 'gzf' , desc = 'surround find'},
+			{ 'gzF' , desc = 'surround find backward'},
+			{ 'gzh' , desc = 'surround highlight'},
+			{ 'gzr' , desc = 'surround replace'},
+			{ 'gzn' , desc = 'surround change n_lines (neighbour lines)'},
 		},
 		opts = {
 			mappings = {

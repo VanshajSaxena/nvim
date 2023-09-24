@@ -396,9 +396,9 @@ return {
 		'ggandor/leap.nvim',
 		--enabled = false,
 		keys = {
-			{ 's',  mode = { 'n', 'x', 'o' }, desc = 'Leap forward to' }, --n- Normal
-			{ 'S',  mode = { 'n', 'x', 'o' }, desc = 'Leap backward to' }, --x- Visual
-			{ 'gs', mode = { 'n', 'x', 'o' }, desc = 'Leap from windows' }, --o- Operator-pending
+			{ 's',  mode = { 'n', 'x', 'o' }, desc = 'leap forward to' }, --n- Normal
+			{ 'S',  mode = { 'n', 'x', 'o' }, desc = 'leap backward to' }, --x- Visual
+			{ 'gs', mode = { 'n', 'x', 'o' }, desc = 'leap from windows' }, --o- Operator-pending
 		},
 		config = function()
 			require('leap').add_default_mappings(true)
