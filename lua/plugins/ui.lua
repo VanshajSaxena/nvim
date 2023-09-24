@@ -80,22 +80,22 @@ return {
 		tag = 'legacy',
 		event = 'LspAttach',
 		opts = {
-				text = {
-					spinner = 'dots',
-					done = '',
-					commenced = 'Initializing',
-					completed = 'Done'
-				},
-				window = {
-					blend = 00,
-					relative = 'editor'
-				},
-				fmt = {
-					leftpad = false,
-					max_width = 45,
-					stack_upwards = false
-				}
+			text = {
+				spinner = 'dots',
+				done = '',
+				commenced = 'Initializing',
+				completed = 'Done'
 			},
+			window = {
+				blend = 00,
+				relative = 'editor'
+			},
+			fmt = {
+				leftpad = false,
+				max_width = 45,
+				stack_upwards = false
+			}
+		},
 	}
 
 }

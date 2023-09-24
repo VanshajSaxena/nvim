@@ -6,13 +6,13 @@ vim.g.mapleader = ' '
 
 function Keymaps()
 	keymap('n', '<leader>gg', ":silent !tmux display-popup -d '\\#{pane_current_path}' -w80\\% -h80\\% -E lazygit<CR>",
-		{ desc = 'tmux open-float lazygit' })
+		{ desc = 'tmux open-float lazygit', silent = true })
 	keymap('n', '<leader>ti', ":silent !tmux display-popup -d '\\#{pane_current_path}' -w80\\% -h80\\% -E tig<CR>",
-		{ desc = 'tmux open-float tig' })
+		{ desc = 'tmux open-float tig', silent = true })
 	keymap('n', '<leader>*', ":silent !tmux display-popup -d '\\#{pane_current_path}' -w80\\% -h80\\% -E<CR>",
-		{ desc = 'tmux open-float' })
+		{ desc = 'tmux open-float', silent = true })
 	keymap('n', '<leader>H', ":silent !tmux display-popup -d '\\#{pane_current_path}' -w80\\% -h80\\% -E htop<CR>",
-		{ desc = 'tmux open-float htop' })
+		{ desc = 'tmux open-float htop', silent = true })
 end
 
 -- Tmux open-float mappings
@@ -33,21 +33,21 @@ if vim.fn.has('nvim-0.9.0') == 1 then
 	keymap('n', '<leader>ui', vim.show_pos, { desc = 'inspect pos' })
 end
 
-keymap('n', 'q:', '<nop>', {desc = 'nop'})
+keymap('n', 'q:', '<nop>', { desc = 'nop' })
 keymap('n', '<A-j>', '<cmd>m .+1<cr>==', { desc = 'move down' })
 keymap('n', '<A-k>', '<cmd>m .-2<cr>==', { desc = 'move up' })
 keymap('i', '<A-j>', '<esc><cmd>m .+1<cr>==gi', { desc = 'move down (insert)' })
 keymap('i', '<A-k>', '<esc><cmd>m .-2<cr>==gi', { desc = 'move up (insert)' })
 keymap('v', '<A-j>', ":m '>+1<cr>gv=gv", { desc = 'move down (visual)' })
 keymap('v', '<A-k>', ":m '<-2<cr>gv=gv", { desc = 'move up (visual)' })
-keymap('n', 'gb', '<cmd>BufferLinePick<CR>', {desc = 'bufferline pick'})
-keymap('n', 'gD', '<cmd>BufferLinePickClose<CR>', {desc = 'bufferline pick close'})
-keymap('n', '<leader>F', vim.lsp.buf.format, {desc = 'lsp format'})
+keymap('n', 'gb', '<cmd>BufferLinePick<CR>', { desc = 'bufferline pick' })
+keymap('n', 'gD', '<cmd>BufferLinePickClose<CR>', { desc = 'bufferline pick close' })
+keymap('n', '<leader>F', vim.lsp.buf.format, { desc = 'lsp format' })
 keymap('i', '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', { desc = 'signature help' })
 keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>', { desc = 'code action' })
 
 -- Lazy mappings
-keymap('n', '<leader>lp', '<cmd>Lazy profile<cr>', {desc = 'lazy profile'})
+keymap('n', '<leader>lp', '<cmd>Lazy profile<cr>', { desc = 'lazy profile' })
 
 -- Jdtls mappings
 keymap('n', '<leader>jr', 'JdtRestart', { desc = 'jdtls restart' })
