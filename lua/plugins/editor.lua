@@ -4,7 +4,7 @@ return {
 		'nvim-tree/nvim-tree.lua',
 		version = '*',
 		keys = {
-			{ '<leader>n', '<cmd>NvimTreeToggle<CR>' }
+			{ '<leader>n', '<cmd>NvimTreeToggle<CR>', desc = 'nvim-tree toggle' }
 		},
 		dependencies = {
 			'nvim-tree/nvim-web-devicons',
@@ -163,26 +163,26 @@ return {
 				'<leader>,',
 				'<cmd>Telescope buffers show_all_buffers=true<cr>',
 				desc =
-				'Switch Buffer'
+				'telescope switch buffer'
 			},
 			{
 				'<leader>fg',
 				"<cmd>lua require('telescope.builtin').live_grep()<cr>",
 				desc =
-				'Grep cwd'
+				'telescope live grep cwd'
 			},
 			{
 				'<leader>/',
 				"<cmd>lua require('telescope.builtin').live_grep()<cr>",
 				desc =
-				'Grep cwd'
+				'telescope live grep cwd'
 			},
 			--{ "<leader>/", Util.telescope("live_grep"), desc = "Grep (root dir)" },
 			{
 				'<leader>:',
 				'<cmd>Telescope command_history<cr>',
 				desc =
-				'Command History'
+				'telescope vim command history'
 			},
 			--{ "<leader><space>", Util.telescope("files"), desc = "Find Files (root dir)" },
 			-- find
@@ -190,106 +190,106 @@ return {
 				'<leader>fb',
 				'<cmd>Telescope buffers<cr>',
 				desc =
-				'Buffers'
+				'telescope buffers'
 			},
 			{
 				'<leader>ff',
 				"<cmd>lua require('telescope.builtin').find_files({hidded = true})<cr>",
 				desc =
-				'Find Files (root dir -> cwd)'
+				'telescope find files (root dir -> cwd)'
 			},
 			{
 				'<leader>fC',
 				"<cmd> lua require('telescope.builtin').live_grep({cwd = vim.fn.stdpath('config')})<cr>",
 				desc =
-				'live grep (cwd to vim.fn.stdpath("config"))'
+				'telescope live grep (cwd to vim.fn.stdpath("config"))'
 			},
 			{
 				'<leader>fc',
 				"<cmd> lua require('telescope.builtin').find_files({cwd = vim.fn.stdpath('config')})<cr>",
 				desc =
-				'Find Files (cwd to vim.fn.stdpath("config"))'
+				'telescope find files (cwd to vim.fn.stdpath("config"))'
 			},
 			--{ "<leader>fF", Util.telescope("files", { cwd = false }), desc = "Find Files (cwd)" },
 			{
 				'<leader>fr',
 				'<cmd>Telescope oldfiles<cr>',
 				desc =
-				'Recent'
+				'telescope recent files'
 			},
 			{
 				'<leader>fR',
 				"<cmd>lua require('telescope.builtin').oldfiles({cwd = vim.loop.cwd()})<cr>",
 				desc =
-				'Recent (cwd)'
+				'telescope recent files (cwd)'
 			},
 			-- git
 			{
 				'<leader>gc',
 				'<cmd>Telescope git_commits<CR>',
 				desc =
-				'commits'
+				'telescope git commits'
 			},
 			{
 				'<leader>gs',
 				'<cmd>Telescope git_status<CR>',
 				desc =
-				'status'
+				'telescope git status'
 			},
 			{
 				'<leader>gf',
 				'<cmd>Telescope git_files<CR>',
 				desc =
-				'files tracked by git'
+				'telescope git files'
 			},
 			-- search
 			{
 				'<leader>sa',
 				'<cmd>Telescope autocommands<cr>',
 				desc =
-				'Auto Commands'
+				'telescope auto commands'
 			},
 			{
-				'<leader>sb',
+				'<leader>sz',
 				'<cmd>Telescope current_buffer_fuzzy_find<cr>',
 				desc =
-				'Buffer'
+				'telescope current buffer fuzzy search'
 			},
 			{
 				'<leader>sc',
 				'<cmd>Telescope command_history<cr>',
 				desc =
-				'Command History'
+				'telescope command history'
 			},
 			{
 				'<leader>sC',
 				'<cmd>Telescope commands<cr>',
 				desc =
-				'Commands'
+				'telescope vim commands'
 			},
 			{
 				'<leader>sd',
 				'<cmd>Telescope diagnostics bufnr=0<cr>',
 				desc =
-				'Document diagnostics'
+				'telescope document diagnostics'
 			},
 			{
 				'<leader>sD',
 				'<cmd>Telescope diagnostics<cr>',
 				desc =
-				'Workspace diagnostics'
+				'telescope workspace diagnostics'
 			},
 			{
 				'<leader>uC',
 				'<cmd>Telescope colorscheme enable_preview=true<cr>',
 				desc =
-				'Telescope builtin'
+				'telescope colorscheme preview'
 			},
 			{
 				'<leader>sp',
 				'<cmd>Telescope builtin<cr>',
 				desc =
-				'Telescope builtin'
+				'telescope builtin'
 			},
 			--{ "<leader>sg", Util.telescope("live_grep"), desc = "Grep (root dir)" },
 			--{ "<leader>sG", Util.telescope("live_grep", { cwd = false }), desc = "Grep (cwd)" },
@@ -297,49 +297,49 @@ return {
 				'<leader>sh',
 				'<cmd>Telescope help_tags<cr>',
 				desc =
-				'Help Pages'
+				'telescope help pages'
 			},
 			{
 				'<leader>sH',
 				'<cmd>Telescope highlights<cr>',
 				desc =
-				'Search Highlight Groups'
+				'telescope search highlight groups'
 			},
 			{
 				'<leader>sk',
 				'<cmd>Telescope keymaps<cr>',
 				desc =
-				'Key Maps'
+				'telescope vim keymaps'
 			},
 			{
 				'<leader>sm',
 				'<cmd>Telescope marks<cr>',
 				desc =
-				'Jump to Mark'
+				'telescope jump to mark'
 			},
 			{
 				'<leader>sM',
 				'<cmd>Telescope man_pages<cr>',
 				desc =
-				'Man Pages'
+				'telescope man pages'
 			},
 			{
 				'<leader>so',
 				'<cmd>Telescope vim_options<cr>',
 				desc =
-				'Options'
+				'telescope vim options'
 			},
 			{
 				'<leader>sr',
 				'<cmd>Telescope resume<cr>',
 				desc =
-				'Resume'
+				'telescope resume'
 			},
 			{
 				'<leader>sw',
 				"<cmd>lua require('telescope.builtin').grep_string()<cr>",
 				desc =
-				'Word (cwd)'
+				'telescope grep string (cwd)'
 			},
 			--{ "<leader>sW", Util.telescope("grep_string", { cwd = false }), desc = "Word (cwd)" },
 			--{ "<leader>uC", Util.telescope("colorscheme", { enable_preview = true }), desc = "Colorscheme with preview" },
