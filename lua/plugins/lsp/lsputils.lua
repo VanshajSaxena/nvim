@@ -39,7 +39,7 @@ return {
 			{ '<leader>gr', '<cmd>Lspsaga rename<cr>',               desc = 'lspsaga rename' },
 			{ '<leader>gR', '<cmd>Lspsaga rename ++project<cr>',     desc = 'lspsaga rename across project' },
 			{ 'gd',         '<cmd>Lspsaga goto_definition<cr>',      desc = 'lspsaga goto definition' },
-			{ 'gd',         '<cmd>Lspsaga peek_definition<cr>',      desc = 'lspsaga peek definition' },
+			{ 'gp',         '<cmd>Lspsaga peek_definition<cr>',      desc = 'lspsaga peek definition' },
 			--		{ 'sl',         '<cmd>Lspsaga show_line_diagnostics<cr>', desc = 'lspsaga show line diagnostics'},
 			--		{ 'sc',         '<cmd>Lspsaga show_cursor_diagnostics<cr>', desc = 'lspsaga show cursor diagnostics'},
 			--		{ 'sb',         '<cmd>Lspsaga show_buf_diagnostics<cr>', desc = 'lspsaga show buffer diagnostics'},
@@ -72,11 +72,11 @@ return {
 			use_diagnostic_signs = true
 		},
 		keys = {
-			{ '<leader>xx', '<cmd>lua require("trouble").toggle()<cr>',                      desc = 'trouble toggle' },
-			{ '<leader>xw', '<cmd>lua require("trouble").open("workspace_diagnostics")<cr>', desc = 'trouble workspace diagnostics' },
-			{ '<leader>xd', '<cmd>lua require("trouble").open("document_diagnostics")<cr>',  desc = 'trouble document diagnostics' },
-			{ '<leader>xq', '<cmd>lua require("trouble").open("quickfix")<cr>',              desc = 'trouble quickfix' },
-			{ '<leader>xl', '<cmd>lua require("trouble").open("loclist")<cr>',               desc = 'trouble loclist' },
+			{ '<leader>to', '<cmd>lua require("trouble").toggle()<cr>',                      desc = 'trouble toggle' },
+			{ '<leader>tw', '<cmd>lua require("trouble").open("workspace_diagnostics")<cr>', desc = 'trouble workspace diagnostics' },
+			{ '<leader>td', '<cmd>lua require("trouble").open("document_diagnostics")<cr>',  desc = 'trouble document diagnostics' },
+			{ '<leader>tq', '<cmd>lua require("trouble").open("quickfix")<cr>',              desc = 'trouble quickfix' },
+			{ '<leader>tl', '<cmd>lua require("trouble").open("loclist")<cr>',               desc = 'trouble loclist' },
 			{ 'gR',         '<cmd>lua require("trouble").open("lsp_references")<cr>',        desc = 'trouble lsp references' }
 		}
 	}

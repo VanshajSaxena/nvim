@@ -1,7 +1,6 @@
 local keymap = vim.keymap.set
 
 keymap('', '<Space>', '<Nop>', { desc = 'nop' })
-vim.g.mapleader = ' '
 --vim.g.maplocalleader = " "
 
 function Keymaps()
