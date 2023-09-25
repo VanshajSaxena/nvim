@@ -17,6 +17,7 @@ return {
 			})
 			vim.cmd([[colorscheme gruvbox]])
 			vim.cmd([[hi Normal guibg=NONE ctermbg=NONE]])
+			vim.cmd([[hi NormalFloat guibg=NONE ctermbg=NONE]])
 			vim.cmd([[hi @keyword cterm=italic gui=italic guifg=#fb4934]])
 			vim.cmd([[hi link @keyword.return.lua @keyword ]])
 		end
@@ -30,6 +31,7 @@ return {
 		config = function()
 			--vim.cmd([[colorscheme tokyonight-night ]])
 			vim.cmd([[ hi Normal guibg=NONE ctermbg=NONE]])
+			vim.cmd([[hi NormalFloat guibg=NONE ctermbg=NONE]])
 		end
 	}
 

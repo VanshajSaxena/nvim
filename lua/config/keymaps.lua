@@ -38,6 +38,7 @@ if os.getenv('OS') == 'Windows_NT' then
 	keymap('n', '<leader>*', "<cmd>lua print('you are not under tmux')<cr>", { desc = 'nop' })
 	keymap('n', '<leader>H', "<cmd>lua print('you are not under tmux')<cr>", { desc = 'nop' })
 else
+	Keymaps()
 end
 ]]
 

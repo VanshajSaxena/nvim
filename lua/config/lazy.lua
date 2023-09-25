@@ -20,6 +20,12 @@ local opts = {
 	defaults = {
 		lazy = true
 	},
+	ui = {
+		border = "single",
+	},
+	change_detection = {
+		notify = false
+	},
 	performance = {
 		rtp = {
 			disabled_plugins = {
