@@ -22,9 +22,7 @@ local function openfloat(program, key, desc, silent)
 		{ desc = desc, silent = silent })
 end
 
-if os.getenv('TERM_PROGRAM') ~= 'tmux' then
-	return
-else
+if os.getenv('TERM_PROGRAM') == 'tmux' then
 	openfloat('lazygit', 'gg', 'tmux open-float lazygit', true)
 	openfloat('', '*', 'tmux open-float', true)
 	openfloat('tig', 'ti', 'tmux open-float tig', true)
