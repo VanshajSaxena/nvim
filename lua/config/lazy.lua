@@ -21,7 +21,7 @@ local opts = {
 		lazy = true
 	},
 	ui = {
-		border = "single",
+		border = "rounded",
 	},
 	change_detection = {
 		notify = false
