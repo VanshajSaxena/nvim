@@ -58,14 +58,14 @@ keymap('v', '<A-k>', ":m '<-2<cr>gv=gv", { desc = 'move up (visual)' })
 keymap('n', 'gb', '<cmd>BufferLinePick<CR>', { desc = 'bufferline pick' })
 keymap('n', 'gD', '<cmd>BufferLinePickClose<CR>', { desc = 'bufferline pick close' })
 keymap('n', '<leader>F', vim.lsp.buf.format, { desc = 'lsp format' })
-keymap('i', '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', { desc = 'signature help' })
+keymap({ 'n', 'i' }, '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', { desc = 'signature help' })
 keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>', { desc = 'code action' })
 
 -- Lazy mappings
 keymap('n', '<leader>lp', '<cmd>Lazy profile<cr>', { desc = 'lazy profile' })
 
 -- Jdtls mappings
-keymap('n', '<leader>jr', 'JdtRestart', { desc = 'jdtls restart' })
-keymap('n', '<leader>jwr', 'JdtWipeDataAndRestart', { desc = 'jdtls wipe data and restart' })
-keymap('n', '<leader>juc', 'JdtUpdateConfig', { desc = 'jdtls update config' })
-keymap('n', '<leader>judc', 'JdtUpdateDebugConfig', { desc = 'jdtls update debug config' })
+keymap('n', '<leader>jr', '<cmd>JdtRestart<cr>', { desc = 'jdtls restart' })
+keymap('n', '<leader>jwr', '<cmd>JdtWipeDataAndRestart<cr>', { desc = 'jdtls wipe data and restart' })
+keymap('n', '<leader>juc', '<cmd>JdtUpdateConfig<cr>', { desc = 'jdtls update config' })
+keymap('n', '<leader>judc', '<cmd>JdtUpdateDebugConfig<cr>', { desc = 'jdtls update debug config' })
