@@ -18,7 +18,7 @@ end
 
 local function openfloat(program, key, desc, silent)
 	keymap('n', '<leader>' .. key,
-		":silent !tmux display-popup -d '\\#{pane_current_path}' -w80\\% -h80\\% -E " .. program .. ' <CR>',
+		":silent !tmux display-popup -d '\\#{pane_current_path}' -w80\\% -h80\\% -b rounded -T ".. program .. " -E " .. program .. ' <CR>',
 		{ desc = desc, silent = silent })
 end
 
