@@ -16,17 +16,32 @@ function Keymaps()
 end
 ]]
 
+--[[
 local function openfloat(program, key, desc, silent)
 	keymap('n', '<leader>' .. key,
-		":silent !tmux display-popup -d '\\#{pane_current_path}' -w80\\% -h80\\% -b rounded -T ".. program .. " -E " .. program .. ' <CR>',
+		":silent !tmux display-popup -d '\\#{pane_current_path}' -w80\\% -h80\\% -b rounded -T " ..
+		program .. ' -E ' .. program .. ' <CR>',
 		{ desc = desc, silent = silent })
 end
+]]
 
 if os.getenv('TERM_PROGRAM') == 'tmux' then
-	openfloat('lazygit', 'gg', 'tmux open-float lazygit', true)
-	openfloat('', '*', 'tmux open-float', true)
-	openfloat('tig', 'ti', 'tmux open-float tig', true)
-	openfloat('htop', 'H', 'tmux open-float htop', true)
+	local openfloatTmux = function(program, map, desc, silent)
+		keymap('n', '<leader>' .. map,
+			":silent !tmux display-popup -d '\\#{pane_current_path}' -w80\\% -h80\\% -b rounded -T " ..
+			program .. ' -E ' .. program .. ' <CR>',
+			{ desc = desc, silent = silent })
+	end
+	openfloatTmux('lazygit', 'gg', 'tmux open-float lazygit', true)
+	openfloatTmux('', '*', 'tmux open-float', true)
+	openfloatTmux('tig', 'ti', 'tmux open-float tig', true)
+	openfloatTmux('htop', 'H', 'tmux open-float htop', true)
+elseif os.getenv('OS') == 'Windows_NT' then
+	local openfloatLspsaga = function(program, map, desc, silent)
+		keymap('n', '<leader>' .. map, '<cmd>Lspsaga term_toggle ' .. program .. '<CR>', { desc = desc, silent = silent })
+	end
+	openfloatLspsaga('lazygit', 'gg', 'Lspsaga term_toggle lazygit', true)
+	openfloatLspsaga('', '*', 'Lspsaga term_toggle', true)
 end
 
 --[[ Tmux open-float mappings
