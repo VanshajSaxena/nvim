@@ -28,8 +28,8 @@ end
 if os.getenv('TERM_PROGRAM') == 'tmux' then
 	local openfloatTmux = function(program, map, desc, silent)
 		keymap('n', '<leader>' .. map,
-			":silent !tmux display-popup -d '\\#{pane_current_path}' -w80\\% -h80\\% -b rounded -T " ..
-			program .. ' -E ' .. program .. ' <CR>',
+			":silent !tmux display-popup -d '\\#{pane_current_path}' -w80\\% -h80\\% -b rounded -E -T " ..
+			program .. ' ' .. program .. ' <CR>',
 			{ desc = desc, silent = silent })
 	end
 	openfloatTmux('lazygit', 'gg', 'tmux open-float lazygit', true)
