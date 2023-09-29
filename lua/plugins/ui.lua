@@ -47,6 +47,19 @@ return {
 	{ 'nvim-tree/nvim-web-devicons', lazy = true },
 
 	{
+		'lukas-reineke/indent-blankline.nvim',
+		main = 'ibl',
+		opts = {
+			indent = {
+				char = '┆'
+			},
+			scope = {
+				highlight = 'GruvboxRed'
+			}
+		}
+	},
+
+	{
 		'akinsho/bufferline.nvim',
 		version = '*',
 		event = 'BufReadPost',
@@ -70,7 +83,6 @@ return {
 					always_show_bufferline = false,
 					separator_style = 'thin' --thick,slope looks good
 				},
-
 			})
 		end
 	},
