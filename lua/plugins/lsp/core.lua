@@ -7,6 +7,7 @@ return {
 			{ 'folke/neodev.nvim', opts = {} },
 			'mason.nvim',
 			'nvim-telescope/telescope-ui-select.nvim',
+			'lukas-reineke/indent-blankline.nvim',
 			{
 				'williamboman/mason-lspconfig.nvim', -- Works as expected
 				opts = {
