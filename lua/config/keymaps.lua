@@ -1,7 +1,5 @@
 local keymap = vim.keymap.set
-
 keymap('', '<Space>', '<Nop>', { desc = 'nop' })
---vim.g.maplocalleader = " "
 
 --[[
 function Keymaps()
@@ -25,6 +23,18 @@ local function openfloat(program, key, desc, silent)
 end
 ]]
 
+
+--[[ Tmux open-float mappings
+if os.getenv('OS') == 'Windows_NT' then
+	keymap('n', '<leader>gg', "<cmd>lua print('you are not under tmux')<cr>", { desc = 'nop' })
+	keymap('n', '<leader>ti', "<cmd>lua print('you are not under tmux')<cr>", { desc = 'nop' })
+	keymap('n', '<leader>*', "<cmd>lua print('you are not under tmux')<cr>", { desc = 'nop' })
+	keymap('n', '<leader>H', "<cmd>lua print('you are not under tmux')<cr>", { desc = 'nop' })
+else
+	Keymaps()
+end
+]]
+
 if os.getenv('TERM_PROGRAM') == 'tmux' then
 	local openfloat = function(program, map, desc, silent)
 		keymap('n', '<leader>' .. map,
@@ -43,17 +53,6 @@ elseif os.getenv('OS') == 'Windows_NT' then
 	openfloat('lazygit', 'gg', 'Lspsaga term_toggle lazygit', true)
 	openfloat('', '*', 'Lspsaga term_toggle', true)
 end
-
---[[ Tmux open-float mappings
-if os.getenv('OS') == 'Windows_NT' then
-	keymap('n', '<leader>gg', "<cmd>lua print('you are not under tmux')<cr>", { desc = 'nop' })
-	keymap('n', '<leader>ti', "<cmd>lua print('you are not under tmux')<cr>", { desc = 'nop' })
-	keymap('n', '<leader>*', "<cmd>lua print('you are not under tmux')<cr>", { desc = 'nop' })
-	keymap('n', '<leader>H', "<cmd>lua print('you are not under tmux')<cr>", { desc = 'nop' })
-else
-	Keymaps()
-end
-]]
 
 keymap('n', '<Tab>', '<C-w>w', { desc = 'tab switching' })
 keymap('n', '<S-Tab>', '<C-w>W', { desc = 'tab switch (shift)' })
