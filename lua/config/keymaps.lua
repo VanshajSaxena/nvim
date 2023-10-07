@@ -46,6 +46,7 @@ if os.getenv('TERM_PROGRAM') == 'tmux' then
 	openfloat('', '*', 'tmux open-float', true)
 	openfloat('tig', 'ti', 'tmux open-float tig', true)
 	openfloat('htop', 'H', 'tmux open-float htop', true)
+	openfloat('btop', 'B', 'tmux open-float btop', true)
 elseif os.getenv('OS') == 'Windows_NT' then
 	local openfloat = function(program, map, desc, silent)
 		keymap('n', '<leader>' .. map, '<cmd>Lspsaga term_toggle ' .. program .. '<CR>', { desc = desc, silent = silent })

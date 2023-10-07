@@ -17,9 +17,10 @@ return {
 			})
 			vim.cmd([[colorscheme gruvbox]])
 			vim.cmd([[hi Normal guibg=NONE ctermbg=NONE]])
+			vim.cmd([[hi FidgetTask gui=italic ctermbg=NONE guibg=NONE guifg=#504945]])
+			vim.cmd([[hi @keyword cterm=italic gui=italic guifg=#fb4934]])
 			vim.cmd([[hi link SagaNormal Normal]])
 			vim.cmd([[hi link LazyNormal Normal]])
-			vim.cmd([[hi @keyword cterm=italic gui=italic guifg=#fb4934]])
 			vim.cmd([[hi link @keyword.return.lua @keyword ]])
 		end
 	},

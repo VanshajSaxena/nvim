@@ -116,6 +116,7 @@ return {
 						{ name = 'path' }, -- Working
 					})
 				},
+				---@diagnostic disable-next-line: missing-fields
 				cmp.setup.cmdline(':', {
 					mapping = cmp.mapping.preset.cmdline(),
 					sources = {
@@ -123,6 +124,7 @@ return {
 						{ name = 'path' } -- Good
 					}
 				}),
+				---@diagnostic disable-next-line: missing-fields
 				cmp.setup.cmdline('/', {
 					mapping = cmp.mapping.preset.cmdline(),
 					sources = {

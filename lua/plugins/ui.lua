@@ -65,27 +65,24 @@ return {
 		version = '*',
 		event = 'BufReadPost',
 		dependencies = 'nvim-tree/nvim-web-devicons',
-		config = function()
-			local bufferline = require('bufferline')
-			bufferline.setup({
-				options = {
-					--numbers = function(opts)
-					--return string.format('%s·%s', opts.ordinal, opts.lower(opts.id))
-					--end,
-					--style_preset = bufferline.style_preset.minimal, -- or bufferline.style_preset.minimal,
-					diagnostics = 'nvim_lsp',
-					offsets = {
-						{
-							filetype = 'NvimTree',
-							highlight = 'SpecialKey',
-							text = 'FileExplorer',
-						}
-					},
-					always_show_bufferline = false,
-					separator_style = 'thin' --thick,slope looks good
+		opts = {
+			options = {
+				--numbers = function(opts)
+				--return string.format('%s·%s', opts.ordinal, opts.lower(opts.id))
+				--end,
+				--style_preset = bufferline.style_preset.minimal, -- or bufferline.style_preset.minimal,
+				diagnostics = 'nvim_lsp',
+				offsets = {
+					{
+						filetype = 'NvimTree',
+						highlight = 'SpecialKey',
+						text = 'FileExplorer',
+					}
 				},
-			})
-		end
+				always_show_bufferline = false,
+				separator_style = 'thin' --thick,slope looks good
+			},
+		},
 	},
 
 	{
