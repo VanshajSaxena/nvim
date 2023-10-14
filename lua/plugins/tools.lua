@@ -15,8 +15,8 @@ return {
 		lazy = false,
 		build = function()
 			if os.getenv('OS') == 'Windows_NT' then
-			require('lazy').load({ plugins = 'firenvim', wait = true })
-			vim.fn['firenvim#install'](0)
+				require('lazy').load({ plugins = 'firenvim', wait = true })
+				vim.fn['firenvim#install'](0)
 			end
 		end,
 		cond = not not vim.g.started_by_firenvim,
@@ -65,10 +65,9 @@ return {
 			end
 
 			--Keymap for Autowrite_buf_content
-			vim.api.nvim_set_keymap('n', '<leader>aw', '<cmd>lua Autowrite_buf_content()<CR>',
-				{ noremap = true, silent = true })
-			vim.api.nvim_set_keymap('n', '<leader>w', '<cmd>w<CR>', {})
-			vim.api.nvim_set_keymap('n', '<esc><esc>', '<cmd>qall!<CR>', {})
+			vim.keymap.set('n', '<leader>aw', '<cmd>lua Autowrite_buf_content()<CR>', {desc = 'firenvim AutoWrite to spawned buffer'})
+			vim.keymap.set('n', '<leader>w', '<cmd>w<CR>', {desc = 'firenvim write'})
+			vim.keymap.set('n', '<esc><esc>', '<cmd>qall!<CR>', {desc = 'firenvim quit all'})
 		end
 	}
 

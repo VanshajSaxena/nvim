@@ -14,7 +14,7 @@ return {
 		config = function()
 			local config_opts = {
 				-- A list of parser names, or "all"
-				ensure_installed = { 'c', 'cpp', 'java', 'json', 'lua', 'vim', 'vimdoc' },
+				ensure_installed = { 'c', 'cpp', 'java', 'json', 'lua', 'vim', 'vimdoc', 'markdown', 'markdown_inline' },
 
 				-- Install parsers synchronously (only applied to `ensure_installed`)
 				sync_install = false,
