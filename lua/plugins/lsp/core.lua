@@ -11,9 +11,10 @@ return {
 			{
 				'williamboman/mason-lspconfig.nvim', -- Works as expected
 				opts = {
-					ensure_installed = { 'jdtls' },
-					automatic_installation = { 'lua-language-server' }
-					--vim.diagnostic.config()
+					--list of servers that are automatically installed regardless of lspconfig setup
+					ensure_installed = { 'lua_ls', 'jdtls' },
+					--list of servers that will automatically install when setup with lspconfig
+					automatic_installation = { 'html', 'clangd', 'pyright', 'ruff_lsp' }
 				},
 			},
 			{
