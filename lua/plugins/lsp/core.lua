@@ -14,7 +14,7 @@ return {
 					--list of servers that are automatically installed regardless of lspconfig setup
 					ensure_installed = { 'lua_ls', 'jdtls' },
 					--list of servers that will automatically install when setup with lspconfig
-					automatic_installation = { 'html', 'clangd', 'pyright', 'ruff_lsp' }
+					automatic_installation = true
 				},
 			},
 			{
@@ -85,6 +85,7 @@ return {
 				-- html language server
 				local capabilities_html = vim.lsp.protocol.make_client_capabilities()
 				capabilities_html.textDocument.completion.completionItem.snippetSupport = true
+				-- requres npm i vscode-langservers-extracted in the project root of the server plugin
 				server.html.setup {
 					capabilities = capabilities_html
 				}
