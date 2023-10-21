@@ -7,8 +7,8 @@ local workspace_dir = stdpath_data .. '/eclipse-workspace-dir/' .. vim.fn.fnamem
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
---local extendedClientCapabilities = require('jdtls').extendedClientCapabilities
---extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
+local extendedClientCapabilities = require('jdtls').extendedClientCapabilities
+extendedClientCapabilities.resolveAdditionalTextEditsSupport = true
 
 local bundles = {
 	vim.fn.glob(stdpath_data ..
@@ -98,26 +98,31 @@ local config = {
 	-- If you don't plan on using the debugger or other eclipse.jdt.ls plugins you can remove this
 	init_options = {
 		bundles = bundles,
-		--extendedClientCapabilities = extendedClientCapabilities
+		extendedClientCapabilities = extendedClientCapabilities
 	},
 	--	enable_format_on_save(),
 }
 
 config['on_attach'] = function()
-	vim.keymap.set('n', '<leader>tc', function() require('jdtls').test_class() end)
-	vim.keymap.set('n', '<leader>tm', function() require('jdtls').test_nearest_method() end)
+	vim.keymap.set('n', '<leader>tc', function() require('jdtls').test_class() end, { desc = 'jdtls test class'})
+	vim.keymap.set('n', '<leader>tm', function() require('jdtls').test_nearest_method() end, {desc = 'jdtls nearest method'})
+	vim.keymap.set('n', '<A-o>', function() require('jdtls').organize_imports() end, {desc = 'jdtls organize imports'})
+	vim.keymap.set('n', '<leader>ev', function() require('jdtls').extract_variable() end, {desc = 'jdtls extract variable'})
+	vim.keymap.set('n', '<leader>em', function() require('jdtls').extract_method() end, {desc = 'jdtls extract method'})
+	vim.keymap.set('n', '<leader>eV', function() require('jdtls').extract_variable_all() end, {desc = 'jdtls extract variable all'})
+	vim.keymap.set('n', '<leader>ec', function() require('jdtls').extract_constant() end, {desc = 'jdtls extract constant'})
 
-	local dap  = require('dap')
+	local dap = require('dap')
 	--local dapui = require('dapui')
 
 	--dap.listeners.after.event_initialized['dapui_config'] = function()
-		--dapui.open()
+	--dapui.open()
 	--end
 	--dap.listeners.before.event_terminated['dapui_config'] = function()
-		--dapui.close()
+	--dapui.close()
 	--end
 	--dap.listeners.before.event_exited['dapui_config'] = function()
-		--dapui.close()
+	--dapui.close()
 	--end
 
 	function Attach_to_debug()

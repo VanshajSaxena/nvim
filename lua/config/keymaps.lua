@@ -63,7 +63,7 @@ if vim.fn.has('nvim-0.9.0') == 1 then
 	keymap('n', '<leader>ui', vim.show_pos, { desc = 'inspect pos' })
 end
 
-keymap('n', 'q:', '<nop>', { desc = 'nop' })
+--keymap('n', 'q:', '<nop>', { desc = 'nop' })
 keymap('n', '<A-j>', '<cmd>m .+1<cr>==', { desc = 'move down' })
 keymap('n', '<A-k>', '<cmd>m .-2<cr>==', { desc = 'move up' })
 keymap('i', '<A-j>', '<esc><cmd>m .+1<cr>==gi', { desc = 'move down (insert)' })
@@ -71,7 +71,7 @@ keymap('i', '<A-k>', '<esc><cmd>m .-2<cr>==gi', { desc = 'move up (insert)' })
 keymap('v', '<A-j>', ":m '>+1<cr>gv=gv", { desc = 'move down (visual)' })
 keymap('v', '<A-k>', ":m '<-2<cr>gv=gv", { desc = 'move up (visual)' })
 keymap('i', '<C-l>', '<esc>la', { desc = 'move right in insert mode' })
-keymap('n', '<leader>ss', '<cmd>vertical sbnext<cr>', { desc = 'split window in two and edit alternate file' })
+keymap('n', '<leader>ss', '<cmd>vertical sbnext<cr>', { desc = 'split window in two and edit alternate file (vertical)' })
 keymap('n', '<leader>[', '<cmd>bnext<cr>', { desc = 'buffer next' })
 keymap('n', '<leader>]', '<cmd>bNext<cr>', { desc = 'buffer previous' })
 keymap('n', 'gb', '<cmd>BufferLinePick<CR>', { desc = 'bufferline pick' })
