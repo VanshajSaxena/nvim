@@ -24,8 +24,9 @@ return {
 		config =
 			function()
 				local capabilities = require('cmp_nvim_lsp').default_capabilities()
+				local server = require('lspconfig')
 				-- lua_ls server configuration
-				require('lspconfig')['lua_ls'].setup {
+				server.lua_ls.setup {
 					capabilities = capabilities,
 					on_attach = function()
 					end,
@@ -53,13 +54,46 @@ return {
 				}
 
 				-- clangd server configuration
-				require 'lspconfig'.clangd.setup {
+				server.clangd.setup {
 					cmd = { 'clangd' },
 					root_dir = require('lspconfig').util.find_git_ancestor,
 					capabilities = capabilities,
 					on_attach = function()
 					end,
 					single_file_support = true
+				}
+
+				--[[ jedi language server: less completion result and stuck at references
+				server.jedi_language_server.setup({
+				capabilities = capabilities,
+				})
+				]]
+
+				-- pyright language server for python
+				server.pyright.setup({
+					settings = {
+						python = {
+							analysis = {
+								diagnosticMode = 'off',
+								typeCheckingMode = 'off'
+							}
+						}
+					}
+				})
+
+				-- html language server
+				local capabilities_html = vim.lsp.protocol.make_client_capabilities()
+				capabilities_html.textDocument.completion.completionItem.snippetSupport = true
+				server.html.setup {
+					capabilities = capabilities_html
+				}
+
+				-- ruff lsp and linter for python
+				server.ruff_lsp.setup {
+					---@diagnostic disable-next-line: unused-local
+					on_attach = function(client, bufnr)
+						client.server_capabilities.hoverProvider = false
+					end
 				}
 
 				-- Diagnostic symbols in the sign column (gutter)
