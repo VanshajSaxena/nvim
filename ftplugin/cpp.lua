@@ -1,5 +1,4 @@
 local function compileC()
-	-- code
 	local file_path = vim.fn.expand('%:p') -- file full path of current file
 	local filename = vim.fn.expand('%:p:t:r')
 	local file_dir = vim.fn.expand('%:p:h')
@@ -16,7 +15,7 @@ local function compileC()
 
 		vim.cmd('cd ' .. file_dir)
 		vim.cmd('silent !' .. compile_cmd .. ' ' .. file_path .. ' -o ' .. filename .. '.out')
-		print('file compiled')
+		print('File Compiled')
 	else
 		print('Not a C/C++ file')
 	end

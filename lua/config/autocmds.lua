@@ -6,16 +6,23 @@ end
 vim.api.nvim_create_autocmd('TextYankPost', {
 	group = augroup('highlight_yank'),
 	callback = function()
-		vim.highlight.on_yank({ higroup = 'IncSearch', timeout = 100 })
+		vim.highlight.on_yank({ higroup = 'IncSearch', timeout = 50 })
 	end,
 })
 
 
 --:au FileType c,cpp,java set mps+==:;
-vim.api.nvim_create_autocmd("FileType", {
+vim.api.nvim_create_autocmd('FileType', {
 	group = augroup('matchpairs'),
 	pattern = { 'c', 'cpp', 'java' },
-	callback = function ()
+	callback = function()
 		vim.cmd('set mps+==:;')
 	end
+})
+
+-- managing comment options
+vim.api.nvim_create_autocmd('FileType', {
+	group = augroup('formatoptions'),
+	pattern = '*',
+	command = 'set formatoptions+=t | set formatoptions-=cro'
 })
