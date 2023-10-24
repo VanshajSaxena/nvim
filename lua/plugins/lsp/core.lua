@@ -98,6 +98,11 @@ return {
 					end
 				}
 
+				-- bash language server
+				server.bashls.setup {
+					root_dir = server.util.root_pattern('.sh')
+				}
+
 				-- Diagnostic symbols in the sign column (gutter)
 				local
 				signs = { Error = ' ', Warn = ' ', Hint = ' ', Info = ' ' }
