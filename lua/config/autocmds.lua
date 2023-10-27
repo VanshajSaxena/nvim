@@ -26,3 +26,13 @@ vim.api.nvim_create_autocmd('FileType', {
 	pattern = '*',
 	command = 'set formatoptions+=t | set formatoptions-=cro'
 })
+
+-- Compile C/CPP files
+vim.api.nvim_create_autocmd('FileType', {
+	group = augroup('CompileC'),
+	pattern = { 'c', 'cpp' },
+	callback = function()
+		require('config.utils')
+		Utils.Expose()
+	end
+})
