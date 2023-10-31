@@ -52,7 +52,7 @@ elseif os.getenv('OS') == 'Windows_NT' then
 		keymap('n', '<leader>' .. map, '<cmd>Lspsaga term_toggle ' .. program .. '<CR>', { desc = desc, silent = silent })
 	end
 	openfloat('lazygit', 'gg', 'Lspsaga term_toggle lazygit', true)
-	openfloat('', '*', 'Lspsaga term_toggle', true)
+	openfloat('pwsh', '*', 'Lspsaga term_toggle', true)
 end
 
 keymap('n', '<Tab>', '<C-w>w', { desc = 'tab switching' })
