@@ -43,7 +43,7 @@ if os.getenv('TERM_PROGRAM') == 'tmux' then
 			{ desc = desc, silent = silent })
 	end
 	openfloat('lazygit', 'gg', 'tmux open-float lazygit', true)
-	openfloat('', '*', 'tmux open-float', true)
+	openfloat('', '>', 'tmux open-float', true)
 	openfloat('tig', 'ti', 'tmux open-float tig', true)
 	openfloat('htop', 'H', 'tmux open-float htop', true)
 	openfloat('btop', 'B', 'tmux open-float btop', true)
@@ -52,7 +52,7 @@ elseif os.getenv('OS') == 'Windows_NT' then
 		keymap('n', '<leader>' .. map, '<cmd>Lspsaga term_toggle ' .. program .. '<CR>', { desc = desc, silent = silent })
 	end
 	openfloat('lazygit', 'gg', 'Lspsaga term_toggle lazygit', true)
-	openfloat('pwsh', '*', 'Lspsaga term_toggle', true)
+	openfloat('pwsh', '>', 'Lspsaga term_toggle', true)
 end
 
 keymap('n', '<Tab>', '<C-w>w', { desc = 'tab switching' })
