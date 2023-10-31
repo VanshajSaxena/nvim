@@ -24,9 +24,8 @@ Utils.CompileC = function()
 end
 
 Utils.Expose = function()
-	vim.keymap.set('n', '<leader>CC', Utils.CompileC, { desc = 'compile C file' })
-	vim.api.nvim_create_user_command('CompileC', Utils.CompileC, { desc = 'compile C file' })
+	vim.keymap.set('n', '<leader>CC', Utils.CompileC, { desc = 'compile C/CPP file' })
+	vim.api.nvim_create_user_command('CompileC', Utils.CompileC, { desc = 'compile C/CPP file' })
 end
 
 return Utils
-
