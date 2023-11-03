@@ -6,8 +6,13 @@ return {
 			'rcarriga/nvim-dap-ui',
 			-- stylua: ignore
 			keys = {
-				{ '<leader>du', function() require('dapui').toggle({}) end, desc = 'dap ui' },
-				{ '<leader>de', function() require('dapui').eval() end,     desc = 'dap eval',  mode = { 'n', 'v' } },
+				{ '<leader>du', function() require('dapui').toggle({ reset = true }) end, desc = 'dap ui' },
+				{
+					'<leader>de',
+					function() require('dapui').eval() end,
+					desc = 'dap eval',
+					mode = { 'n', 'v' }
+				},
 			},
 			opts = {},
 			config = function(_, opts)

@@ -36,3 +36,13 @@ vim.api.nvim_create_autocmd('FileType', {
 		Utils.Expose()
 	end
 })
+
+-- Compile Java files
+vim.api.nvim_create_autocmd('FileType', {
+	group = augroup('CompileJava'),
+	pattern = { 'java' },
+	callback = function()
+		require('config.utils')
+		Utils.ExposeJava()
+	end
+})
