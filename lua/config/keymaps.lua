@@ -1,40 +1,6 @@
 local keymap = vim.keymap.set
 keymap('', '<Space>', '<Nop>', { desc = 'nop' })
 
---[[
-function Keymaps()
-	keymap('n', '<leader>gg', ":silent !tmux display-popup -d '\\#{pane_current_path}' -w80\\% -h80\\% -E lazygit<CR>",
-		{ desc = 'tmux open-float lazygit', silent = true })
-	keymap('n', '<leader>ti', ":silent !tmux display-popup -d '\\#{pane_current_path}' -w80\\% -h80\\% -E tig<CR>",
-		{ desc = 'tmux open-float tig', silent = true })
-	keymap('n', '<leader>*', ":silent !tmux display-popup -d '\\#{pane_current_path}' -w80\\% -h80\\% -E<CR>",
-		{ desc = 'tmux open-float', silent = true })
-	keymap('n', '<leader>H', ":silent !tmux display-popup -d '\\#{pane_current_path}' -w80\\% -h80\\% -E htop<CR>",
-		{ desc = 'tmux open-float htop', silent = true })
-end
-]]
-
---[[
-local function openfloat(program, key, desc, silent)
-	keymap('n', '<leader>' .. key,
-		":silent !tmux display-popup -d '\\#{pane_current_path}' -w80\\% -h80\\% -b rounded -T " ..
-		program .. ' -E ' .. program .. ' <CR>',
-		{ desc = desc, silent = silent })
-end
-]]
-
-
---[[ Tmux open-float mappings
-if os.getenv('OS') == 'Windows_NT' then
-	keymap('n', '<leader>gg', "<cmd>lua print('you are not under tmux')<cr>", { desc = 'nop' })
-	keymap('n', '<leader>ti', "<cmd>lua print('you are not under tmux')<cr>", { desc = 'nop' })
-	keymap('n', '<leader>*', "<cmd>lua print('you are not under tmux')<cr>", { desc = 'nop' })
-	keymap('n', '<leader>H', "<cmd>lua print('you are not under tmux')<cr>", { desc = 'nop' })
-else
-	Keymaps()
-end
-]]
-
 if os.getenv('TERM_PROGRAM') == 'tmux' then
 	local openfloat = function(program, map, desc, silent)
 		keymap('n', '<leader>' .. map,
@@ -64,12 +30,12 @@ if vim.fn.has('nvim-0.9.0') == 1 then
 end
 
 --keymap('n', 'q:', '<nop>', { desc = 'nop' })
-keymap('n', '<A-j>', '<cmd>m .+1<cr>==', { desc = 'move down' })
-keymap('n', '<A-k>', '<cmd>m .-2<cr>==', { desc = 'move up' })
-keymap('i', '<A-j>', '<esc><cmd>m .+1<cr>==gi', { desc = 'move down (insert)' })
-keymap('i', '<A-k>', '<esc><cmd>m .-2<cr>==gi', { desc = 'move up (insert)' })
-keymap('v', '<A-j>', ":m '>+1<cr>gv=gv", { desc = 'move down (visual)' })
-keymap('v', '<A-k>', ":m '<-2<cr>gv=gv", { desc = 'move up (visual)' })
+keymap('n', '<C-A-j>', '<cmd>m .+1<cr>==', { desc = 'move down' })
+keymap('n', '<C-A-k>', '<cmd>m .-2<cr>==', { desc = 'move up' })
+keymap('i', '<C-A-j>', '<esc><cmd>m .+1<cr>==gi', { desc = 'move down (insert)' })
+keymap('i', '<C-A-k>', '<esc><cmd>m .-2<cr>==gi', { desc = 'move up (insert)' })
+keymap('v', '<C-A-j>', ":m '>+1<cr>gv=gv", { desc = 'move down (visual)' })
+keymap('v', '<C-A-k>', ":m '<-2<cr>gv=gv", { desc = 'move up (visual)' })
 keymap('i', '<C-l>', '<esc>la', { desc = 'move right in insert mode' })
 keymap('n', '<leader>ss', '<cmd>vertical sbnext<cr>', { desc = 'split window in two and edit alternate file (vertical)' })
 keymap('n', '<leader>[', '<cmd>bnext<cr>', { desc = 'buffer next' })
