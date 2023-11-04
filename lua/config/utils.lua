@@ -1,6 +1,6 @@
 Utils = {}
 
-Utils.CompileC = function()
+local function CompileC()
 	local file_path = vim.fn.expand('%:p') -- file full path of current file
 	local filename = vim.fn.expand('%:p:t:r')
 	local file_dir = vim.fn.expand('%:p:h')
@@ -24,11 +24,11 @@ Utils.CompileC = function()
 end
 
 Utils.ExposeC = function()
-	vim.keymap.set('n', '<leader>CC', Utils.CompileC, { desc = 'compile C/CPP file' })
-	vim.api.nvim_create_user_command('CompileC', Utils.CompileC, { desc = 'compile C/CPP file' })
+	vim.keymap.set('n', '<leader>CC', CompileC, { desc = 'compile C/CPP file' })
+	vim.api.nvim_create_user_command('CompileC', CompileC, { desc = 'compile C/CPP file' })
 end
 
-Utils.CompileJava = function()
+local function CompileJava()
 	local file_path = vim.fn.expand('%:p') -- file full path of current file
 	local file_dir = vim.fn.expand('%:p:h')
 	local file_ext = vim.fn.expand('%:e')
@@ -44,7 +44,7 @@ Utils.CompileJava = function()
 end
 
 Utils.ExposeJava = function()
-	vim.keymap.set('n', '<leader>CC', Utils.CompileJava, { desc = 'compile Java file' })
-	vim.api.nvim_create_user_command('CompileJava', Utils.CompileJava, { desc = 'compile Java file' })
+	vim.keymap.set('n', '<leader>CC', CompileJava, { desc = 'compile Java file' })
+	vim.api.nvim_create_user_command('CompileJava', CompileJava, { desc = 'compile Java file' })
 end
 return Utils
