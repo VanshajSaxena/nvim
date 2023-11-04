@@ -33,7 +33,7 @@ vim.api.nvim_create_autocmd('FileType', {
 	pattern = { 'c', 'cpp' },
 	callback = function()
 		require('config.utils')
-		Utils.Expose()
+		Utils.ExposeC()
 	end
 })
 
