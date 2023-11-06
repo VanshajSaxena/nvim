@@ -23,7 +23,7 @@ return {
 							sources = { 'nvim_lsp' },
 							-- Displays diagnostics for the defined severity types
 							sections = { 'error', 'warn', 'info' },
-							symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' },
+							symbols = { error = ' ', warn = ' ', info = ' ', hint = '󰌶 ' },
 							colored = true, -- Displays diagnostics status in color if set to true.
 							update_in_insert = false, -- Update diagnostics in insert mode.
 							always_visible = false, -- Show diagnostics even if there are none.
