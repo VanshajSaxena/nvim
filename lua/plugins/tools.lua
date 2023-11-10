@@ -1,6 +1,23 @@
 return {
 
 	{
+		'zbirenbaum/copilot.lua',
+		cmd = 'Copilot',
+		event = 'InsertEnter',
+		opts = {
+			panel = {
+				auto_refresh = true
+			},
+			suggestion = {
+				auto_trigger = true,
+				keymap = {
+					accept = '<M-;>'
+				}
+			}
+		}
+	},
+
+	{
 		'christoomey/vim-tmux-navigator',
 		keys = {
 			{ '<c-h>', desc = 'move left' },
@@ -65,9 +82,10 @@ return {
 			end
 
 			--Keymap for Autowrite_buf_content
-			vim.keymap.set('n', '<leader>aw', '<cmd>lua Autowrite_buf_content()<CR>', {desc = 'firenvim AutoWrite to spawned buffer'})
-			vim.keymap.set('n', '<leader>w', '<cmd>w<CR>', {desc = 'firenvim write'})
-			vim.keymap.set('n', '<esc><esc>', '<cmd>qall!<CR>', {desc = 'firenvim quit all'})
+			vim.keymap.set('n', '<leader>aw', '<cmd>lua Autowrite_buf_content()<CR>',
+				{ desc = 'firenvim AutoWrite to spawned buffer' })
+			vim.keymap.set('n', '<leader>w', '<cmd>w<CR>', { desc = 'firenvim write' })
+			vim.keymap.set('n', '<esc><esc>', '<cmd>qall!<CR>', { desc = 'firenvim quit all' })
 		end
 	}
 
