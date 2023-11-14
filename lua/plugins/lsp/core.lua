@@ -100,7 +100,12 @@ return {
 
 				-- bash language server
 				server.bashls.setup {
-					root_dir = server.util.root_pattern('.sh')
+					root_dir = server.util.root_pattern(),
+					settings = {
+						bashIde = {
+							enableSourceErrorDiagnostics = true
+						}
+					}
 				}
 
 				-- Diagnostic symbols in the sign column (gutter)
