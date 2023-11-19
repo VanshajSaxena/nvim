@@ -67,13 +67,13 @@ return {
 			'dap breakpoint condition'
 		},
 		{
-			'<leader>db',
+			'<F9>',
 			function() require('dap').toggle_breakpoint() end,
 			desc =
 			'dap toggle breakpoint'
 		},
 		{
-			'<leader>dc',
+			'<F5>',
 			function() require('dap').continue() end,
 			desc =
 			'dap continue'
@@ -91,7 +91,7 @@ return {
 			'dap go to line (no execute)'
 		},
 		{
-			'<leader>di',
+			'<F11>',
 			function() require('dap').step_into() end,
 			desc =
 			'dap step Into'
@@ -110,13 +110,13 @@ return {
 			'dap run last'
 		},
 		{
-			'<leader>do',
+			'<S-F11>',
 			function() require('dap').step_out() end,
 			desc =
 			'dap step out'
 		},
 		{
-			'<leader>dO',
+			'<F10>',
 			function() require('dap').step_over() end,
 			desc =
 			'dap step over'
@@ -140,7 +140,7 @@ return {
 			'dap session'
 		},
 		{
-			'<leader>dt',
+			'<S-F5>',
 			function() require('dap').terminate() end,
 			desc =
 			'dap terminate'
