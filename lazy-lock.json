@@ -25,7 +25,6 @@
   "mini.pairs": { "branch": "main", "commit": "71f117fd57f930da6ef4126b24f594dd398bac26" },
   "mini.surround": { "branch": "main", "commit": "af8129efcabe95fc08a233e9f91569829bed031f" },
   "neodev.nvim": { "branch": "main", "commit": "1676d2c24186fc30005317e0306d20c639b2351b" },
-  "neorg": { "branch": "main", "commit": "bf3daa2229c60f92f48ac6d7db3049b65fd01371" },
   "nvim-cmp": { "branch": "main", "commit": "0b751f6beef40fd47375eaf53d3057e0bfa317e4" },
   "nvim-dap": { "branch": "master", "commit": "13ce59d4852be2bb3cd4967947985cb0ceaff460" },
   "nvim-dap-ui": { "branch": "master", "commit": "34160a7ce6072ef332f350ae1d4a6a501daf0159" },
