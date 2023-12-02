@@ -46,3 +46,13 @@ vim.api.nvim_create_autocmd('FileType', {
 		Utils.ExposeJava()
 	end
 })
+
+-- Interpret Python files
+vim.api.nvim_create_autocmd('FileType', {
+	group = augroup('InterpretPy'),
+	pattern = { 'python' },
+	callback = function()
+		require('config.utils')
+		Utils.ExposePy()
+	end
+})

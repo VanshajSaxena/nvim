@@ -47,4 +47,21 @@ Utils.ExposeJava = function()
 	vim.keymap.set('n', '<leader>CC', CompileJava, { desc = 'compile Java file' })
 	vim.api.nvim_create_user_command('CompileJava', CompileJava, { desc = 'compile Java file' })
 end
+
+local function InterpretPy()
+	local file_ext = vim.fn.expand('%:e')
+
+	if file_ext == 'py' then
+		local interpret_cmd = '!python '
+		vim.cmd(interpret_cmd .. vim.fn.expand('%:p'))
+	else
+		print('Not a Python file')
+	end
+end
+
+Utils.ExposePy = function()
+	vim.keymap.set('n', '<leader>CC', InterpretPy, { desc = 'interpret Python file' })
+	vim.api.nvim_create_user_command('InterpretPy', InterpretPy, { desc = 'interpret Python file' })
+end
+
 return Utils
