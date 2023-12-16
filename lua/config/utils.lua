@@ -53,7 +53,7 @@ local function InterpretPy()
 
 	if file_ext == 'py' then
 		local interpret_cmd = '!python '
-		vim.cmd(interpret_cmd .. vim.fn.expand('%:p'))
+		vim.cmd(interpret_cmd .. '%')
 	else
 		print('Not a Python file')
 	end
