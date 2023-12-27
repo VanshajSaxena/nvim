@@ -42,8 +42,7 @@ set.shortmess:append({ m = true, I = true })                        -- m- Modifi
 set.sessionoptions = { 'buffers', 'curdir', 'tabpages', 'winsize' } -- Changes the effect of :mksession cmd --test
 
 
---[[
-if os.getenv('USER') ~= 'termux' then
+if os.getenv('OS') == 'Windows_NT' then
 	vim.cmd [[ let g:clipboard = {
 \ 'name': 'win32yank',
 \ 'copy': {
@@ -57,7 +56,6 @@ if os.getenv('USER') ~= 'termux' then
 \ 'cache_enabled': 0,
 \ }
 ]]
---end
---]]
+end
 
 set.clipboard = 'unnamedplus'
