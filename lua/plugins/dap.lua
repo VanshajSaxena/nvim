@@ -79,6 +79,12 @@ return {
 			'dap continue'
 		},
 		{
+			'<leader>dc',
+			function() require('dap').continue() end,
+			desc =
+			'dap continue'
+		},
+		{
 			'<leader>dC',
 			function() require('dap').run_to_cursor() end,
 			desc =

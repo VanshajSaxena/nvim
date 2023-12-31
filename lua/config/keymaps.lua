@@ -36,7 +36,7 @@ keymap('i', '<C-A-J>', '<esc><cmd>m .+1<cr>==gi', { desc = 'move down (insert)' 
 keymap('i', '<C-A-K>', '<esc><cmd>m .-2<cr>==gi', { desc = 'move up (insert)' })
 keymap('v', '<C-A-J>', ":m '>+1<cr>gv=gv", { desc = 'move down (visual)' })
 keymap('v', '<C-A-K>', ":m '<-2<cr>gv=gv", { desc = 'move up (visual)' })
-keymap('i', '<C-l>', '<esc>la', { desc = 'move right in insert mode' })
+keymap('i', '<C-l>', '<right>', { desc = 'move right in insert mode' })
 keymap('n', '<leader>ss', '<cmd>vertical sbnext<cr>', { desc = 'split window in two and edit alternate file (vertical)' })
 keymap('n', '<leader>[', '<cmd>bnext<cr>', { desc = 'buffer next' })
 keymap('n', '<leader>]', '<cmd>bNext<cr>', { desc = 'buffer previous' })

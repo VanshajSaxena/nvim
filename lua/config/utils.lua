@@ -64,4 +64,8 @@ Utils.ExposePy = function()
 	vim.api.nvim_create_user_command('InterpretPy', InterpretPy, { desc = 'interpret Python file' })
 end
 
+Utils.PrintMsg = function()
+	vim.keymap.set('n', '<leader>z', ':echo "hello"<CR>', {desc = 'print msg fucntion Utils module'})
+end
+
 return Utils

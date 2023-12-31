@@ -149,7 +149,7 @@ return {
 					extensions = {
 						['ui-select'] = {
 							require('telescope.themes').get_dropdown {
-								initial_mode = 'normal'
+								initial_mode = 'insert'
 							}
 						}
 					}
@@ -209,6 +209,18 @@ return {
 				"<cmd> lua require('telescope.builtin').find_files({cwd = vim.fn.stdpath('config')})<cr>",
 				desc =
 				'telescope find files (cwd to vim.fn.stdpath("config"))'
+			},
+			{
+				'<leader>f.',
+				"<cmd> lua require('telescope.builtin').find_files({cwd = vim.fn.expand('$HOME/.config')})<cr>",
+				desc =
+				'telescope find files (cwd to vim.fn.expand("$HOME/.config"))'
+			},
+			{
+				'<leader>f,',
+				"<cmd> lua require('telescope.builtin').live_grep({cwd = vim.fn.expand('$HOME/.config')})<cr>",
+				desc =
+				'telescope live files (cwd to vim.fn.expand("$HOME/.config"))'
 			},
 			--{ "<leader>fF", Util.telescope("files", { cwd = false }), desc = "Find Files (cwd)" },
 			{
