@@ -15,9 +15,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.api.nvim_create_autocmd('FileType', {
 	group = augroup('matchpairs'),
 	pattern = { 'c', 'cpp', 'java' },
-	callback = function()
-		vim.cmd('set mps+==:;')
-	end
+	callback = 'set mps+==:;'
 })
 
 -- touchegg files are xml types
@@ -39,8 +37,7 @@ vim.api.nvim_create_autocmd('FileType', {
 	group = augroup('CompileC'),
 	pattern = { 'c', 'cpp' },
 	callback = function()
-		require('config.utils')
-		Utils.ExposeC()
+		require('config.utils').ExposeC()
 	end
 })
 
@@ -49,8 +46,7 @@ vim.api.nvim_create_autocmd('FileType', {
 	group = augroup('CompileJava'),
 	pattern = { 'java' },
 	callback = function()
-		require('config.utils')
-		Utils.ExposeJava()
+		require('config.utils').ExposeJava()
 	end
 })
 
@@ -59,7 +55,6 @@ vim.api.nvim_create_autocmd('FileType', {
 	group = augroup('InterpretPy'),
 	pattern = { 'python' },
 	callback = function()
-		require('config.utils')
-		Utils.ExposePy()
+		require('config.utils').ExposePy()
 	end
 })
