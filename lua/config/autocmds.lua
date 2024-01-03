@@ -15,7 +15,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.api.nvim_create_autocmd('FileType', {
 	group = augroup('matchpairs'),
 	pattern = { 'c', 'cpp', 'java' },
-	callback = 'set mps+==:;'
+	command = 'set mps+==:;'
 })
 
 -- touchegg files are xml types
