@@ -71,6 +71,26 @@ local config = {
 		java = {
 			autobuild = { enabled = true, },
 			signatureHelp = { enabled = true },
+			inlayHints = {
+				parameterNames = {
+					enabled = "all",
+				},
+				parameterTypes = {
+					enabled = true,
+				},
+				varargArguments = {
+					enabled = true,
+				},
+				varargParameters = {
+					enabled = true,
+				},
+				hints = {
+					enabled = true,
+					onlyForLiterals = false,
+					onlyWhenOverlapping = false,
+					maxLength = 30,
+				},
+			},
 			format = {
 				enabled = true,
 			},
@@ -104,13 +124,17 @@ local config = {
 }
 
 config['on_attach'] = function()
-	vim.keymap.set('n', '<leader>tc', function() require('jdtls').test_class() end, { desc = 'jdtls test class'})
-	vim.keymap.set('n', '<leader>tm', function() require('jdtls').test_nearest_method() end, {desc = 'jdtls nearest method'})
-	vim.keymap.set('n', '<A-o>', function() require('jdtls').organize_imports() end, {desc = 'jdtls organize imports'})
-	vim.keymap.set('n', '<leader>ev', function() require('jdtls').extract_variable() end, {desc = 'jdtls extract variable'})
-	vim.keymap.set('n', '<leader>em', function() require('jdtls').extract_method() end, {desc = 'jdtls extract method'})
-	vim.keymap.set('n', '<leader>eV', function() require('jdtls').extract_variable_all() end, {desc = 'jdtls extract variable all'})
-	vim.keymap.set('n', '<leader>ec', function() require('jdtls').extract_constant() end, {desc = 'jdtls extract constant'})
+	vim.keymap.set('n', '<leader>tc', function() require('jdtls').test_class() end, { desc = 'jdtls test class' })
+	vim.keymap.set('n', '<leader>tm', function() require('jdtls').test_nearest_method() end,
+		{ desc = 'jdtls nearest method' })
+	vim.keymap.set('n', '<A-o>', function() require('jdtls').organize_imports() end, { desc = 'jdtls organize imports' })
+	vim.keymap.set('n', '<leader>ev', function() require('jdtls').extract_variable() end,
+		{ desc = 'jdtls extract variable' })
+	vim.keymap.set('n', '<leader>em', function() require('jdtls').extract_method() end, { desc = 'jdtls extract method' })
+	vim.keymap.set('n', '<leader>eV', function() require('jdtls').extract_variable_all() end,
+		{ desc = 'jdtls extract variable all' })
+	vim.keymap.set('n', '<leader>ec', function() require('jdtls').extract_constant() end,
+		{ desc = 'jdtls extract constant' })
 
 	local dap = require('dap')
 	--local dapui = require('dapui')

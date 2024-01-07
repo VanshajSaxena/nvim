@@ -27,12 +27,54 @@ return {
 		}
 	},
 
+	--[[
+	{
+		'ThePrimeagen/harpoon',
+		branch       = 'harpoon2',
+		dependencies = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope.nvim' },
+		config       = function()
+			local harpoon = require('harpoon')
+			harpoon:setup({})
+
+			-- basic telescope configuration
+			local conf = require('telescope.config').values
+			local function toggle_telescope(harpoon_files)
+				local file_paths = {}
+				for _, item in ipairs(harpoon_files.items) do
+					table.insert(file_paths, item.value)
+				end
+
+				require('telescope.pickers').new({}, {
+					prompt_title = 'Harpoon',
+					finder = require('telescope.finders').new_table({
+						results = file_paths,
+					}),
+					previewer = conf.file_previewer({}),
+					sorter = conf.generic_sorter({}),
+				}):find()
+			end
+			vim.keymap.set('n', '<C-e>', function() toggle_telescope(harpoon:list():next()) end,
+				{ desc = 'Open harpoon window' })
+		end,
+		keys         = {
+			{ '<leader>hs', function() require('harpoon'):list():display() end },
+			{ '<leader>ha', function() require('harpoon'):list():append() end },
+			{ '<leader>1',  function() require('harpoon'):list():select(1) end },
+			{ '<leader>2',  function() require('harpoon'):list():select(2) end },
+			{ '<leader>3',  function() require('harpoon'):list():select(3) end },
+			{ '<leader>4',  function() require('harpoon'):list():select(4) end },
+			{ '<leader>hh', function() require('harpoon.ui'):toggle_quick_menu(require('harpoon'):list()) end },
+			{ '<leader>hk', function() require('harpoon'):list():prev() end },
+		}
+	},]]
+
+
 	{
 		'glacambre/firenvim', -- Firenvim for browser integration
 		lazy = false,
 		build = function()
-				require('lazy').load({ plugins = 'firenvim', wait = true })
-				vim.fn['firenvim#install'](0)
+			require('lazy').load({ plugins = 'firenvim', wait = true })
+			vim.fn['firenvim#install'](0)
 		end,
 		cond = not not vim.g.started_by_firenvim,
 		config = function()
