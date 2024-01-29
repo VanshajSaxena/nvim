@@ -76,16 +76,16 @@ local config = {
 					enabled = "all",
 				},
 				parameterTypes = {
-					enabled = true,
+					enabled = "all",
 				},
 				varargArguments = {
-					enabled = true,
+					enabled = "all",
 				},
 				varargParameters = {
-					enabled = true,
+					enabled = "all",
 				},
 				hints = {
-					enabled = true,
+					enabled = "all",
 					onlyForLiterals = false,
 					onlyWhenOverlapping = false,
 					maxLength = 30,

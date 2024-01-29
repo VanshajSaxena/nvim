@@ -1,4 +1,19 @@
 return {
+
+	{
+		'lvimuser/lsp-inlayhints.nvim',
+		event = 'LspAttach',
+		config = function()
+			require('lsp-inlayhints').setup({
+				inlay_hints = {
+					parameter_hints = {
+						prefix = ' <<-'
+					}
+				},
+			})
+		end
+	},
+
 	{
 		'nvimdev/lspsaga.nvim',
 		event = 'LspAttach',
