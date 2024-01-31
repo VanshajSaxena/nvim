@@ -73,19 +73,19 @@ local config = {
 			signatureHelp = { enabled = true },
 			inlayHints = {
 				parameterNames = {
-					enabled = "all",
+					enabled = 'all',
 				},
 				parameterTypes = {
-					enabled = "all",
+					enabled = 'all',
 				},
 				varargArguments = {
-					enabled = "all",
+					enabled = 'all',
 				},
 				varargParameters = {
-					enabled = "all",
+					enabled = 'all',
 				},
 				hints = {
-					enabled = "all",
+					enabled = 'all',
 					onlyForLiterals = false,
 					onlyWhenOverlapping = false,
 					maxLength = 30,
@@ -166,7 +166,7 @@ config['on_attach'] = function()
 	-- you make during a debug session immediately.
 	-- Remove the option if you do not want that.
 	-- You can use the `JdtHotcodeReplace` command to trigger it manually
-	require('jdtls').setup_dap({ hotcodereplace = 'auto' })
+	require('jdtls').setup_dap({ hotcodereplace = 'auto', config_overrides = {} })
 	require('jdtls.dap').setup_dap_main_class_configs()
 end
 
