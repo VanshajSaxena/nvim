@@ -29,12 +29,11 @@ return {
 
 	{
 		'glacambre/firenvim', -- Firenvim for browser integration
-		lazy = false,
+		lazy = not vim.g.started_by_firenvim,
 		build = function()
-			require('lazy').load({ plugins = 'firenvim', wait = true })
+			require('lazy').load({ plugins = { 'firenvim' }, wait = true })
 			vim.fn['firenvim#install'](0)
 		end,
-		cond = not not vim.g.started_by_firenvim,
 		config = function()
 			vim.g.firenvim_config = {
 				globalSettings = {
@@ -62,7 +61,7 @@ return {
 				}
 			}
 			-- AutoWrite Function
-			function Autowrite_buf_content()
+			local function autowrite_buf_content()
 				vim.api.nvim_create_autocmd({ 'TextChanged', 'TextChangedI' }, {
 					callback = function()
 						if vim.g.timer_started == true then
@@ -79,9 +78,14 @@ return {
 				-- code
 			end
 
+			vim.api.nvim_create_autocmd({ 'BufReadPre' }, {
+				callback = function()
+					vim.opt.laststatus = 1
+				end
+			})
+
 			--Keymap for Autowrite_buf_content
-			vim.keymap.set('n', '<leader>aw', '<cmd>lua Autowrite_buf_content()<CR>',
-				{ desc = 'firenvim AutoWrite to spawned buffer' })
+			vim.keymap.set('n', '<leader>aw', autowrite_buf_content, { desc = 'firenvim AutoWrite to spawned buffer' })
 			vim.keymap.set('n', '<leader>w', '<cmd>w<CR>', { desc = 'firenvim write' })
 			vim.keymap.set('n', '<esc><esc>', '<cmd>qall!<CR>', { desc = 'firenvim quit all' })
 		end
