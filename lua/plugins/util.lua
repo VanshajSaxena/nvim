@@ -12,13 +12,7 @@ return {
 
 	{
 		'nvim-neorg/neorg',
-		enabled = function()
-			if os.getenv('OS') == 'Windows_NT' then
-				return true
-			else
-				return false
-			end
-		end,
+		enabled = true,
 		build = ':Neorg sync-parsers',
 		cmd = 'Neorg',
 		ft = 'norg',
