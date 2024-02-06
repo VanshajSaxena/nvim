@@ -8,6 +8,12 @@ return {
 			keys = {
 				{ '<leader>du', function() require('dapui').toggle({ reset = true }) end, desc = 'dap ui' },
 				{
+					'<F29>', -- Ctrl + F5
+					function() require('dapui').eval() end,
+					desc = 'dap eval (Ctrl + F5)',
+					mode = { 'n', 'v' }
+				},
+				{
 					'<leader>de',
 					function() require('dapui').eval() end,
 					desc = 'dap eval',
@@ -61,13 +67,25 @@ return {
 
 	keys = {
 		{
-			'<leader>dB',
+			'<F33>', -- Ctrl + F9
+			function() require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: ')) end,
+			desc =
+			'dap breakpoint condition (Ctrl + F9)'
+		},
+		{
+			'<leader>dB', -- Ctrl + F8
 			function() require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: ')) end,
 			desc =
 			'dap breakpoint condition'
 		},
 		{
 			'<F9>',
+			function() require('dap').toggle_breakpoint() end,
+			desc =
+			'dap toggle breakpoint'
+		},
+		{
+			'<leader>db',
 			function() require('dap').toggle_breakpoint() end,
 			desc =
 			'dap toggle breakpoint'
@@ -85,10 +103,10 @@ return {
 			'dap continue'
 		},
 		{
-			'<leader>dC',
+			'<F53>', -- Alt + F5
 			function() require('dap').run_to_cursor() end,
 			desc =
-			'dap run to cursor'
+			'dap run to cursor (Alt + F5)'
 		},
 		{
 			'<leader>dg',
@@ -100,7 +118,7 @@ return {
 			'<F11>',
 			function() require('dap').step_into() end,
 			desc =
-			'dap step Into'
+			'dap step into'
 		},
 		{
 			'<leader>dj',
@@ -116,10 +134,10 @@ return {
 			'dap run last'
 		},
 		{
-			'<S-F11>',
+			'<F23>', -- Shift + F7
 			function() require('dap').step_out() end,
 			desc =
-			'dap step out'
+			'dap step out (Shift + F11)'
 		},
 		{
 			'<F10>',
@@ -146,7 +164,13 @@ return {
 			'dap session'
 		},
 		{
-			'<S-F5>',
+			'<F17>',
+			function() require('dap').terminate() end,
+			desc =
+			'dap terminate (Shift + F5)'
+		},
+		{
+			'<leader>dt',
 			function() require('dap').terminate() end,
 			desc =
 			'dap terminate'
