@@ -5,7 +5,7 @@ if os.getenv('TERM_PROGRAM') == 'tmux' then
 	local openfloat = function(program, map, desc, silent)
 		keymap('n', '<leader>' .. map,
 			":silent !tmux display-popup -d '\\#{pane_current_path}' -w80\\% -h80\\% -b rounded -E -T " ..
-			program .. ' ' .. program .. '<CR>',
+			program .. ' ' .. program .. '<cr>',
 			{ desc = desc, silent = silent })
 	end
 	openfloat('lazygit', 'gg', 'tmux open-float lazygit', true)
@@ -15,7 +15,7 @@ if os.getenv('TERM_PROGRAM') == 'tmux' then
 	openfloat('btop', 'B', 'tmux open-float btop', true)
 elseif os.getenv('OS') == 'Windows_NT' then
 	local openfloat = function(program, map, desc, silent)
-		keymap('n', '<leader>' .. map, '<cmd>Lspsaga term_toggle ' .. program .. '<CR>', { desc = desc, silent = silent })
+		keymap('n', '<leader>' .. map, '<cmd>Lspsaga term_toggle ' .. program .. '<cr>', { desc = desc, silent = silent })
 	end
 	openfloat('lazygit', 'gg', 'Lspsaga term_toggle lazygit', true)
 	openfloat('pwsh', '>', 'Lspsaga term_toggle', true)
@@ -40,11 +40,13 @@ keymap('i', '<C-l>', '<right>', { desc = 'move right in insert mode' })
 keymap('n', '<leader>ss', '<cmd>vertical sbnext<cr>', { desc = 'split window in two and edit alternate file (vertical)' })
 keymap('n', '<leader>[', '<cmd>bnext<cr>', { desc = 'buffer next' })
 keymap('n', '<leader>]', '<cmd>bNext<cr>', { desc = 'buffer previous' })
-keymap('n', 'gb', '<cmd>BufferLinePick<CR>', { desc = 'bufferline pick' })
-keymap('n', 'co', '<cmd>BufferLinePickClose<CR>', { desc = 'bufferline pick close' })
+keymap('n', 'gb', '<cmd>BufferLinePick<cr>', { desc = 'bufferline pick' })
+keymap('n', 'co', '<cmd>BufferLinePickClose<cr>', { desc = 'bufferline pick close' })
 keymap('n', '<leader>F', vim.lsp.buf.format, { desc = 'lsp format' })
-keymap({ 'n', 'i' }, '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', { desc = 'signature help' })
+keymap({ 'n', 'i' }, '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<cr>', { desc = 'signature help' })
 keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>', { desc = 'code action' })
+keymap('n', '<F60>', '<cmd>lua require("copilot.command").disable() print("Copilot disabled")<cr>', { desc = 'Copilot disable' })
+
 
 -- Lazy mappings
 keymap('n', '<leader>lp', '<cmd>Lazy profile<cr>', { desc = 'lazy profile' })
