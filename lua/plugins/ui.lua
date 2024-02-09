@@ -55,7 +55,7 @@ return {
 				char = '┆'
 			},
 			scope = {
-				highlight = 'GruvboxRed'
+				highlight = 'Keyword'
 			}
 		}
 	},
