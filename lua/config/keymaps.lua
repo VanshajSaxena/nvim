@@ -2,17 +2,17 @@ local keymap = vim.keymap.set
 keymap('', '<Space>', '<Nop>', { desc = 'nop' })
 
 if os.getenv('TERM_PROGRAM') == 'tmux' then
-	local openfloat = function(program, map, desc, silent)
+	local openfloat = function(program, title, map, desc, silent)
 		keymap('n', '<leader>' .. map,
-			":silent !tmux display-popup -d '\\#{pane_current_path}' -w80\\% -h80\\% -b rounded -E -T " ..
-			program .. ' ' .. program .. '<cr>',
+			':silent !tmux display-popup -T ' ..
+			title .. " -d '\\#{pane_current_path}' -w80\\% -h80\\% -b rounded -E " .. program .. '<cr>',
 			{ desc = desc, silent = silent })
 	end
-	openfloat('lazygit', 'gg', 'tmux open-float lazygit', true)
-	openfloat('', '>', 'tmux open-float', true)
-	openfloat('tig', 'ti', 'tmux open-float tig', true)
-	openfloat('htop', 'H', 'tmux open-float htop', true)
-	openfloat('btop', 'B', 'tmux open-float btop', true)
+	openfloat('lazygit', 'lazygit', 'gg', 'tmux open-float lazygit', true)
+	openfloat('', 'term', '>', 'tmux open-float term', true)
+	openfloat('tig', 'tig', 'ti', 'tmux open-float tig', true)
+	openfloat('htop', 'htop', 'H', 'tmux open-float htop', true)
+	openfloat('btop', 'btop', 'B', 'tmux open-float btop', true)
 elseif os.getenv('OS') == 'Windows_NT' then
 	local openfloat = function(program, map, desc, silent)
 		keymap('n', '<leader>' .. map, '<cmd>Lspsaga term_toggle ' .. program .. '<cr>', { desc = desc, silent = silent })
@@ -45,7 +45,8 @@ keymap('n', 'co', '<cmd>BufferLinePickClose<cr>', { desc = 'bufferline pick clos
 keymap('n', '<leader>F', vim.lsp.buf.format, { desc = 'lsp format' })
 keymap({ 'n', 'i' }, '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<cr>', { desc = 'signature help' })
 keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>', { desc = 'code action' })
-keymap('n', '<F60>', '<cmd>lua require("copilot.command").disable() print("Copilot disabled")<cr>', { desc = 'Copilot disable' })
+keymap('n', '<F60>', '<cmd>lua require("copilot.command").disable() print("Copilot disabled")<cr>',
+	{ desc = 'Copilot disable (Alt-F12)' })
 
 
 -- Lazy mappings
