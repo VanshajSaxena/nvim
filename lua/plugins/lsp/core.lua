@@ -57,6 +57,11 @@ return {
 					},
 				}
 
+				-- swift language server
+				server.sourcekit.setup {
+					cmd = { 'sourcekit-lsp' },
+				}
+
 				-- clangd server configuration
 				server.clangd.setup {
 					cmd = { 'clangd' },
