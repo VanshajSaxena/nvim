@@ -82,6 +82,7 @@ return {
 			vim.api.nvim_create_autocmd({ 'BufReadPre' }, {
 				callback = function()
 					vim.opt.laststatus = 1
+					vim.opt.shortmess = "FW"
 				end
 			})
 
