@@ -87,6 +87,7 @@ return {
 
 	{
 		'j-hui/fidget.nvim',
+		cond = not vim.g.started_by_firenvim,
 		tag = 'legacy',
 		event = 'LspAttach',
 		opts = {
