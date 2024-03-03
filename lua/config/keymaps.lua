@@ -9,7 +9,7 @@ if os.getenv('TERM_PROGRAM') == 'tmux' then
 			{ desc = desc, silent = silent })
 	end
 	openfloat('lazygit', 'lazygit', 'gg', 'tmux open-float lazygit', true)
-	openfloat('', 'term', '>', 'tmux open-float term', true)
+	openfloat('', 'Terminal', '>', 'tmux open-float term', true)
 	openfloat('tig', 'tig', 'ti', 'tmux open-float tig', true)
 	openfloat('htop', 'htop', 'H', 'tmux open-float htop', true)
 	openfloat('btop', 'btop', 'B', 'tmux open-float btop', true)
