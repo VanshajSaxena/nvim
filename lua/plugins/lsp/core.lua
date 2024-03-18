@@ -62,6 +62,8 @@ return {
 					cmd = { 'sourcekit-lsp' },
 				}
 
+				-- nix language server `nixd`
+				require'lspconfig'.nixd.setup {}
 				-- nix language server
 				require'lspconfig'.nil_ls.setup{}
 
