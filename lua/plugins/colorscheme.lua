@@ -2,9 +2,9 @@ return {
 
 	{
 		'ellisonleao/gruvbox.nvim',
-		enabled = true,
+		enabled = false,
 		lazy = false,
-		priority = 1000,
+		--priority = 1000,
 		config = function()
 			require('gruvbox').setup({
 				terminal_colors = true, -- add neovim terminal colors
@@ -46,8 +46,8 @@ return {
 	{
 		'folke/tokyonight.nvim',
 		enabled = true,
-		lazy = true,
-		priority = 100,
+		lazy = false,
+		priority = 1000,
 		opts = {
 			transparent_mode = true;
 		},
