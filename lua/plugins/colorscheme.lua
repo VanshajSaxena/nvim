@@ -46,10 +46,16 @@ return {
 	{
 		'folke/tokyonight.nvim',
 		enabled = false,
-		lazy = false,
+		lazy = true,
 		priority = 1000,
+		opts = {
+			transparent_mode = true;
+		},
 		config = function()
 			vim.cmd([[colorscheme tokyonight-night ]])
+			vim.cmd([[ hi link SagaNormal Normal ]])
+			vim.cmd([[ hi link LazyNormal Normal ]])
+			vim.cmd([[ hi link @keyword.return.lua @keyword ]])
 		end
 	}
 

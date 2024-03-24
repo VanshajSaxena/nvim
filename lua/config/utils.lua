@@ -65,7 +65,15 @@ Utils.ExposePy = function()
 end
 
 Utils.PrintMsg = function()
-	vim.keymap.set('n', '<leader>z', ':echo "hello"<CR>', {desc = 'print msg fucntion Utils module'})
+	vim.keymap.set('n', '<leader>z', ':echo "hello"<CR>', { desc = 'print msg fucntion Utils module' })
+end
+
+Utils.DapContiueBetter = function()
+	require('jdtls')
+	vim.keymap.set('n', '<F5>', function()
+		require('jdtls.dap').setup_dap_main_class_configs()
+		require('dap').continue()
+	end, { desc = 'dap continue better' })
 end
 
 return Utils

@@ -42,6 +42,7 @@ return {
 					ignoreKeys = {
 						all = { '<C-->' },
 						normal = { '<C-1>', '<C-2>', '<C-3>', '<C-4>', '<C-5>', '<C-6>', '<C-7>',
+							'<C-Tab>',
 							'<F11>',
 							'<F5>'
 						}
@@ -53,7 +54,7 @@ return {
 						content  = 'text',
 						priority = 0,
 						selector = 'textarea',
-						takeover = 'never'
+						takeover = 'once' -- `takeover` can be set to `always`, `empty`, `never`, `nonempty` or `once`.
 					},
 					['google.*'] = {
 						takeover = 'never'
@@ -81,6 +82,7 @@ return {
 			vim.api.nvim_create_autocmd({ 'BufReadPre' }, {
 				callback = function()
 					vim.opt.laststatus = 1
+					vim.opt.shortmess = "FW"
 				end
 			})
 
