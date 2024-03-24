@@ -2,8 +2,8 @@ return {
 
 	{
 		'ellisonleao/gruvbox.nvim',
-		enabled = true,
-		lazy = false,
+		enabled = false,
+		lazy = true,
 		priority = 1000,
 		config = function()
 			require('gruvbox').setup({
@@ -30,7 +30,7 @@ return {
 				dim_inactive = false,
 				transparent_mode = true,
 			})
-			vim.cmd([[ colorscheme gruvbox ]])
+			vim.cmd([[ colorscheme ron ]])
 			vim.cmd([[ hi @keyword cterm=italic gui=italic guifg=#fb4934 ]])
 			vim.cmd([[ hi link SagaNormal Normal ]])
 			vim.cmd([[ hi link LazyNormal Normal ]])
@@ -45,9 +45,9 @@ return {
 
 	{
 		'folke/tokyonight.nvim',
-		enabled = true,
-		lazy = true,
-		--priority = 1000,
+		enabled = false,
+		lazy = false,
+		priority = 1000,
 		config = function()
 			vim.cmd([[colorscheme tokyonight-night ]])
 		end

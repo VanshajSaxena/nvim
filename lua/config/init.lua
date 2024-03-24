@@ -1,4 +1,5 @@
 require('config.options')
+vim.cmd([[ colorscheme habamax ]])
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 if vim.fn.argc(-1) == 0 then --argc(-1) for global arglist
