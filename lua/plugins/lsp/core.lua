@@ -12,9 +12,9 @@ return {
 				'williamboman/mason-lspconfig.nvim', -- Works as expected
 				opts = {
 					--list of servers that are automatically installed regardless of lspconfig setup
-					ensure_installed = { 
-					--'lua_ls',
-					'jdtls' },
+					ensure_installed = {
+						--'lua_ls',
+						'jdtls' },
 					--list of servers that will automatically install when setup with lspconfig
 					automatic_installation = false
 				},
@@ -61,26 +61,18 @@ return {
 
 				-- swift language server
 				server.sourcekit.setup {
-					cmd =
-						function()
-							if os.getenv('OS') == 'macos' then
-								M = { 'sourcekit-lsp',
-									'-Xswiftc',
-									'-sdk',
-									'-Xswiftc',
-									'/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk',
-									'-Xswiftc',
-									'-target',
-									'-Xswiftc',
-									'arm64-apple-ios15.0-simulator',
-									'-Xcc',
-									'-DSWIFT_PACKAGE=0'
-								}
-								return M;
-							else
-								return { 'sourcekit-lsp' }
-							end
-						end,
+					cmd = { 'sourcekit-lsp',
+						'-Xswiftc',
+						'-sdk',
+						--'-Xswiftc',
+						--'/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk',
+						'-Xswiftc',
+						'-target',
+						--'-Xswiftc',
+						--'arm64-apple-ios15.0-simulator',
+						--'-Xcc',
+						--'-DSWIFT_PACKAGE=0'
+					}
 				}
 
 				-- nix language server `nixd`

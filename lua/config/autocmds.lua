@@ -18,6 +18,14 @@ vim.api.nvim_create_autocmd('FileType', {
 	command = 'set mps+==:;'
 })
 
+vim.api.nvim_create_autocmd('FileType',{
+	group = augroup('swift_wrap'),
+	pattern = {'swift'},
+	callback = function()
+		vim.wo.wrap = true
+	end,
+})
+
 -- touchegg files are xml types
 vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufNewFile' }, {
 	group = augroup('touchegg_xml'),
