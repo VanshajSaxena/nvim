@@ -13,7 +13,7 @@ return {
 	{
 		'nvim-neorg/neorg',
 		enabled = true,
-		build = ':Neorg sync-parsers',
+		--build = ':Neorg sync-parsers',
 		cmd = 'Neorg',
 		ft = 'norg',
 		dependencies = { 'nvim-lua/plenary.nvim' },
