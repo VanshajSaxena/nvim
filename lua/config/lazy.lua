@@ -28,14 +28,21 @@ require("lazy").setup({
   },
   install = { colorscheme = { "tokyonight", "habamax" } },
   checker = { enabled = true }, -- automatically check for plugin updates
+  ui = {
+    border = "rounded",
+  },
+  change_detection = {
+    notify = false,
+  },
   performance = {
     rtp = {
       -- disable some rtp plugins
       disabled_plugins = {
         "gzip",
-        -- "matchit",
+        "matchit",
         -- "matchparen",
-        -- "netrwPlugin",
+        "netrwPlugin",
+        "rplugin",
         "tarPlugin",
         "tohtml",
         "tutor",

@@ -11,12 +11,12 @@ set.hlsearch = false
 set.mouse = "nv"
 set.pumblend = 0 -- Popup blend pumblend has to be set to zero for : completion
 set.winblend = 0 -- Float-windows blend
---set.pumheight = 40 --later to update
+set.pumheight = 20 --later to update
 set.scroll = 10 -- scroll for CTRL-D and CTRL-U
 set.scrolloff = 16
 set.sidescrolloff = 48
-set.shiftwidth = 4
-set.tabstop = 4
+--set.shiftwidth = 2
+--set.tabstop = 2
 
 if os.getenv("OS") == "Windows_NT" then
   vim.cmd([[ let g:clipboard = {
