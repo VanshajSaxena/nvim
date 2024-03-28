@@ -33,13 +33,6 @@ return {
 				dim_inactive = false,
 				transparent_mode = true,
     },
-    config = function (_, opts)
-      require("gruvbox").setup(opts)
-			vim.cmd([[ hi @keyword cterm=italic gui=italic guifg=#fb4934 ]])
-			vim.cmd([[ hi link SagaNormal Normal ]])
-			vim.cmd([[ hi link LazyNormal Normal ]])
-			vim.cmd([[ hi link @keyword.return.lua @keyword ]])
-    end
   },
 
   -- Configure LazyVim to load gruvbox

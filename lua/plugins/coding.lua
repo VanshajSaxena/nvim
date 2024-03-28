@@ -9,6 +9,7 @@ return {
 
   {
     "hrsh7th/nvim-cmp",
+    event = { "InsertEnter", "CmdLineEnter" },
     dependencies = {
       "hrsh7th/cmp-calc", --Works
       "hrsh7th/cmp-cmdline", --Cmdline Completion
