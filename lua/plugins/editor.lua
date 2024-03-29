@@ -24,6 +24,21 @@ return {
         "<cmd>Telescope builtin<cr>",
         desc = "telescope builtins",
       },
+      {
+        "<leader>fC",
+        "<cmd> lua require('telescope.builtin').live_grep({ cwd = vim.fn.stdpath('config') })<cr>",
+        desc = "Grep Config files",
+      },
+      {
+        "<leader>f.",
+        "<cmd> lua require('telescope.builtin').find_files({cwd = vim.fn.expand('$HOME/.config')})<cr>",
+        desc = "Find Files $HOME/.config",
+      },
+      {
+        "<leader>f,",
+        "<cmd> lua require('telescope.builtin').live_grep({cwd = vim.fn.expand('$HOME/.config')})<cr>",
+        desc = "Grep $HOME/.config",
+      },
     },
 
     opts = {
