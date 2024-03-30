@@ -55,7 +55,7 @@ return {
               vim_item.menu = truncated_cmp_label .. "..."
             end
             if vim_item.menu == "v:null..." then
-              vim_item.menu = " "
+              vim_item.menu = ""
             end
             return vim_item
           end,
