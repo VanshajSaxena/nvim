@@ -44,13 +44,13 @@ return {
         --  fields = { 'abbr', 'menu', 'kind'}, -- is a working sequence of fields for jdtls and lua_ls
         format = lspkind.cmp_format({
           mode = "symbol_text", -- show only symbol annotations
-          maxwidth = 15, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+          maxwidth = 18, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
           ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
           -- The function below will be called before any actual modifications from lspkind
           -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
           ---@diagnostic disable-next-line: unused-local
           before = function(entry, vim_item)
-            local maxwidth_cmp = 15
+            local maxwidth_cmp = 18
             local cmp_label = vim_item.menu
             local truncated_cmp_label = vim.fn.strcharpart(cmp_label, 0, maxwidth_cmp)
             if truncated_cmp_label ~= cmp_label then
@@ -65,7 +65,6 @@ return {
       }
       opts.sources = vim.tbl_extend("force", opts.sources, {
         { name = "emoji" },
-        { name = "calc" },
       })
       opts.mapping = cmp.mapping.preset.insert({
         ["<C-k>"] = cmp.mapping.scroll_docs(-1),
