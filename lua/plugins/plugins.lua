@@ -39,7 +39,13 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "gruvbox",
+      colorscheme = function ()
+        if vim.loop.os_uname().sysname == "Darwin" then
+          vim.cmd("colorscheme tokyonight-night")
+        else
+          vim.cmd("colorscheme gruvbox")
+        end
+      end
     },
   },
 
