@@ -2,10 +2,12 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
---[[
 local keymap = vim.keymap.set
-keymap("", "<Space>", "<Nop>", { desc = "nop" })
+vim.keymap.del("n", "<leader>l")
+keymap("", "<leader>lp", "<cmd>Lazy<cr>", { desc = "Lazy Profile" })
+keymap("", "<leader>lh", "<cmd>Lazy home<cr>", { desc = "Lazy Home" })
 
+--[[
 if os.getenv("TERM_PROGRAM") == "tmux" then
   local openfloat = function(program, title, map, desc, silent)
     keymap(
@@ -32,4 +34,4 @@ elseif os.getenv("OS") == "Windows_NT" then
   openfloat("pwsh", ">", "Lspsaga term_toggle", true)
 end
 
-]]
+--]]

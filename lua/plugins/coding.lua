@@ -29,6 +29,11 @@ return {
       local luasnip = require("luasnip")
       local cmp = require("cmp")
       local lspkind = require("lspkind")
+      opts.view = {
+        entries = {
+          follow_cursor = true,
+        },
+      }
 
       opts.snippet = {
         expand = function(args)
