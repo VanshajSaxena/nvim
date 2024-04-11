@@ -40,7 +40,9 @@ return {
         -- "nvim-lua/plenary.nvim", -- optional/requirement of telescope.nvim
         -- "stevearc/dressing.nvim", -- optional (in case you don't use telescope but something else)
       },
-      opts = {},
+      config = function()
+        require("xbase").setup({})
+      end,
     },
   },
 }

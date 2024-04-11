@@ -30,6 +30,8 @@ vim.api.nvim_create_autocmd("filetype", {
 vim.api.nvim_create_autocmd("filetype", {
   group = augroup("swift_playground_setwrap"),
   pattern = { "swift" },
-  command = "set wrap",
+  callback = function()
+    vim.wo.wrap = true
+  end,
   desc = "swift playground files set wrap",
 })
