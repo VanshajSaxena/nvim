@@ -33,6 +33,7 @@ return {
     {
       "xbase-lab/xbase",
       enabled = true,
+      ft = "swift",
       build = "make install", -- or "make install && make free_space" (not recommended, longer build time)
       dependencies = {
         "neovim/nvim-lspconfig",

@@ -18,7 +18,7 @@ return {
 
   -- Configure LazyVim to load gruvbox
   {
-    "LazyVim/LazyVim",
+    "LazyVim",
     opts = {
       colorscheme = function ()
         if vim.loop.os_uname().sysname == "Linux" then
