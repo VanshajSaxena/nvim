@@ -29,21 +29,24 @@ return {
         clangd = {},
       },
     },
-
-    {
-      "xbase-lab/xbase",
-      enabled = true,
-      ft = "swift",
-      build = "make install", -- or "make install && make free_space" (not recommended, longer build time)
-      dependencies = {
-        "neovim/nvim-lspconfig",
-        -- "nvim-telescope/telescope.nvim", -- optional
-        -- "nvim-lua/plenary.nvim", -- optional/requirement of telescope.nvim
-        -- "stevearc/dressing.nvim", -- optional (in case you don't use telescope but something else)
-      },
-      config = function()
-        require("xbase").setup({})
-      end,
-    },
   },
+
+  {
+    "xbase-lab/xbase",
+    enabled = function()
+      return vim.loop.os_uname().sysname == "Darwin" and true or false
+    end,
+    ft = "swift",
+    build = "make install", -- or "make install && make free_space" (not recommended, longer build time)
+    dependencies = {
+      "neovim/nvim-lspconfig",
+      -- "nvim-telescope/telescope.nvim", -- optional
+      -- "nvim-lua/plenary.nvim", -- optional/requirement of telescope.nvim
+      -- "stevearc/dressing.nvim", -- optional (in case you don't use telescope but something else)
+    },
+    config = function()
+      require("xbase").setup({})
+    end,
+  },
+  opts = {},
 }
