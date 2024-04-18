@@ -16,6 +16,19 @@ return {
     },
   },
 
+  {
+    "tokyonight.nvim",
+    opts = {
+      style = "night", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
+      transparent = true, -- Enable this to disable setting the background color
+      styles = {
+        -- Background styles. Can be "dark", "transparent" or "normal"
+        sidebars = "transparent", -- style for sidebars, see below
+        floats = "transparent", -- style for floating windows
+      },
+    }
+  },
+
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim",
@@ -24,7 +37,7 @@ return {
         if vim.loop.os_uname().sysname == "Linux" then
           vim.cmd("colorscheme gruvbox")
         else
-          vim.cmd("colorscheme tokyonight-night")
+          vim.cmd("colorscheme tokyonight")
         end
       end
     },
