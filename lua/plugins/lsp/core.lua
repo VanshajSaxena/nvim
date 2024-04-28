@@ -33,9 +33,7 @@ return {
 
   {
     "xbase-lab/xbase",
-    enabled = function()
-      return vim.loop.os_uname().sysname == "Darwin" and true or false
-    end,
+    cond = vim.loop.os_uname().sysname == "Darwin" and true or false,
     ft = "swift",
     build = "make install", -- or "make install && make free_space" (not recommended, longer build time)
     dependencies = {
