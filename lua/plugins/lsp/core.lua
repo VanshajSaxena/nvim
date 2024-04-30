@@ -46,5 +46,4 @@ return {
       require("xbase").setup({})
     end,
   },
-  opts = {},
 }
