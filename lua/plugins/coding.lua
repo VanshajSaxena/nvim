@@ -68,9 +68,15 @@ return {
           end,
         }),
       }
-      opts.sources = vim.tbl_extend("force", opts.sources, {
+      opts.sources = {
+        { name = "nvim_lsp" },
+        { name = "luasnip" },
+        { name = "buffer" },
+        { name = "path" },
+        { name = "calc" },
         { name = "emoji" },
-      })
+        { name = "copilot" },
+      }
       opts.mapping = cmp.mapping.preset.insert({
         ["<C-k>"] = cmp.mapping.scroll_docs(-1),
         ["<C-j>"] = cmp.mapping.scroll_docs(1),
