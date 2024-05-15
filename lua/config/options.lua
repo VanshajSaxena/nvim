@@ -4,6 +4,7 @@
 
 local set = vim.opt
 
+set.completeopt = "menu,menuone,noselect,noinsert,preview"
 set.confirm = false
 set.hidden = true
 set.inccommand = "split"

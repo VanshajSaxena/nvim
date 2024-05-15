@@ -13,6 +13,18 @@ keymap(
   "<cmd>vertical sbnext<cr>",
   { desc = "split window in two and edit alternate file (vertical)" }
 )
+keymap(
+  "n",
+  "<leader>sl",
+  "<cmd> lua require('telescope.builtin').find_files({cwd = vim.fn.expand('$HOME/.local/share/nvim/lazy/LazyVim')})<cr>",
+  { desc = "Find Files LazyVim" }
+)
+keymap(
+  "n",
+  "<leader>sL",
+  "<cmd> lua require('telescope.builtin').live_grep({cwd = vim.fn.expand('$HOME/.local/share/nvim/lazy/LazyVim')})<cr>",
+  { desc = "Grep LazyVim" }
+)
 
 ---[[
 if os.getenv("TERM_PROGRAM") == "tmux" then
