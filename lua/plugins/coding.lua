@@ -1,24 +1,92 @@
 return {
 
+  --[[
   {
     "L3MON4D3/LuaSnip",
     keys = function()
       return {}
     end,
   },
+  --]]
 
   {
     "hrsh7th/nvim-cmp",
     event = { "InsertEnter", "CmdLineEnter" },
     dependencies = {
-      "hrsh7th/cmp-calc", --Works
-      "hrsh7th/cmp-cmdline", --Cmdline Completion
-      "hrsh7th/cmp-emoji", --Cmdline Completion
-      "onsails/lspkind.nvim",
+      "hrsh7th/cmp-calc", -- Works
+      "hrsh7th/cmp-cmdline", -- Cmdline Completion
+      "hrsh7th/cmp-emoji", -- emoji Completion
     },
 
+    --[==[
+    opts = {
+      window = {
+        completion = require("cmp").config.window.bordered(),
+        documentation = require("cmp").config.window.bordered(),
+      },
+      view = {
+        entries = {
+          follow_cursor = true,
+        },
+        docs = {
+          auto_open = true,
+        },
+      },
+      sources = {
+        { name = "nvim_lsp" },
+        { name = "buffer" },
+        { name = "path" },
+        { name = "calc" },
+        { name = "emoji" },
+        { name = "copilot" },
+      },
+      mapping = {
+        ["<C-k>"] = require("cmp").mapping.scroll_docs(-1),
+        ["<C-j>"] = require("cmp").mapping.scroll_docs(1),
+      },
+    },
+    config = function()
+      local has_words_before = function()
+        unpack = unpack or table.unpack
+        local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+        return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+      end
+
+      local cmp = require("cmp")
+
+      mapping = vim.tbl_extend("force", opts.mapping, {
+        ["<Tab>"] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            -- You could replace select_next_item() with confirm({ select = true }) to get VS Code autocompletion behavior
+            cmp.select_next_item()
+          elseif vim.snippet.active({ direction = 1 }) then
+            vim.schedule(function()
+              vim.snippet.jump(1)
+            end)
+          elseif has_words_before() then
+            cmp.complete()
+          else
+            fallback()
+          end
+        end, { "i", "s" }),
+        ["<S-Tab>"] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            cmp.select_prev_item()
+          elseif vim.snippet.active({ direction = -1 }) then
+            vim.schedule(function()
+              vim.snippet.jump(-1)
+            end)
+          else
+            fallback()
+          end
+        end, { "i", "s" }),
+      })
+    end,
+  },
+  --]==]
+    ---[=[
     opts = function(_, opts)
-      --[[
+      ---[[
       local has_words_before = function()
         unpack = unpack or table.unpack
         local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -26,24 +94,23 @@ return {
       end
       --]]
 
-      local luasnip = require("luasnip")
       local cmp = require("cmp")
-      local lspkind = require("lspkind")
       opts.view = {
         entries = {
           follow_cursor = true,
         },
       }
 
-      opts.snippet = {
-        expand = function(args)
-          require("luasnip").lsp_expand(args.body)
-        end,
-      }
+      -- opts.snippet = {
+      --   expand = function(args)
+      --     require("luasnip").lsp_expand(args.body)
+      --   end,
+      -- }
       opts.window = {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
       }
+      --[[
       opts.formatting = {
         fields = { "abbr", "menu", "kind" }, -- these fiels decide the members of cmp-pmenu; see help cmp-config.formatting.fields
         --  fields = { 'abbr', 'menu', 'kind'}, -- is a working sequence of fields for jdtls and lua_ls
@@ -68,15 +135,16 @@ return {
           end,
         }),
       }
+      --]]
       opts.sources = {
         { name = "nvim_lsp" },
-        { name = "luasnip" },
         { name = "buffer" },
         { name = "path" },
         { name = "calc" },
         { name = "emoji" },
         { name = "copilot" },
       }
+      --[==[
       opts.mapping = cmp.mapping.preset.insert({
         ["<C-k>"] = cmp.mapping.scroll_docs(-1),
         ["<C-j>"] = cmp.mapping.scroll_docs(1),
@@ -102,6 +170,34 @@ return {
           end
         end, { "i", "s" }),
       })
+      --]==]
+      opts.mapping = vim.tbl_extend("force", opts.mapping, {
+        ["<Tab>"] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            -- You could replace select_next_item() with confirm({ select = true }) to get VS Code autocompletion behavior
+            cmp.select_next_item()
+          elseif vim.snippet.active({ direction = 1 }) then
+            vim.schedule(function()
+              vim.snippet.jump(1)
+            end)
+          elseif has_words_before() then
+            cmp.complete()
+          else
+            fallback()
+          end
+        end, { "i", "s" }),
+        ["<S-Tab>"] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            cmp.select_prev_item()
+          elseif vim.snippet.active({ direction = -1 }) then
+            vim.schedule(function()
+              vim.snippet.jump(-1)
+            end)
+          else
+            fallback()
+          end
+        end, { "i", "s" }),
+      })
       cmp.setup.cmdline(":", {
         mapping = cmp.mapping.preset.cmdline(),
         sources = {
@@ -109,7 +205,7 @@ return {
           { name = "path" }, -- Good
         },
       })
-      cmp.setup.cmdline("/", {
+      cmp.setup.cmdline({ "/", "?" }, {
         mapping = cmp.mapping.preset.cmdline(),
         sources = {
           { name = "buffer" }, -- Good
@@ -117,5 +213,6 @@ return {
         },
       })
     end,
+    --]=]
   },
 }
