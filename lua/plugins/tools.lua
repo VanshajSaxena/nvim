@@ -44,7 +44,7 @@ return {
             content = "text",
             priority = 0,
             selector = "textarea",
-            takeover = "once", -- `takeover` can be set to `always`, `empty`, `never`, `nonempty` or `once`.
+            takeover = "never", -- `takeover` can be set to `always`, `empty`, `never`, `nonempty` or `once`.
           },
           ["google.*"] = {
             takeover = "never",
