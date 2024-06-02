@@ -5,14 +5,13 @@
     "lazyvim.plugins.extras.coding.yanky",
     "lazyvim.plugins.extras.dap.core",
     "lazyvim.plugins.extras.editor.dial",
-    "lazyvim.plugins.extras.editor.trouble-v3",
     "lazyvim.plugins.extras.lang.java",
     "lazyvim.plugins.extras.test.core",
     "lazyvim.plugins.extras.ui.mini-animate",
     "lazyvim.plugins.extras.util.mini-hipatterns"
   ],
   "news": {
-    "NEWS.md": "4964"
+    "NEWS.md": "5204"
   },
-  "version": 4
+  "version": 6
 }
