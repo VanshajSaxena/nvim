@@ -24,18 +24,8 @@ return {
           cmdlineTimeout = 2001,
           ignoreKeys = {
             all = { "<C-->" },
-            normal = {
-              "<C-1>",
-              "<C-2>",
-              "<C-3>",
-              "<C-4>",
-              "<C-5>",
-              "<C-6>",
-              "<C-7>",
-              "<C-Tab>",
-              "<F11>",
-              "<F5>",
-            },
+            -- stylua: ignore
+            normal = { "<C-1>", "<C-2>", "<C-3>", "<C-4>", "<C-5>", "<C-6>", "<C-7>", "<C-Tab>", "<F11>", "<F5>", },
           },
         },
         localSettings = {
