@@ -15,7 +15,7 @@ return {
               and { "sourcekit-lsp", "-Xswiftc", "-sdk", "-Xswiftc", "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk", "-Xswiftc", "-target", "-Xswiftc", "arm64-apple-ios15.0-simulator", "-Xcc", "-DSWIFT_PACKAGE=0", }
             or { "sourcekit-lsp" },
         },
-        nil_ls = {},
+        --nil_ls = {},
         clangd = {},
       },
     },
