@@ -26,12 +26,7 @@ return {
     "LazyVim",
     opts = {
       colorscheme = function()
-        ---@diagnostic disable-next-line: undefined-field
-        if vim.loop.os_uname().sysname == "Linux" then
-          vim.cmd("colorscheme gruvbox")
-        else
-          vim.cmd("colorscheme tokyonight")
-        end
+        vim.cmd("colorscheme gruvbox")
       end,
     },
   },
