@@ -9,6 +9,8 @@ return {
         load = {
           ["core.defaults"] = {},
           ["core.concealer"] = {},
+          ["core.export"] = {},
+          ["core.ui.calendar"] = {},
         },
       })
     end,
