@@ -9,8 +9,8 @@ keymap("", "<leader>lh", "<cmd>Lazy home<cr>", { desc = "Lazy Home" })
 keymap("i", "<C-l>", "<right>", { desc = "move right in insert mode" })
 -- stylua: ignore start
 keymap( "n", "<leader>sn", "<cmd>vertical sbnext<cr>", { desc = "split window in two and edit alternate file (vertical)" })
-keymap( "n", "<leader>sl", "<cmd> lua require('telescope.builtin').find_files({cwd = vim.fn.expand('$HOME/.local/share/nvim/lazy/LazyVim')})<cr>", { desc = "Find Files LazyVim" })
-keymap( "n", "<leader>sL", "<cmd> lua require('telescope.builtin').live_grep({cwd = vim.fn.expand('$HOME/.local/share/nvim/lazy/LazyVim')})<cr>", { desc = "Grep LazyVim" })
+keymap( "n", "<leader>sl", "<cmd> lua require('telescope.builtin').find_files({cwd = vim.fn.stdpath('data') .. '/lazy/LazyVim'})<cr>", { desc = "Find Files LazyVim" })
+keymap( "n", "<leader>sL", "<cmd> lua require('telescope.builtin').live_grep({cwd = vim.fn.stdpath('data') .. '/lazy/LazyVim'})<cr>", { desc = "Grep LazyVim" })
 -- stylua: ignore end
 
 ---[[

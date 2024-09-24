@@ -9,6 +9,19 @@ return {
         desc = "telescope builtins",
       },
       {
+        "<leader><space>",
+        function()
+          local root = vim.fs.root(0, ".git")
+          if root ~= nil then
+            require("telescope.builtin").find_files({ cwd = root })
+          else
+            vim.cmd("Telescope projects")
+          end
+        end,
+        desc = "Projects or Find Files based on the buffer",
+      },
+      { "<leader>sz", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Buffer" },
+      {
         "<leader>fC",
         "<cmd> lua require('telescope.builtin').live_grep({ cwd = vim.fn.stdpath('config') })<cr>",
         desc = "Grep Config files",
@@ -39,9 +52,37 @@ return {
             ["h"] = function(...)
               return require("telescope.actions").file_split(...)
             end,
+            ["<C-D>"] = function(...)
+              return require("telescope.actions").results_scrolling_down(...)
+            end,
+            ["<C-U>"] = function(...)
+              return require("telescope.actions").results_scrolling_up(...)
+            end,
+            ["J"] = function(...)
+              return require("telescope.actions").preview_scrolling_down(...)
+            end,
+            ["K"] = function(...)
+              return require("telescope.actions").preview_scrolling_up(...)
+            end,
+          },
+          i = {
+            ["<C-D>"] = function(...)
+              return require("telescope.actions").results_scrolling_down(...)
+            end,
+            ["<C-U>"] = function(...)
+              return require("telescope.actions").results_scrolling_up(...)
+            end,
           },
         },
       },
+    },
+  },
+
+  {
+    "m4xshen/hardtime.nvim",
+    dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+    opts = {
+      disable_mouse = false,
     },
   },
 }

@@ -41,6 +41,9 @@ return {
 
   {
     "mini.animate",
+    cond = function()
+      return not vim.g.neovide
+    end,
     opts = {
       open = {
         enable = false,
@@ -48,6 +51,14 @@ return {
       close = {
         enable = false,
       },
+    },
+  },
+
+  {
+    "rcarriga/nvim-dap-ui",
+    -- stylua: ignore
+    keys = {
+      { "<leader>du", function() require("dapui").toggle({ reset = true }) end, desc = "Dap UI" },
     },
   },
 
@@ -62,6 +73,22 @@ return {
       { "<F23>", function() require("dap").step_out() end, desc = "Dap Step Out (Shift + F11)", },
       { "<F10>", function() require("dap").step_over() end, desc = "Dap Step Over", },
       { "<F17>", function() require("dap").terminate() end, desc = "Dap Terminate (Shift + F5)", },
+    },
+  },
+
+  {
+    "zbirenbaum/copilot.lua",
+    opts = {
+      filetypes = {
+        java = false,
+      },
+    },
+  },
+
+  {
+    "mini.surround",
+    opts = {
+      search_method = "cover_or_next",
     },
   },
 }

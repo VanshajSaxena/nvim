@@ -26,7 +26,7 @@ return {
             }
             or { "sourcekit-lsp" },
         },
-        --nil_ls = {},
+        nixd = { mason = false },
         clangd = {},
       },
     },
@@ -40,9 +40,6 @@ return {
     build = "make install", -- or "make install && make free_space" (not recommended, longer build time)
     dependencies = {
       "neovim/nvim-lspconfig",
-      -- "nvim-telescope/telescope.nvim", -- optional
-      -- "nvim-lua/plenary.nvim", -- optional/requirement of telescope.nvim
-      -- "stevearc/dressing.nvim", -- optional (in case you don't use telescope but something else)
     },
     config = function()
       require("xbase").setup({})

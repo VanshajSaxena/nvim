@@ -4,7 +4,7 @@
 
 local set = vim.opt
 
-set.completeopt = "menu,menuone,noselect,noinsert,preview"
+set.completeopt = "menu,menuone,preview"
 set.confirm = false
 set.hidden = true
 set.inccommand = "split"
@@ -12,7 +12,7 @@ set.hlsearch = false
 set.mouse = "nv"
 set.pumblend = 0 -- Popup blend pumblend has to be set to zero for : completion
 set.winblend = 0 -- Float-windows blend
-set.pumheight = 20 --later to update
+set.pumheight = 20 -- later to update
 set.scroll = 10 -- scroll for CTRL-D and CTRL-U
 set.scrolloff = 16
 set.sidescrolloff = 48
@@ -34,8 +34,8 @@ if os.getenv("OS") == "Windows_NT" then
 end
 
 if vim.g.neovide then
-  vim.g.neovide_transparency = 1
+  vim.g.neovide_transparency = 0.80
   vim.o.guifont = "JetBrainsMono Nerd Font:h12"
-  set.pumblend = 85 -- Popup blend pumblend has to be set to zero for : completion
-  set.winblend = 85 -- Float-windows blend
+  set.pumblend = 50 -- Popup blend pumblend has to be set to zero for : completion
+  set.winblend = 50 -- Float-windows blend
 end
