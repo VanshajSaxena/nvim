@@ -9,8 +9,28 @@ return {
         load = {
           ["core.defaults"] = {},
           ["core.concealer"] = {},
-          ["core.export"] = {},
           ["core.ui.calendar"] = {},
+          ["core.export"] = {},
+          ["core.journal"] = {
+            config = {
+              workspace = "journal",
+            },
+          },
+          ["core.dirman"] = {
+            config = {
+              default_workspace = "notes",
+              use_popup = true,
+              workspaces = {
+                notes = "~/neorg/notes",
+                journal = "~/neorg",
+              },
+            },
+          },
+          ["core.completion"] = {
+            config = {
+              engine = "nvim-cmp",
+            },
+          },
         },
       })
     end,

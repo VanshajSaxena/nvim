@@ -35,6 +35,7 @@ return {
         { name = "calc" },
         { name = "emoji" },
         { name = "copilot" },
+        { name = "neorg" },
       }
 
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
