@@ -96,4 +96,32 @@ return {
       },
     },
   },
+
+  {
+    "eandrju/cellular-automaton.nvim",
+    cmd = "CellularAutomaton",
+    keys = {
+      { "<C-s>r", "<cmd>CellularAutomaton make_it_rain<cr>", desc = "Cellular Automaton (make it rain)" },
+      { "<C-s>s", "<cmd>CellularAutomaton scramble<cr>", desc = "Cellular Automaton (scramble)" },
+    },
+  },
+
+  {
+    "michaelb/sniprun",
+    branch = "master",
+
+    build = "sh install.sh 1",
+    -- do 'sh install.sh 1' if you want to force compile locally
+    -- (instead of fetching a binary from the github release). Requires Rust >= 1.65
+
+    keys = {
+      { "<leader>r", mode = { "n", "v" }, "<Plug>SnipRun", desc = "SnipRun" },
+      { "<leader>ro", "<Plug>SnipRunOperator", desc = "SnipRunOperater" },
+    },
+
+    opts = {
+      live_mode_toggle = "enable", -- unsafe
+      binary_path = vim.fn.stdpath("data") .. "/lazy/sniprun/target/release/sniprun",
+    },
+  },
 }
