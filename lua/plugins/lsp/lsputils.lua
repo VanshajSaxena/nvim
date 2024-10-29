@@ -51,7 +51,7 @@ return {
     keys = {
       { "gh", "<cmd>Lspsaga finder ++inexist<cr>", desc = "lspsaga finder" },
       { "gd", "<cmd>Lspsaga goto_definition<cr>", desc = "lspsaga goto definition" },
-      { "gp", "<cmd>Lspsaga peek_definition<cr>", desc = "lspsaga peek definition" },
+      { "<leader>gp", "<cmd>Lspsaga peek_definition<cr>", desc = "lspsaga peek definition" },
       { "K", "<cmd>Lspsaga hover_doc ++quiet<cr>", desc = "lspsaga hover doc" },
       { "<leader>o", "<cmd>Lspsaga outline<cr>", desc = "lspsaga outline" },
       { "<leader>ci", "<cmd>Lspsaga incoming_calls<cr>", desc = "lspsaga incoming calls (call hierarchy)", },

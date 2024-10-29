@@ -35,7 +35,7 @@ end
 
 if vim.g.neovide then
   vim.g.neovide_transparency = 0.80
-  vim.o.guifont = "JetBrainsMono Nerd Font:h12"
+  vim.o.guifont = "JetBrainsMono Nerd Font:h09"
   set.pumblend = 50 -- Popup blend pumblend has to be set to zero for : completion
   set.winblend = 50 -- Float-windows blend
 end
