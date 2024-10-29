@@ -108,6 +108,7 @@ return {
 
   {
     "michaelb/sniprun",
+    enabled = not IsTermux,
     branch = "master",
 
     build = "sh install.sh 1",
