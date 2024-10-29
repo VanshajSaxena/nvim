@@ -27,7 +27,7 @@ return {
             or { "sourcekit-lsp" },
         },
         nixd = { mason = false },
-        clangd = {},
+        clangd = { mason = not IsTermux },
       },
     },
   },
