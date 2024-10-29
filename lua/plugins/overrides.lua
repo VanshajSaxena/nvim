@@ -42,7 +42,7 @@ return {
   {
     "mini.animate",
     cond = function()
-      return not vim.g.neovide
+      return not (vim.g.neovide or IsTermux)
     end,
     opts = {
       open = {

@@ -81,4 +81,9 @@ return {
       })
     end,
   },
+
+  {
+    "zbirenbaum/copilot.lua",
+    cond = not IsTermux,
+  },
 }
