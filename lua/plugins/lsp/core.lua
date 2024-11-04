@@ -28,6 +28,7 @@ return {
         },
         nixd = { mason = false },
         clangd = { mason = not IsTermux },
+        lua_ls = { mason = not IsTermux},
       },
     },
   },
