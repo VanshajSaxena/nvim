@@ -29,20 +29,13 @@ return {
     },
   },
 
-  {
-    "scottmckendry/cyberdream.nvim",
-    lazy = false,
-    enabled = IsTermux,
-    priority = 1000,
-  },
-
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim",
     opts = {
       colorscheme = function()
         if IsTermux then
-          vim.cmd("colorscheme cyberdream")
+          vim.cmd("colorscheme default")
           vim.cmd("hi Normal guibg=NONE")
           vim.cmd("hi NormalFloat guibg=NONE")
         else
