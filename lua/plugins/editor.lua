@@ -8,6 +8,7 @@ return {
         "<cmd>Telescope builtin<cr>",
         desc = "telescope builtins",
       },
+
       {
         "<leader><space>",
         function()
@@ -20,27 +21,43 @@ return {
         end,
         desc = "Projects or Find Files based on the buffer",
       },
+
       { "<leader>sz", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Buffer" },
+
       {
         "<leader>fC",
         "<cmd> lua require('telescope.builtin').live_grep({ cwd = vim.fn.stdpath('config') })<cr>",
         desc = "Grep Config files",
       },
+
       {
         "<leader>f.",
         "<cmd> lua require('telescope.builtin').find_files({cwd = vim.fn.expand('$HOME/.config')})<cr>",
         desc = "Find Files $HOME/.config",
       },
+
       {
         "<leader>f,",
         "<cmd> lua require('telescope.builtin').live_grep({cwd = vim.fn.expand('$HOME/.config')})<cr>",
         desc = "Grep $HOME/.config",
       },
+
+      {
+        "<leader>sl",
+        "<cmd> lua require('telescope.builtin').find_files({cwd = vim.fn.stdpath('data') .. '/lazy/LazyVim'})<cr>",
+        desc = "Find Files LazyVim",
+      },
+
+      {
+        "<leader>sL",
+        "<cmd> lua require('telescope.builtin').live_grep({cwd = vim.fn.stdpath('data') .. '/lazy/LazyVim'})<cr>",
+        desc = "Grep LazyVim",
+      },
     },
 
     opts = {
       defaults = {
-        selection_strategy = "follow",
+        selection_strategy = "closest",
         mappings = {
           n = {
             ["t"] = function(...)

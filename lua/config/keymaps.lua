@@ -2,16 +2,17 @@ local keymap = vim.keymap.set
 
 vim.keymap.del("n", "<leader>l")
 vim.keymap.del({ "n", "i", "x" }, "<C-s>")
+
 keymap("", "<leader>lp", "<cmd>Lazy<cr>", { desc = "Lazy Profile" })
-keymap("", "<leader>lh", "<cmd>Lazy home<cr>", { desc = "Lazy Home" })
 keymap("n", "<leader>lE", "<cmd>LazyExtras<cr>", { desc = "Lazy Extras" })
+
 keymap("i", "<C-l>", "<right>", { desc = "move right in insert mode" })
 keymap("i", "<C-j>", "<down>", { desc = "move down in insert mode" })
+
 keymap("n", "<leader>Cd", "<cmd>Copilot disable<cr>", { desc = "Disable Copilot" })
+
 -- stylua: ignore start
 keymap( "n", "<leader>sn", "<cmd>vertical sbnext<cr>", { desc = "split window in two and edit alternate file (vertical)" })
-keymap( "n", "<leader>sl", "<cmd> lua require('telescope.builtin').find_files({cwd = vim.fn.stdpath('data') .. '/lazy/LazyVim'})<cr>", { desc = "Find Files LazyVim" })
-keymap( "n", "<leader>sL", "<cmd> lua require('telescope.builtin').live_grep({cwd = vim.fn.stdpath('data') .. '/lazy/LazyVim'})<cr>", { desc = "Grep LazyVim" })
 keymap("n", "\\nj", "<cmd>Neorg journal today<cr>", { desc = "[neorg] Journal Today" })
 -- stylua: ignore end
 
@@ -33,5 +34,4 @@ elseif os.getenv("OS") == "Windows_NT" then
   -- openfloat("lazygit", "gg", "Lspsaga term_toggle lazygit", true)
   openfloat("pwsh", ">", "Lspsaga term_toggle", true)
 end
-
 --]]
