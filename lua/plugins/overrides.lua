@@ -34,7 +34,7 @@ return {
     "LazyVim",
     opts = {
       colorscheme = function()
-        if IsTermux then
+        if Termux then
           vim.cmd("colorscheme default")
           vim.cmd("hi Normal guibg=NONE")
           vim.cmd("hi NormalFloat guibg=NONE")

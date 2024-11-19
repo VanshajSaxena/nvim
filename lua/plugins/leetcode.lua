@@ -1,6 +1,6 @@
 return {
   "kawre/leetcode.nvim",
-  enabled = not IsTermux, -- disable on termux
+  enabled = not Termux, -- disable on termux
   build = ":TSUpdate html",
   dependencies = {
     "nvim-telescope/telescope.nvim",

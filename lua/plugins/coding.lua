@@ -84,6 +84,6 @@ return {
 
   {
     "zbirenbaum/copilot.lua",
-    cond = not IsTermux,
+    cond = not Termux,
   },
 }
