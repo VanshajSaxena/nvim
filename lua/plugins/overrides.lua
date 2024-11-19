@@ -46,21 +46,6 @@ return {
   },
 
   {
-    "mini.animate",
-    cond = function()
-      return not (vim.g.neovide or IsTermux)
-    end,
-    opts = {
-      open = {
-        enable = false,
-      },
-      close = {
-        enable = false,
-      },
-    },
-  },
-
-  {
     "rcarriga/nvim-dap-ui",
     -- stylua: ignore
     keys = {
