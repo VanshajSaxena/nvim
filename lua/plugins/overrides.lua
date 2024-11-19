@@ -83,4 +83,11 @@ return {
       search_method = "cover_or_next",
     },
   },
+
+  {
+    "folke/snacks.nvim",
+    opts = {
+      dashboard = { enabled = false },
+    },
+  },
 }
