@@ -8,4 +8,9 @@ return {
     "folke/noice.nvim",
     enabled = false,
   },
+
+  {
+    "mini.animate",
+    enabled = false,
+  },
 }
