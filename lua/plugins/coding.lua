@@ -64,6 +64,8 @@ return {
             fallback()
           end
         end, { "i", "s" }),
+        ["<C-d>"] = cmp.mapping.scroll_docs(4),
+        ["<C-u>"] = cmp.mapping.scroll_docs(-4),
       })
       cmp.setup.cmdline(":", {
         mapping = cmp.mapping.preset.cmdline(),
