@@ -39,6 +39,50 @@ return {
   },
 
   {
+    "mfussenegger/nvim-jdtls",
+    opts = {
+      settings = {
+        java = {
+          signatureHelp = { enabled = true, description = { enabled = true } },
+          contentProvider = { preferred = "fernflower" },
+          completion = {
+            chainCompletion = {
+              enabled = true,
+            },
+          },
+          codeGeneration = {
+            generateComments = {
+              enabled = true,
+            },
+            toString = {
+              codeStyle = "STRING_BUILDER",
+            },
+          },
+          edit = {
+            smartSemicolonDetection = {
+              enabled = true,
+            },
+          },
+          inlayHints = {
+            parameterNames = {
+              enabled = "all",
+            },
+            variableTypes = {
+              enabled = "all",
+            },
+            returnType = {
+              enabled = "all",
+            },
+          },
+          referencesCodeLens = {
+            enabled = true,
+          },
+        },
+      },
+    },
+  },
+
+  {
     "zbirenbaum/copilot.lua",
     opts = {
       filetypes = {

@@ -10,7 +10,7 @@ return {
         spinner = "dots",
         done = "",
         commenced = "Initializing",
-        completed = "Setup Complete",
+        completed = "Done",
       },
       window = {
         blend = 00,
