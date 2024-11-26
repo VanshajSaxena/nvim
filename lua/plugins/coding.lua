@@ -85,5 +85,8 @@ return {
   {
     "zbirenbaum/copilot.lua",
     cond = not Termux,
+    keys = {
+      { "<leader>Cd", "<cmd>Copilot disable<cr>", desc = "Disable Copilot" },
+    },
   },
 }

@@ -3,17 +3,15 @@ local keymap = vim.keymap.set
 vim.keymap.del("n", "<leader>l")
 vim.keymap.del({ "n", "i", "x" }, "<C-s>")
 
-keymap("", "<leader>lp", "<cmd>Lazy<cr>", { desc = "Lazy Profile" })
+keymap("n", "<leader>lp", "<cmd>Lazy<cr>", { desc = "Lazy Profile" })
 keymap("n", "<leader>lE", "<cmd>LazyExtras<cr>", { desc = "Lazy Extras" })
 
 keymap("i", "<C-l>", "<right>", { desc = "move right in insert mode" })
 keymap("i", "<C-j>", "<down>", { desc = "move down in insert mode" })
 
-keymap("n", "<leader>Cd", "<cmd>Copilot disable<cr>", { desc = "Disable Copilot" })
 
 -- stylua: ignore start
 keymap( "n", "<leader>sn", "<cmd>vertical sbnext<cr>", { desc = "split window in two and edit alternate file (vertical)" })
-keymap("n", "\\nj", "<cmd>Neorg journal today<cr>", { desc = "[neorg] Journal Today" })
 -- stylua: ignore end
 
 ---[[
