@@ -83,15 +83,6 @@ return {
   },
 
   {
-    "zbirenbaum/copilot.lua",
-    opts = {
-      filetypes = {
-        java = false,
-      },
-    },
-  },
-
-  {
     "mini.surround",
     opts = {
       search_method = "cover_or_next",
