@@ -91,9 +91,9 @@ return {
       filetypes = {
         java = false,
       },
-      keys = {
-        { "<leader>Cd", "<cmd>Copilot disable<cr>", desc = "Disable Copilot" },
-      },
+    },
+    keys = {
+      { "<leader>Cd", "<cmd>Copilot disable<cr>", desc = "Disable Copilot" },
     },
   },
 }
