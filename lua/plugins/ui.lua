@@ -3,23 +3,13 @@ return {
   {
     "j-hui/fidget.nvim",
     cond = not vim.g.started_by_firenvim,
-    tag = "legacy",
     event = "LspAttach",
     opts = {
-      text = {
-        spinner = "dots",
-        done = "",
-        commenced = "Initializing",
-        completed = "Done",
-      },
-      window = {
-        blend = 00,
-        relative = "editor",
-      },
-      fmt = {
-        leftpad = false,
-        max_width = 45,
-        stack_upwards = false,
+      notification = {
+        window = {
+          winblend = 0,
+          x_padding = 0,
+        },
       },
     },
   },
