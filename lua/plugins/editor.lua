@@ -94,4 +94,22 @@ return {
       },
     },
   },
+
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    dependencies = {
+      { "s1n7ax/nvim-window-picker", name = "window-picker", version = "2.*", opts = {} },
+    },
+    opts = {
+      window = {
+        position = "right",
+        mappings = {
+          ["l"] = "none",
+          ["<cr>"] = "open_with_window_picker",
+          ["s"] = "vsplit_with_window_picker",
+          ["h"] = "split_with_window_picker",
+        },
+      },
+    },
+  },
 }
