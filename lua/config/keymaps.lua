@@ -10,11 +10,10 @@ keymap("i", "<C-l>", "<right>", { desc = "move right in insert mode" })
 keymap("i", "<C-j>", "<down>", { desc = "move down in insert mode" })
 
 
--- stylua: ignore start
+-- stylua: ignore
 keymap( "n", "<leader>sn", "<cmd>vertical sbnext<cr>", { desc = "split window in two and edit alternate file (vertical)" })
--- stylua: ignore end
 
----[[
+--[[
 if os.getenv("TERM_PROGRAM") == "tmux" then
   local openfloat = function(program, title, map, desc, silent)
     -- stylua: ignore
