@@ -93,7 +93,17 @@ return {
     "folke/snacks.nvim",
     opts = {
       dashboard = { enabled = false },
+      scratch = { enabled = false },
       statuscolumn = { enabled = true },
+    },
+    keys = {
+      {
+        "<leader>ti",
+        function()
+          require("snacks").terminal.toggle("tig")
+        end,
+        desc = "Snacks Terminal Tig",
+      },
     },
   },
 }
