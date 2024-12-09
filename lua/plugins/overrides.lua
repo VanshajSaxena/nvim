@@ -97,13 +97,9 @@ return {
       statuscolumn = { enabled = true },
     },
     keys = {
-      {
-        "<leader>ti",
-        function()
-          require("snacks").terminal.toggle("tig")
-        end,
-        desc = "Snacks Terminal Tig",
-      },
+      -- stylua: ignore
+      { "<leader>tg", function() require("snacks").terminal.toggle("tig") end, desc = "Snacks Terminal Tig", },
+      { "<leader>n", false },
     },
   },
 }
