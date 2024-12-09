@@ -30,7 +30,7 @@ require("lazy").setup({
   },
   install = { colorscheme = { "default" } },
   ui = {
-    border = "rounded",
+    pills = false,
   },
   change_detection = {
     notify = false,
