@@ -97,8 +97,9 @@ return {
       statuscolumn = { enabled = true },
     },
     keys = {
-      -- stylua: ignore
+      -- stylua: ignore start
       { "<leader>tg", function() require("snacks").terminal.toggle("tig") end, desc = "Snacks Terminal Tig", },
+      { "<leader>bt", function() require("snacks").terminal.toggle("btop") end, desc = "Snacks Terminal Btop", },
       { "<leader>n", false },
     },
   },
