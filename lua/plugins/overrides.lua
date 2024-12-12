@@ -102,4 +102,14 @@ return {
       { "<leader>n", false },
     },
   },
+
+  {
+    "folke/todo-comments.nvim",
+    opts = {
+      keywords = {
+        REVISE = { icon = " ", alt = { "REVISION", "SEEME" } },
+        BOOKMARK = { icon = " ", color = "hint", alt = { "MARK" } },
+      },
+    },
+  },
 }
