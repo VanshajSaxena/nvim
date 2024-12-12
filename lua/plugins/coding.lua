@@ -93,7 +93,7 @@ return {
       },
     },
     keys = {
-      { "<leader>Cd", "<cmd>Copilot disable<cr>", desc = "Disable Copilot" },
+      { "<leader>uo", "<cmd>Copilot disable<cr>", desc = "Disable Copilot" },
     },
   },
 }
