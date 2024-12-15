@@ -2,18 +2,10 @@ return {
   -- add gruvbox
   {
     "ellisonleao/gruvbox.nvim",
-    config = function()
-      if vim.g.neovide then
-        require("gruvbox").setup({
-          contrast = "hard",
-          transparent_mode = false,
-        })
-      elseif require("gruvbox").setup({
-        contrast = "hard",
-        transparent_mode = true,
-      }) then
-      end
-    end,
+    opts = {
+      contrast = "hard",
+      transparent_mode = not vim.g.neovide,
+    },
   },
 
   {
