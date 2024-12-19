@@ -5,8 +5,8 @@ return {
     enabled = not Termux, -- disable on termux
     build = ":TSUpdate html",
     dependencies = {
-      "nvim-telescope/telescope.nvim",
-      "nvim-lua/plenary.nvim", -- required by telescope
+      "ibhagwan/fzf-lua",
+      "nvim-lua/plenary.nvim",
       "MunifTanjim/nui.nvim",
     },
     opts = {
@@ -46,11 +46,11 @@ return {
               },
             },
           },
-          ["core.completion"] = {
-            config = {
-              engine = "nvim-cmp",
-            },
-          },
+          -- ["core.completion"] = {
+          --   config = {
+          --     engine = "nvim-cmp",
+          --   },
+          -- },
         },
       })
     end,
