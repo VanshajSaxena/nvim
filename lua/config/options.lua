@@ -2,7 +2,6 @@ Termux = os.getenv("TERMUX_VERSION") ~= nil
 
 local set = vim.opt
 
-set.completeopt = "menu,menuone,preview"
 set.confirm = false
 set.hidden = true
 set.inccommand = "split"
