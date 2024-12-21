@@ -5,6 +5,9 @@ return {
     opts = {
       contrast = "hard",
       transparent_mode = not vim.g.neovide,
+      overrides = {
+        Pmenu = { bg = "none" }, -- blink.cmp uses Pmenu for completion menu, it makes it transparent.
+      },
     },
   },
 
