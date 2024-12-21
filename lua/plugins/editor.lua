@@ -1,94 +1,65 @@
 return {
-  {
-    "nvim-telescope/telescope.nvim",
 
+  {
+    "ibhagwan/fzf-lua",
     keys = {
       {
         "<leader>sp",
-        "<cmd>Telescope builtin<cr>",
-        desc = "telescope builtins",
+        "<cmd>FzfLua builtin<cr>",
+        desc = "FzfLua builtins",
       },
 
-      {
-        "<leader><space>",
-        function()
-          local root = vim.fs.root(0, ".git")
-          if root ~= nil then
-            require("telescope.builtin").find_files({ cwd = root })
-          else
-            vim.cmd("Telescope projects")
-          end
-        end,
-        desc = "Projects or Find Files based on the buffer",
-      },
+      { "<leader>sz", "<cmd>FzfLua blines<cr>", desc = "Current Buffer" },
 
-      { "<leader>sz", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Buffer" },
+      { "<leader>sZ", "<cmd>FzfLua lines<cr>", desc = "Open Buffers" },
 
       {
         "<leader>fC",
-        "<cmd> lua require('telescope.builtin').live_grep({ cwd = vim.fn.stdpath('config') })<cr>",
+        function()
+          require("fzf-lua").live_grep({ cwd = vim.fn.stdpath("config") })
+        end,
         desc = "Grep Config files",
       },
 
       {
         "<leader>f.",
-        "<cmd> lua require('telescope.builtin').find_files({cwd = vim.fn.expand('$HOME/.config')})<cr>",
+        function()
+          require("fzf-lua").files({ cwd = vim.fn.expand("$HOME/.config") })
+        end,
         desc = "Find Files $HOME/.config",
       },
 
       {
         "<leader>f,",
-        "<cmd> lua require('telescope.builtin').live_grep({cwd = vim.fn.expand('$HOME/.config')})<cr>",
+        function()
+          require("fzf-lua").live_grep({ cwd = vim.fn.expand("$HOME/.config") })
+        end,
         desc = "Grep $HOME/.config",
       },
 
       {
         "<leader>sl",
-        "<cmd> lua require('telescope.builtin').find_files({cwd = vim.fn.stdpath('data') .. '/lazy/LazyVim'})<cr>",
+        function()
+          require("fzf-lua").files({ cwd = vim.fn.stdpath("data") .. "/lazy/LazyVim" })
+        end,
         desc = "Find Files LazyVim",
       },
 
       {
         "<leader>sL",
-        "<cmd> lua require('telescope.builtin').live_grep({cwd = vim.fn.stdpath('data') .. '/lazy/LazyVim'})<cr>",
+        function()
+          require("fzf-lua").live_grep({ cwd = vim.fn.stdpath("data") .. "/lazy/LazyVim" })
+        end,
         desc = "Grep LazyVim",
       },
     },
 
     opts = {
-      defaults = {
-        selection_strategy = "closest",
-        mappings = {
-          n = {
-            ["t"] = function(...)
-              return require("telescope.actions").file_tab(...)
-            end,
-            ["s"] = function(...)
-              return require("telescope.actions").file_vsplit(...)
-            end,
-            ["h"] = function(...)
-              return require("telescope.actions").file_split(...)
-            end,
-            ["<C-D>"] = function(...)
-              return require("telescope.actions").results_scrolling_down(...)
-            end,
-            ["<C-U>"] = function(...)
-              return require("telescope.actions").results_scrolling_up(...)
-            end,
-            ["J"] = function(...)
-              return require("telescope.actions").preview_scrolling_down(...)
-            end,
-            ["K"] = function(...)
-              return require("telescope.actions").preview_scrolling_up(...)
-            end,
-          },
-          i = {
-            ["<C-D>"] = function(...)
-              return require("telescope.actions").results_scrolling_down(...)
-            end,
-            ["<C-U>"] = function(...)
-              return require("telescope.actions").results_scrolling_up(...)
-            end,
+      winopts = {
+        preview = {
+          delay = 10,
+          winopts = {
+            number = false,
           },
         },
       },
