@@ -1,7 +1,8 @@
 return {
 
   {
-    "seghen/blink.cmp",
+    "Seghen/blink.cmp",
+    url = "git@github.com:Saghen/blink.cmp.git",
     opts = {
       completion = {
         menu = {
