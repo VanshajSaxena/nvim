@@ -46,7 +46,7 @@ return {
           signatureHelp = { enabled = true, description = { enabled = true } },
           contentProvider = { preferred = "fernflower" },
           completion = {
-            chainCompletion = {
+            chain = {
               enabled = true,
             },
           },
@@ -59,7 +59,7 @@ return {
             },
           },
           edit = {
-            smartSemicolonDetection = {
+            smartSemicolon = {
               enabled = true,
             },
           },
@@ -94,11 +94,11 @@ return {
     opts = {
       dashboard = { enabled = false },
       scratch = { enabled = false },
-      statuscolumn = { enabled = true },
     },
     keys = {
       -- stylua: ignore start
       { "<leader>tg", function() require("snacks").terminal.toggle("tig") end, desc = "Snacks Terminal Tig", },
+      { "<leader>yz", function() require("snacks").terminal.toggle("yazi") end, desc = "Snacks Terminal Yazi", },
       { "<leader>bt", function() require("snacks").terminal.toggle("btop") end, desc = "Snacks Terminal Btop", },
       { "<leader>n", false },
     },
@@ -110,6 +110,17 @@ return {
       keywords = {
         REVISE = { icon = " ", alt = { "REVISION", "SEEME" } },
         BOOKMARK = { icon = " ", color = "hint", alt = { "MARK" } },
+      },
+    },
+  },
+
+  {
+    "ibhagwan/fzf-lua",
+    opts = {
+      winopts = {
+        preview = {
+          delay = 10,
+        },
       },
     },
   },
