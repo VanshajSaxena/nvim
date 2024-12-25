@@ -57,9 +57,13 @@ return {
     opts = {
       winopts = {
         preview = {
+          title = false,
           delay = 10,
           winopts = {
-            number = false,
+            relativenumber = true,
+            list = true,
+            signcolumn = "yes",
+            foldenable = true,
           },
         },
       },
