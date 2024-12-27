@@ -52,6 +52,20 @@ return {
         end,
         desc = "Grep LazyVim",
       },
+      {
+        "<localleader>no",
+        function()
+          require("fzf-lua").files({ cwd = vim.fn.expand("$HOME/neorg/notes") })
+        end,
+        desc = "Find Notes",
+      },
+      {
+        "<localleader>nO",
+        function()
+          require("fzf-lua").live_grep({ cwd = vim.fn.expand("$HOME/neorg/notes") })
+        end,
+        desc = "Grep Notes",
+      },
     },
 
     opts = {
