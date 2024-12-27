@@ -3,6 +3,7 @@ return {
   {
     "kawre/leetcode.nvim",
     enabled = not Termux, -- disable on termux
+    lazy = "leetcode.nvim" ~= vim.fn.argv(0, -1),
     build = ":TSUpdate html",
     dependencies = {
       "ibhagwan/fzf-lua",
