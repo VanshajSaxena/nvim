@@ -80,8 +80,8 @@ return {
     -- (instead of fetching a binary from the github release). Requires Rust >= 1.65
 
     keys = {
-      { "<leader>r", mode = { "n", "v" }, "<Plug>SnipRun", desc = "SnipRun" },
-      { "<leader>ro", "<Plug>SnipRunOperator", desc = "SnipRunOperater" },
+      { "<leader>su", mode = { "n", "v" }, "<Plug>SnipRun", desc = "SnipRun" },
+      { "<leader>so", "<Plug>SnipRunOperator", desc = "SnipRunOperater" },
     },
 
     opts = {
