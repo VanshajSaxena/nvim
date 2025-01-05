@@ -44,34 +44,32 @@ return {
       settings = {
         java = {
           signatureHelp = { enabled = true, description = { enabled = true } },
-          contentProvider = { preferred = "fernflower" },
+          --contentProvider = { preferred = "fernflower" },
           completion = {
+            guessMethodArguments = "insertBestGuessedArguments",
             chain = {
               enabled = true,
             },
           },
           codeGeneration = {
-            generateComments = {
-              enabled = true,
-            },
+            generateComments = true,
             toString = {
-              codeStyle = "STRING_BUILDER",
+              codeStyle = "STRING_BUILDER_CHAINED",
             },
+            useBlocks = true,
           },
-          edit = {
-            smartSemicolon = {
-              enabled = true,
-            },
-          },
+          implementationCodeLens = "all",
           inlayHints = {
             parameterNames = {
               enabled = "all",
             },
-            variableTypes = {
-              enabled = "all",
-            },
-            returnType = {
-              enabled = "all",
+          },
+          saveActions = {
+            organizeImports = true,
+          },
+          edit = {
+            smartSemicolonDetection = {
+              enabled = true,
             },
           },
           referencesCodeLens = {
