@@ -7,6 +7,9 @@ return {
       keys[#keys + 1] = { "gd", false }
     end,
     opts = {
+      codelens = {
+        enabled = true,
+      },
       servers = {
         sourcekit = {
           -- stylua: ignore
