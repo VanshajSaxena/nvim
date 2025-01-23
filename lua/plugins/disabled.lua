@@ -2,6 +2,13 @@ return {
 
   {
     "folke/noice.nvim",
-    enabled = false,
+    enabled = true,
+    opts = {
+      lsp = {
+        progress = {
+          enabled = false,
+        },
+      },
+    },
   },
 }
