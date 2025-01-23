@@ -33,6 +33,7 @@ return {
     opts = {
       filetypes = {
         java = false,
+        python = false,
       },
     },
     keys = {
