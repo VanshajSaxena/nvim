@@ -8,7 +8,7 @@ return {
         progress = {
           enabled = false,
         },
-        --disabled if favour of blink.cmp signature help
+        --disabled in favour of blink.cmp signature help
         signature = {
           enabled = false,
         },
