@@ -3,6 +3,7 @@ return {
   {
     "folke/noice.nvim",
     enabled = true,
+    cond = not vim.g.started_by_firenvim,
     opts = {
       lsp = {
         progress = {
