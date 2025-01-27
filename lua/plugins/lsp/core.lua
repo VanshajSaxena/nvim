@@ -32,6 +32,7 @@ return {
         nixd = { mason = false },
         clangd = { mason = not Termux },
         groovyls = {},
+        gradle_ls = {},
         lua_ls = {
           mason = not Termux,
           settings = {
