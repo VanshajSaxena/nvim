@@ -31,8 +31,22 @@ return {
         },
         nixd = { mason = false },
         clangd = { mason = not Termux },
-        lua_ls = { mason = not Termux },
         groovyls = {},
+        lua_ls = {
+          mason = not Termux,
+          settings = {
+            Lua = {
+              codeLens = {
+                enable = false,
+              },
+              hint = {
+                setType = true,
+                paramName = "Enable",
+                arrayIndex = "Enable",
+              },
+            },
+          },
+        },
       },
     },
   },
