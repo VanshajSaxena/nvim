@@ -22,6 +22,23 @@ return {
       { "<leader>du", function() require("dapui").toggle({ reset = true }) end, desc = "Dap UI" },
       { "<F12>", function() require("dapui").eval() end, desc = "Eval", mode = {"n", "v"} },
     },
+    dependencies = {
+      "nvim-dap-virtual-text",
+      opts = {
+        enabled_commands = true,
+        highlight_changed_variables = true,
+        highlight_new_as_changed = false,
+        show_stop_reason = true,
+        commented = true,
+        only_first_definition = false,
+        all_references = true,
+        clear_on_continue = false,
+        -- experimental features:
+        all_frames = false,
+        virt_lines = false,
+        virt_text_win_col = nil,
+      },
+    },
   },
 
   {
