@@ -12,24 +12,22 @@ return {
       },
       servers = {
         sourcekit = {
-          -- stylua: ignore
-          ---@diagnostic disable-next-line: undefined-field
-          cmd = vim.loop.os_uname().sysname == "Darwin"
-              and { "sourcekit-lsp",
-              "-Xswiftc",
-              "-sdk",
-              "-Xswiftc",
-              "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk",
-              "-Xswiftc",
-              "-target",
-              "-Xswiftc",
-              "arm64-apple-ios15.0-simulator",
-              "-Xcc",
-              "-DSWIFT_PACKAGE=0",
-            }
+          cmd = vim.uv.os_uname().sysname == "Darwin"
+              and {
+                "sourcekit-lsp",
+                "-Xswiftc",
+                "-sdk",
+                "-Xswiftc",
+                "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk",
+                "-Xswiftc",
+                "-target",
+                "-Xswiftc",
+                "arm64-apple-ios15.0-simulator",
+                "-Xcc",
+                "-DSWIFT_PACKAGE=0",
+              }
             or { "sourcekit-lsp" },
         },
-        nixd = { mason = false },
         clangd = { mason = not Termux },
         groovyls = {},
         gradle_ls = {},
@@ -48,14 +46,21 @@ return {
             },
           },
         },
+        nixd = {
+          mason = false,
+          settings = {
+            formatting = {
+              command = { "nixfmt" },
+            },
+          },
+        },
       },
     },
   },
 
   {
     "xbase-lab/xbase",
-    ---@diagnostic disable-next-line: undefined-field
-    cond = vim.loop.os_uname().sysname == "Darwin" and true or false,
+    cond = vim.uv.os_uname().sysname == "Darwin" and true or false,
     ft = "swift",
     build = "make install", -- or "make install && make free_space" (not recommended, longer build time)
     dependencies = {
