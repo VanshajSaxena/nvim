@@ -108,14 +108,22 @@ return {
     opts = {
       dashboard = { enabled = false },
       scratch = { enabled = false },
+      picker = {
+        win = {
+          preview = {
+            wo = {
+              relativenumber = true,
+              signcolumn = "no",
+            },
+          },
+        },
+      },
     },
     keys = {
       -- stylua: ignore start
-      { "<leader>tg", function() require("snacks").terminal.toggle("tig") end, desc = "Snacks Terminal Tig", },
-      { "<leader>yz", function() require("snacks").terminal.toggle("yazi") end, desc = "Snacks Terminal Yazi", },
-      { "<leader>bt", function() require("snacks").terminal.toggle("btop") end, desc = "Snacks Terminal Btop", },
-      { "<leader>n", false },
-      { "<leader>ns", function() require("snacks").notifier.show_history() end, desc = "Snacks Notification History", },
+      { "<leader>tg", function() Snacks.terminal.toggle("tig") end, desc = "Snacks Terminal Tig", },
+      { "<leader>yz", function() Snacks.terminal.toggle("yazi") end, desc = "Snacks Terminal Yazi", },
+      { "<leader>bt", function() Snacks.terminal.toggle("btop") end, desc = "Snacks Terminal Btop", },
     },
   },
 
