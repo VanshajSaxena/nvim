@@ -130,9 +130,24 @@ return {
   {
     "folke/todo-comments.nvim",
     opts = {
+      -- MARK:
+      -- TODO:
+      -- PERF:
+      -- TEST:
+      -- NOTE:
+      -- REVISE:
+      -- HACK:
+      -- WARN:
+      -- PENDING:
+      -- FIX:
       keywords = {
-        REVISE = { icon = " ", alt = { "REVISION", "SEEME" } },
-        BOOKMARK = { icon = " ", color = "hint", alt = { "MARK" } },
+        PENDING = { icon = " ", color = "orange", alt = { "NOTDONE" } },
+        REVISION = { icon = " ", color = "hint", alt = { "REVISE" } },
+        BOOKMARK = { icon = " ", color = "blue", alt = { "MARK" } },
+      },
+      colors = {
+        orange = { "Special" },
+        blue = { "Identifier" },
       },
     },
   },
