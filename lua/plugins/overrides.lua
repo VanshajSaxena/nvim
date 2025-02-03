@@ -26,7 +26,7 @@ return {
       "nvim-dap-virtual-text",
       opts = {
         enabled_commands = true,
-        highlight_changed_variables = true,
+        highlight_changed_variables = false,
         highlight_new_as_changed = true,
         show_stop_reason = true,
         only_first_definition = false,
@@ -74,7 +74,7 @@ return {
             },
             useBlocks = true,
           },
-          implementationCodeLens = "methods",
+          implementationCodeLens = "none", -- methods | types | all | none
           inlayHints = {
             parameterNames = {
               enabled = "all",
