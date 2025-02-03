@@ -11,7 +11,6 @@ keymap("i", "<C-j>", "<down>", { desc = "move down in insert mode" })
 
 
 -- stylua: ignore
-keymap( "n", "<leader>sn", "<cmd>vertical sbnext<cr>", { desc = "split window in two and edit alternate file (vertical)" })
 
 --[[
 if os.getenv("TERM_PROGRAM") == "tmux" then
