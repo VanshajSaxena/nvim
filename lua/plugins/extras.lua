@@ -42,8 +42,9 @@ return {
               default_workspace = "notes",
               use_popup = true,
               workspaces = {
-                notes = "~/neorg/notes",
                 journal = "~/neorg",
+                short_notes = "~/neorg/short_notes",
+                notes = "~/neorg/notes",
               },
             },
           },
