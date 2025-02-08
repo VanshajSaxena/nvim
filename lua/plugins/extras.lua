@@ -16,6 +16,19 @@ return {
         non_standalone = true,
       },
     },
+    keys = {
+      { "<leader>L", false, desc = "Disable Mapping" },
+      { "<leader>Lm", "<cmd>Leet<cr>", desc = "Leet Menu" },
+      { "<leader>Ll", "<cmd>Leet list<cr>", desc = "Leet List" },
+      { "<leader>Ls", "<cmd>Leet submit<cr>", desc = "Leet Submit" },
+      { "<F8>", "<cmd>Leet submit<cr>", desc = "Leet Submit" },
+      { "<leader>Lr", "<cmd>Leet run<cr>", desc = "Leet Run" },
+      { "<F7>", "<cmd>Leet run<cr>", desc = "Leet Run" },
+      { "<leader>LR", "<cmd>Leet reset<cr>", desc = "Leet Reset" },
+      { "<leader>LL", "<cmd>Leet last_submit<cr>", desc = "Leet Last Submit" },
+      { "<leader>Lo", "<cmd>Leet open<cr>", desc = "Leet Open" },
+      { "<leader>Lc", "<cmd>Leet console<cr>", desc = "Leet Console" },
+    },
   },
 
   {
