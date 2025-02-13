@@ -108,6 +108,7 @@ return {
     opts = {
       dashboard = { enabled = false },
       scratch = { enabled = false },
+      image = {},
       picker = {
         win = {
           preview = {
@@ -124,6 +125,12 @@ return {
       { "<leader>tg", function() Snacks.terminal.toggle("tig") end, desc = "Snacks Terminal Tig", },
       { "<leader>yz", function() Snacks.terminal.toggle("yazi") end, desc = "Snacks Terminal Yazi", },
       { "<leader>bt", function() Snacks.terminal.toggle("btop") end, desc = "Snacks Terminal Btop", },
+      { "<leader>sP", function() Snacks.picker() end, desc = "Snacks Pickers", },
+      { "<leader>fC", function() Snacks.picker.grep({ dirs = {vim.fn.stdpath('config')} or nil}) end, desc = "Grep Neovim Config files", },
+      { "<leader>f,", function() Snacks.picker.grep({ dirs = {vim.fn.expand('$HOME/.config')} or nil}) end, desc = "Grep Home Config files", },
+      { "<leader>f.", function() Snacks.picker.files({ dirs = {vim.fn.expand('$HOME/.config')} or nil, hidden = true}) end, desc = "Find Home Config files", },
+      { "<localleader>no", function() Snacks.picker.files({ dirs = {vim.fn.expand('$HOME/neorg/notes')} or nil, hidden = true}) end, desc = "Find Notes", },
+      { "<localleader>nO", function() Snacks.picker.grep({ dirs = {vim.fn.expand('$HOME/neorg/notes')} or nil, hidden = true}) end, desc = "Grep Notes", },
     },
   },
 
