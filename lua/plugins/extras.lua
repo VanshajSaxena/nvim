@@ -17,7 +17,6 @@ return {
       },
     },
     keys = {
-      { "<leader>L", false, desc = "Disable Mapping" },
       { "<leader>Lm", "<cmd>Leet<cr>", desc = "Leet Menu" },
       { "<leader>Ll", "<cmd>Leet list<cr>", desc = "Leet List" },
       { "<leader>Ls", "<cmd>Leet submit<cr>", desc = "Leet Submit" },

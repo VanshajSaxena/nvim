@@ -1,6 +1,7 @@
 local keymap = vim.keymap.set
 
-vim.keymap.del("n", "<leader>l")
+vim.keymap.del("n", "<leader>l") -- Disable Lazy Home
+vim.keymap.del("n", "<leader>L") -- Disable Lazyvim changelog
 vim.keymap.del({ "n", "i", "x" }, "<C-s>")
 
 keymap("n", "<leader>lp", "<cmd>Lazy<cr>", { desc = "Lazy Profile" })
