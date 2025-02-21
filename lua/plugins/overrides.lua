@@ -109,6 +109,12 @@ return {
       dashboard = { enabled = false },
       scratch = { enabled = false },
       image = {},
+      statuscolumn = {
+        folds = {
+          open = true, -- show open fold icons
+          git_hl = true, -- use Git Signs hl for fold icons
+        },
+      },
       picker = {
         win = {
           preview = {
