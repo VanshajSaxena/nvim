@@ -31,8 +31,8 @@ if os.getenv("OS") == "Windows_NT" then
 end
 
 if vim.g.neovide then
-  vim.g.neovide_transparency = 0.80
-  vim.o.guifont = "JetBrainsMono Nerd Font:h09"
-  set.pumblend = 50 -- Popup blend pumblend has to be set to zero for : completion
-  set.winblend = 50 -- Float-windows blend
+  vim.g.neovide_transparency = 0.70
+  vim.o.guifont = "FiraCode Nerd Font:h12"
+  set.pumblend = 0 -- Popup blend pumblend has to be set to zero for : completion
+  set.winblend = 0 -- Float-windows blend
 end
