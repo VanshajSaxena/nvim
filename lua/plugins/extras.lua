@@ -12,9 +12,13 @@ return {
     },
     opts = {
       lang = "java",
+      cache = {
+        update_interval = 60 * 60 * 24, -- 24 hours
+      },
       plugins = {
         non_standalone = true,
       },
+      image_support = true,
     },
     keys = {
       { "<leader>Lm", "<cmd>Leet<cr>", desc = "Leet Menu" },
