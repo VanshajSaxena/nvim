@@ -107,7 +107,6 @@ return {
     "folke/snacks.nvim",
     opts = {
       dashboard = { enabled = false },
-      scratch = { enabled = false },
       image = {},
       statuscolumn = {
         folds = {
@@ -116,6 +115,11 @@ return {
         },
       },
       picker = {
+        sources = {
+          explorer = {
+            layout = { preview = "file", preset = "ivy" }, -- puts explorer below
+          },
+        },
         win = {
           preview = {
             wo = {
