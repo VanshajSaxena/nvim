@@ -117,7 +117,7 @@ return {
       picker = {
         sources = {
           explorer = {
-            layout = { preview = "file", preset = "ivy" }, -- puts explorer below
+            layout = { preview = "file", preset = "ivy", layout = { zindex = 45 } }, -- puts explorer below
           },
         },
         win = {
