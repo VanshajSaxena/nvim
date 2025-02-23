@@ -139,8 +139,11 @@ return {
       { "<leader>fC", function() Snacks.picker.grep({ dirs = {vim.fn.stdpath('config')} or nil}) end, desc = "Grep Neovim Config files", },
       { "<leader>f,", function() Snacks.picker.grep({ dirs = {vim.fn.expand('$HOME/.config')} or nil}) end, desc = "Grep Home Config files", },
       { "<leader>f.", function() Snacks.picker.files({ dirs = {vim.fn.expand('$HOME/.config')} or nil, hidden = true}) end, desc = "Find Home Config files", },
+      { "<leader>s.", function() Snacks.picker.smart() end, desc = "Snacks Smart", },
       { "<localleader>no", function() Snacks.picker.files({ dirs = {vim.fn.expand('$HOME/neorg/notes')} or nil, hidden = true}) end, desc = "Find Notes", },
       { "<localleader>nO", function() Snacks.picker.grep({ dirs = {vim.fn.expand('$HOME/neorg/notes')} or nil, hidden = true}) end, desc = "Grep Notes", },
+      { "<localleader>ns", function() Snacks.picker.files({ dirs = {vim.fn.expand('$HOME/neorg/short_notes/')} or nil, hidden = true}) end, desc = "Find Short Notes", },
+      { "<localleader>nS", function() Snacks.picker.grep({ dirs = {vim.fn.expand('$HOME/neorg/short_notes')} or nil, hidden = true}) end, desc = "Grep Short Notes", },
     },
   },
 
