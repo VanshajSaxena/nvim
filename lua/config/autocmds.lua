@@ -11,7 +11,7 @@ vim.api.nvim_create_autocmd("filetype", {
 
 vim.api.nvim_create_autocmd({ "bufreadpost", "bufnewfile" }, {
   group = augroup("touchegg_xml"),
-  pattern = vim.fn.expand("$home") .. "/.config/touchegg/*",
+  pattern = vim.fs.normalize("$home") .. "/.config/touchegg/*",
   command = "set filetype=xml",
   desc = "touchegg files are xml types",
 })
