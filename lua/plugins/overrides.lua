@@ -159,12 +159,15 @@ return {
       -- REVISE:
       -- HACK:
       -- WARN:
+      -- TOPICS:
+      -- ALGO:
       -- PENDING:
       -- FIX:
       keywords = {
         PENDING = { icon = " ", color = "orange", alt = { "NOTDONE" } },
         REVISION = { icon = " ", color = "hint", alt = { "REVISE" } },
         BOOKMARK = { icon = " ", color = "blue", alt = { "MARK" } },
+        TOPICS = { icon = " ", color = "warning", alt = { "ALGO" } },
       },
       colors = {
         orange = { "Special" },
