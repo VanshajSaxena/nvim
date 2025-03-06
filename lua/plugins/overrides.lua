@@ -125,6 +125,7 @@ return {
             wo = {
               relativenumber = true,
               signcolumn = "no",
+              wrap = false,
             },
           },
         },
