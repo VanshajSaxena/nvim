@@ -11,7 +11,7 @@ return {
       "MunifTanjim/nui.nvim",
     },
     opts = {
-      lang = "java",
+      lang = "python3",
       cache = {
         update_interval = 60 * 60 * 24, -- 24 hours
       },
@@ -39,7 +39,53 @@ return {
     lazy = false, -- Disable lazy loading as some `lazy.nvim` distributions set `lazy = true` by default
     version = "*", -- Pin Neorg to the latest stable release
     keys = {
+      -- stylua: ignore start
       { "<localleader>nj", "<cmd>Neorg journal today<cr>", desc = "[neorg] Journal Today" },
+      -- override todo-comments for norg files
+      { "<leader>st", function() Snacks.picker.todo_comments({ keywords = {"TOPICS"} }) end, desc = "Topics", ft = "norg" },
+      -- stylua: ignore end
+      {
+        "<localleader>nC",
+        -- NOTE: This needs a refactor, maybe the async job can be done
+        -- differently with a better API/Approach.
+        function()
+          local commit_msg = "Save Notes"
+          local git_commit_command = "git commit -m '" .. commit_msg .. "'"
+
+          -- Callback for handling the commit command result.
+          local function on_commit_exit(_job_id, exit_code, _event_type)
+            if exit_code ~= 0 then
+              vim.schedule(function()
+                vim.notify("Git commit failed. Make sure there are staged changes and you are in a Git repository.")
+              end)
+              return
+            end
+            vim.schedule(function()
+              vim.notify("Commit Successful")
+            end)
+            -- Now run the push command asynchronously.
+            local function on_push_exit(_push_job_id, push_exit_code, _push_event_type)
+              if push_exit_code ~= 0 then
+                vim.schedule(function()
+                  vim.notify("Git push failed.")
+                end)
+                return
+              end
+              vim.schedule(function()
+                vim.notify("Push Successful")
+              end)
+            end
+            vim.fn.jobstart("git push", {
+              on_exit = on_push_exit,
+            })
+          end
+          vim.fn.jobstart(git_commit_command, {
+            on_exit = on_commit_exit,
+          })
+        end,
+        desc = "[neorg] Commit and Save Notes",
+        ft = "norg",
+      },
     },
     config = function()
       require("neorg").setup({
@@ -61,6 +107,7 @@ return {
                 journal = "~/neorg",
                 short_notes = "~/neorg/short_notes",
                 notes = "~/neorg/notes",
+                DSA = "~/code/DSA",
               },
             },
           },
