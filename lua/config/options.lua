@@ -2,6 +2,8 @@ Termux = os.getenv("TERMUX_VERSION") ~= nil
 
 local set = vim.opt
 
+vim.g.snacks_scroll = false
+
 set.confirm = false
 set.hidden = true
 set.inccommand = "split"
