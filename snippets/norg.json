@@ -1,0 +1,42 @@
+{
+  "problem": {
+    "prefix": "pro",
+    "body": [
+      "** ( ) [${1:}]{}",
+      "",
+      "   %TOPICS: ${2:}%",
+      "",
+      "*** ( ) Approach One",
+      "",
+      "    *Time Complexity*:",
+      "    *Space Complexity*:"
+    ]
+  },
+  "approach": {
+    "prefix": "app",
+    "body": [
+      "*** ( ) Approach ${1:}",
+      "",
+      "    ${2:}",
+      "",
+      "    *Time Complexity*:",
+      "    *Space Complexity*:"
+    ]
+  },
+  "index": {
+    "prefix": "index",
+    "body": [
+      "* ${1:}",
+      "",
+      "** Problems",
+      "",
+      "   - {:./easy-problems:}[Easy]",
+      "",
+      "   - {:./medium-problems:}[Medium]",
+      "",
+      "   - {:./hard-problems:}[Hard]",
+      "",
+      "** Concepts and Algorithms"
+    ]
+  }
+}

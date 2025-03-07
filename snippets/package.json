@@ -1,0 +1,11 @@
+{
+  "name": "personal-snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "norg",
+        "path": "./norg.json"
+      }
+    ]
+  }
+}
