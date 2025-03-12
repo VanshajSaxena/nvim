@@ -6,23 +6,30 @@ return {
 
     opts = {
       finder = {
-        default = "def+ref+imp",
+        default = "def+imp",
         keys = {
-          split = "h",
+          shuttle = "<C-w>w",
+          vsplit = "<C-v>",
+          split = "<C-s>",
+          tabe = "<C-t>",
+          toggle_or_open = "<cr>",
         },
       },
       callhierarchy = {
         key = {
-          edit = "o",
-          split = "h",
+          shuttle = "<C-w>w",
+          edit = "<cr>",
+          split = "<C-s>",
+          vsplit = "<C-v>",
+          tabe = "<C-t>",
         },
       },
       definition = {
         keys = {
-          vsplit = "s",
-          split = "h",
-          tabe = "t",
-          edit = "o",
+          vsplit = "<C-v>",
+          split = "<C-s>",
+          tabe = "<C-t>",
+          edit = "<cr>",
         },
       },
       rename = {
@@ -46,7 +53,7 @@ return {
 
     -- stylua: ignore
     keys = {
-      { "gh", "<cmd>Lspsaga finder ++inexist<cr>", desc = "lspsaga finder" },
+      { "gq", "<cmd>Lspsaga finder ++inexist<cr>", desc = "lspsaga finder" },
       { "gd", "<cmd>Lspsaga goto_definition<cr>", desc = "lspsaga goto definition" },
       { "<leader>gp", "<cmd>Lspsaga peek_definition<cr>", desc = "lspsaga peek definition" },
       { "K", "<cmd>Lspsaga hover_doc ++quiet<cr>", desc = "lspsaga hover doc" },
