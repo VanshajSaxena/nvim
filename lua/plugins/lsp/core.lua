@@ -55,6 +55,15 @@ return {
             },
           },
         },
+        vacuum = {
+          filetypes = { "yaml.openapi", "json.openapi" },
+        },
+        jsonls = {
+          filetypes = { "json.openapi" },
+        },
+        yamlls = {
+          filetypes = { "yaml.openapi" },
+        },
       },
     },
   },

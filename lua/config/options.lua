@@ -38,3 +38,11 @@ if vim.g.neovide then
   set.pumblend = 0 -- Popup blend pumblend has to be set to zero for : completion
   set.winblend = 0 -- Float-windows blend
 end
+
+-- OpenAPI filetype
+vim.filetype.add({
+  pattern = {
+    ["openapi.*%.ya?ml"] = "yaml.openapi",
+    ["openapi.*%.json"] = "json.openapi",
+  },
+})
