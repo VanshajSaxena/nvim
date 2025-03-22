@@ -145,6 +145,7 @@ return {
       { "<localleader>nO", function() Snacks.picker.grep({ dirs = {vim.fs.normalize('$HOME/neorg/notes')}, hidden = true}) end, desc = "Grep Notes", },
       { "<localleader>ns", function() Snacks.picker.files({ dirs = {vim.fs.normalize('$HOME/neorg/short_notes/')}, hidden = true}) end, desc = "Find Short Notes", },
       { "<localleader>nS", function() Snacks.picker.grep({ dirs = {vim.fs.normalize('$HOME/neorg/short_notes')}, hidden = true}) end, desc = "Grep Short Notes", },
+      -- stylua: ignore end
     },
   },
 

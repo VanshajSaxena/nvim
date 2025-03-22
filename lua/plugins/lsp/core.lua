@@ -58,6 +58,9 @@ return {
         vacuum = {
           filetypes = { "yaml.openapi", "json.openapi" },
         },
+        spectral = {
+          filetypes = { "yaml.openapi", "json.openapi" },
+        },
         jsonls = {
           filetypes = { "json.openapi" },
         },
