@@ -62,10 +62,10 @@ return {
           filetypes = { "yaml.openapi", "json.openapi" },
         },
         jsonls = {
-          filetypes = { "json.openapi" },
+          filetypes = { "json", "json.openapi" },
         },
         yamlls = {
-          filetypes = { "yaml.openapi" },
+          filetypes = { "yaml", "yaml.openapi" },
         },
       },
     },
