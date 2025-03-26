@@ -94,6 +94,11 @@ return {
         },
       },
     },
+    keys = {
+      --stylua: ignore start
+      { "<leader>cgb", function() Snacks.terminal.open("gradle build", {interactive = false, win = {border = "rounded"}}) end, desc = "Gradle Build", },
+      { "<leader>cgr", function() Snacks.terminal.open("gradle run",{interactive = false, win = {border ="rounded"}}) end, desc = "Gradle Run", },
+    },
   },
 
   {
