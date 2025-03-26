@@ -53,7 +53,7 @@ return {
           local git_commit_command = "git commit -m '" .. commit_msg .. "'"
 
           -- Callback for handling the commit command result.
-          local function on_commit_exit(_job_id, exit_code, _event_type)
+          local function on_commit_exit(_, exit_code, _)
             if exit_code ~= 0 then
               vim.schedule(function()
                 vim.notify("Git commit failed. Make sure there are staged changes and you are in a Git repository.")
@@ -64,7 +64,7 @@ return {
               vim.notify("Commit Successful")
             end)
             -- Now run the push command asynchronously.
-            local function on_push_exit(_push_job_id, push_exit_code, _push_event_type)
+            local function on_push_exit(_, push_exit_code, _)
               if push_exit_code ~= 0 then
                 vim.schedule(function()
                   vim.notify("Git push failed.")
