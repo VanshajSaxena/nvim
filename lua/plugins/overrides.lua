@@ -58,13 +58,40 @@ return {
     "mfussenegger/nvim-jdtls",
     opts = {
       settings = {
+        -- https://github.com/eclipse-jdtls/eclipse.jdt.ls/wiki/Running-the-JAVA-LS-server-from-the-command-line#initialize-request
         java = {
           signatureHelp = { enabled = true, description = { enabled = true } },
-          --contentProvider = { preferred = "fernflower" },
+          contentProvider = { preferred = "fernflower" },
           completion = {
             guessMethodArguments = "insertBestGuessedArguments",
             chain = {
               enabled = true,
+            },
+            -- content assist will propose these static members even if the import is missing
+            favoriteStaticMembers = {
+              -- default list of static members to be used for autocompletion
+              "org.junit.Assert.*",
+              "org.junit.Assume.*",
+              "org.junit.jupiter.api.Assertions.*",
+              "org.junit.jupiter.api.Assumptions.*",
+              "org.junit.jupiter.api.DynamicContainer.*",
+              "org.junit.jupiter.api.DynamicTest.*",
+
+              -- non-default favorite static members
+              "org.hamcrest.MatcherAssert.assertThat",
+              "org.hamcrest.Matchers.*",
+              "org.hamcrest.CoreMatchers.*",
+              "java.util.Objects.requireNonNull",
+              "java.util.Objects.requireNonNullElse",
+              "org.mockito.Mockito.*",
+              "org.springframework.test.web.servlet.result.MockMvcResultMatchers.*",
+              "org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*",
+            },
+          },
+          sources = {
+            organizeImports = {
+              starThreshold = 9999,
+              staticStarThreshold = 9999,
             },
           },
           codeGeneration = {
