@@ -96,6 +96,10 @@ return {
           },
           codeGeneration = {
             generateComments = true,
+            hashCodeEquals = {
+              useInstanceof = true,
+              useJava7Objects = true,
+            },
             toString = {
               codeStyle = "STRING_BUILDER_CHAINED",
             },
