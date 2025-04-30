@@ -56,8 +56,14 @@ return {
           },
         },
         vacuum = {
+          cmd = {
+            "vacuum",
+            "language-server",
+            -- "--hard-mode"
+          },
           filetypes = { "yaml.openapi", "json.openapi" },
         },
+        harper_ls = {},
         spectral = {
           filetypes = { "yaml.openapi", "json.openapi" },
         },
