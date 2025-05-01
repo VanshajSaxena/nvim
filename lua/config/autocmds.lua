@@ -1,5 +1,5 @@
 local function augroup(name)
-  return vim.api.nvim_create_augroup("augroup_" .. name, { clear = true })
+  return vim.api.nvim_create_augroup("usercommands_" .. name, { clear = true })
 end
 
 vim.api.nvim_create_autocmd("filetype", {
@@ -31,4 +31,11 @@ vim.api.nvim_create_autocmd("filetype", {
     vim.o.spell = true
   end,
   desc = "set wrap and spell for swift and norg",
+})
+
+vim.api.nvim_create_autocmd("BufWritePost", {
+  group = augroup("texcompile"),
+  pattern = { "*.tex" },
+  command = "VimtexCompile",
+  desc = "autocompile tex files after each write",
 })
