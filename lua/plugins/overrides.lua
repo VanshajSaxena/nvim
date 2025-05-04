@@ -9,7 +9,7 @@ return {
           vim.cmd("hi Normal guibg=NONE")
           vim.cmd("hi NormalFloat guibg=NONE")
         else
-          vim.cmd("colorscheme gruvbox")
+          vim.cmd("colorscheme catppuccin")
         end
       end,
     },

@@ -25,7 +25,9 @@ return {
   },
 
   {
-    "catppuccin.nvim",
-    enabled = false,
+    "catppuccin/nvim",
+    opts = {
+      transparent_background = true, -- disables setting the background color.
+    },
   },
 }
