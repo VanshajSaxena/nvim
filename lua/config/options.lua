@@ -15,6 +15,7 @@ set.pumheight = 20 -- later to update
 set.scroll = 10 -- scroll for CTRL-D and CTRL-U
 set.scrolloff = 16
 set.sidescrolloff = 48
+set.cmdheight = 0 -- HACK: This is experimental
 
 if os.getenv("OS") == "Windows_NT" then
   vim.cmd([[ let g:clipboard = {
