@@ -28,6 +28,13 @@ return {
     "catppuccin/nvim",
     opts = {
       transparent_background = true, -- disables setting the background color.
+      highlight_overrides = {
+        all = function(colors)
+          return {
+            ["@lsp.type.interface.java"] = { fg = "#b3f2e5" },
+          }
+        end,
+      },
     },
   },
 }
