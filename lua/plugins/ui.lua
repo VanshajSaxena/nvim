@@ -22,4 +22,21 @@ return {
       { "<C-s>s", "<cmd>CellularAutomaton scramble<cr>", desc = "Cellular Automaton (scramble)" },
     },
   },
+
+  {
+    "nvim-lualine/lualine.nvim",
+    opts = {
+      options = {
+        section_separators = { left = "", right = "" },
+        component_separators = { left = "", right = "" },
+      },
+      sections = {
+        lualine_z = {
+          function()
+            return os.date("%R")
+          end,
+        },
+      },
+    },
+  },
 }
