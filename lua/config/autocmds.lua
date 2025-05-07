@@ -4,7 +4,7 @@ end
 
 vim.api.nvim_create_autocmd("filetype", {
   group = augroup("matchpairs"),
-  pattern = { "c", "cpp" },
+  pattern = { "*.c", "*.cpp" },
   command = "set mps+==:;",
   desc = "set matchpairs for c, cpp",
 })
@@ -25,7 +25,7 @@ vim.api.nvim_create_autocmd("filetype", {
 
 vim.api.nvim_create_autocmd("filetype", {
   group = augroup("setwrap"),
-  pattern = { "swift", "norg" },
+  pattern = { "*.swift", "*.norg" },
   callback = function()
     vim.o.wrap = true
     vim.o.spell = true
