@@ -43,7 +43,9 @@ return {
   {
     "mfussenegger/nvim-dap",
     -- stylua: ignore
-    keys = { { "<F33>", function() require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: ")) end, desc = "Dap Breakpoint Condition (Ctrl + F9)", },
+    keys = {
+      { "<leader>dL", function() require("dap").clear_breakpoints() end, desc = "Dap Clear All Breakpoints", },
+      { "<F33>", function() require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: ")) end, desc = "Dap Breakpoint Condition (Ctrl + F9)", },
       { "<F9>", function() require("dap").toggle_breakpoint() end, desc = "Dap Toggle Breakpoint", },
       { "<F5>", function() require("dap").continue() end, desc = "Dap Continue", },
       { "<F53>", function() require("dap").run_to_cursor() end, desc = "Dap Run To Cursor (Alt + F5)", },
