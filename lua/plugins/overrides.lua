@@ -86,6 +86,7 @@ return {
               "java.util.Objects.requireNonNull",
               "java.util.Objects.requireNonNullElse",
               "org.mockito.Mockito.*",
+              "org.mockito.ArgumentMatchers.*",
               "org.springframework.test.web.servlet.result.MockMvcResultMatchers.*",
               "org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*",
             },
