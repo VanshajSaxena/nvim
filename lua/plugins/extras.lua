@@ -43,6 +43,10 @@ return {
       { "<localleader>nj", "<cmd>Neorg journal today<cr>", desc = "[neorg] Journal Today" },
       -- override todo-comments for norg files
       { "<leader>st", function() Snacks.picker.todo_comments({ keywords = {"TOPICS"} }) end, desc = "Topics", ft = "norg" },
+      { "<localleader>no", function() Snacks.picker.files({ dirs = {vim.fs.normalize('$HOME/neorg/notes')}, hidden = true}) end, desc = "Find Notes", },
+      { "<localleader>nO", function() Snacks.picker.grep({ dirs = {vim.fs.normalize('$HOME/neorg/notes')}, hidden = true}) end, desc = "Grep Notes", },
+      { "<localleader>ns", function() Snacks.picker.files({ dirs = {vim.fs.normalize('$HOME/neorg/short_notes/')}, hidden = true}) end, desc = "Find Short Notes", },
+      { "<localleader>nS", function() Snacks.picker.grep({ dirs = {vim.fs.normalize('$HOME/neorg/short_notes')}, hidden = true}) end, desc = "Grep Short Notes", },
       -- stylua: ignore end
       {
         "<localleader>nC",
