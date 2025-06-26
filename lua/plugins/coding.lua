@@ -22,6 +22,7 @@ return {
         enabled = true,
         window = {
           border = "rounded",
+          show_documentation = false,
         },
       },
     },
