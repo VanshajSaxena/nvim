@@ -175,7 +175,7 @@ return {
     keys = {
       -- stylua: ignore start
       { "<leader>tg", function() Snacks.terminal.toggle("tig") end, desc = "Snacks Terminal Tig", },
-      { "<leader>yz", function() Snacks.terminal.toggle("yazi") end, desc = "Snacks Terminal Yazi", },
+      { "<leader>yz", function() Snacks.terminal.toggle("yazi " .. Snacks.git.get_root()) end, desc = "Snacks Terminal Yazi", },
       { "<leader>bt", function() Snacks.terminal.toggle("btop") end, desc = "Snacks Terminal Btop", },
       { "<leader>gC", function() Snacks.terminal.toggle("git commit -v") end, desc = "Git Commit Verbose", },
       { "<leader>sP", function() Snacks.picker() end, desc = "Snacks Pickers", },
