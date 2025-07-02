@@ -8,6 +8,8 @@ return {
           vim.cmd("colorscheme default")
           vim.cmd("hi Normal guibg=NONE")
           vim.cmd("hi NormalFloat guibg=NONE")
+        elseif vim.g.neovide then
+          vim.cmd("colorscheme kanso")
         else
           vim.cmd("colorscheme gruvbox")
         end
