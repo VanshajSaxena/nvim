@@ -45,6 +45,11 @@ return {
     opts = {
       transparent = true,
       theme = "zen", -- [zen | ink | pearl]
+      overrides = function(colors)
+        return {
+          BlinkCmpMenuBorder = { link = "FloatBorder" },
+        }
+      end,
     },
   },
 }
