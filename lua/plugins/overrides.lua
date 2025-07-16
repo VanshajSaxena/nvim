@@ -11,7 +11,7 @@ return {
         elseif vim.g.neovide then
           vim.cmd("colorscheme kanso")
         else
-          vim.cmd("colorscheme gruvbox")
+          vim.cmd("colorscheme kanso")
         end
       end,
     },
@@ -110,7 +110,7 @@ return {
             },
             useBlocks = true,
           },
-          implementationCodeLens = "none", -- methods | types | all | none
+          implementationsCodeLens = "none", -- methods | types | all | none
           inlayHints = {
             parameterNames = {
               enabled = "all",
