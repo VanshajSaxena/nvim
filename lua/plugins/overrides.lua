@@ -110,7 +110,7 @@ return {
             },
             useBlocks = true,
           },
-          implementationsCodeLens = "none", -- methods | types | all | none
+          implementationsCodeLens = { enabled = false },
           inlayHints = {
             parameterNames = {
               enabled = "all",
