@@ -36,6 +36,7 @@ return {
         java = false,
         python = false,
         norg = false,
+        csharp = false,
       },
     },
     keys = {
