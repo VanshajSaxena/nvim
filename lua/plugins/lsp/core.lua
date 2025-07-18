@@ -63,7 +63,6 @@ return {
           },
           filetypes = { "yaml.openapi", "json.openapi" },
         },
-        harper_ls = {},
         spectral = {
           filetypes = { "yaml.openapi", "json.openapi" },
         },
