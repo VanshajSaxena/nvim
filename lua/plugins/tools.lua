@@ -89,4 +89,9 @@ return {
       binary_path = vim.fn.stdpath("data") .. "/lazy/sniprun/target/release/sniprun",
     },
   },
+
+  {
+    "NotAShelf/direnv.nvim",
+    opts = { autoload_direnv = true, statusline = { enabled = true } },
+  },
 }

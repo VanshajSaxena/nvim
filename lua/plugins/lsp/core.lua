@@ -72,6 +72,15 @@ return {
         yamlls = {
           filetypes = { "yaml", "yaml.openapi" },
         },
+        basedpyright = {
+          settings = {
+            analysis = {
+              inlayHints = {
+                genericTypes = true,
+              },
+            },
+          },
+        },
       },
     },
   },
