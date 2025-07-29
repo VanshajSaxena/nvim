@@ -2,14 +2,18 @@ return {
 
   {
     "Seghen/blink.cmp",
-    url = "git@github.com:Saghen/blink.cmp.git",
+    url = "git@github.com:Saghen/blink.cmp",
     opts = {
       completion = {
         menu = {
           border = "rounded",
           winblend = 0,
           draw = {
-            columns = { { "label", "label_description", gap = 5 }, { "kind_icon", "kind" } },
+            -- remove kind icon if launched by firenvim
+            columns = {
+              { "label", "label_description", gap = 5 },
+              vim.g.started_by_firenvim and { "kind" } or { "kind_icon", "kind" },
+            },
           },
         },
         documentation = {
@@ -26,6 +30,11 @@ return {
         },
       },
     },
+  },
+
+  {
+    "echasnovski/mini.ai",
+    url = "git@github.com:echasnovski/mini.ai",
   },
 
   {

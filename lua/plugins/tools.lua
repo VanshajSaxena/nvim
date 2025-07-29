@@ -14,18 +14,6 @@ return {
     "glacambre/firenvim", -- Firenvim for browser integration
     lazy = not vim.g.started_by_firenvim,
     build = ":call firenvim#install(0)",
-    dependencies = {
-      "Seghen/blink.cmp",
-      opts = {
-        completion = {
-          menu = {
-            draw = {
-              columns = { { "label", "label_description", gap = 5 }, { "kind" } }, -- disables kind_icon
-            },
-          },
-        },
-      },
-    },
     config = function()
       vim.g.firenvim_config = {
         globalSettings = {
