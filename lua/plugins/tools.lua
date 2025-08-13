@@ -95,6 +95,7 @@ return {
 
   {
     "NotAShelf/direnv.nvim",
+    enabled = not os.getenv("OS") == "Windows_NT",
     opts = { autoload_direnv = true, statusline = { enabled = true } },
   },
 }
