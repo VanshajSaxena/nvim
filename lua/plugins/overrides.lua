@@ -9,9 +9,9 @@ return {
           vim.cmd("hi Normal guibg=NONE")
           vim.cmd("hi NormalFloat guibg=NONE")
         elseif vim.g.neovide or vim.env.EDITOR == "neovide" then
-          vim.cmd("colorscheme kanso")
+          vim.cmd("colorscheme kanagawa")
         else
-          vim.cmd("colorscheme kanso")
+          vim.cmd("colorscheme kanagawa")
         end
       end,
     },
@@ -149,6 +149,7 @@ return {
     "folke/snacks.nvim",
     opts = {
       dashboard = { enabled = false },
+      explorer = { enabled = false },
       image = {},
       statuscolumn = {
         folds = {

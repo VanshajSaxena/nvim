@@ -9,6 +9,13 @@ vim.api.nvim_create_autocmd("filetype", {
   desc = "set matchpairs for c, cpp",
 })
 
+vim.api.nvim_create_autocmd({ "bufreadpre" }, {
+  group = augroup("URS_2016"),
+  pattern = "D:/Projects/URS_Code/URS_2016/**",
+  command = "set readonly",
+  desc = "set files readonly for the project URS_2016",
+})
+
 vim.api.nvim_create_autocmd({ "bufreadpost", "bufnewfile" }, {
   group = augroup("touchegg_xml"),
   pattern = vim.fs.normalize("$home") .. "/.config/touchegg/*",
