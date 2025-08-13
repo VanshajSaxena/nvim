@@ -46,6 +46,8 @@ return {
         python = false,
         norg = false,
         csharp = false,
+        typescript = false,
+        javascript = false,
       },
     },
     keys = {

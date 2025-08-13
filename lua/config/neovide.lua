@@ -5,4 +5,6 @@ if vim.g.neovide then
   vim.o.pumblend = 0 -- Popup blend pumblend has to be set to zero for : completion
   vim.o.winblend = 0 -- Float-windows blend
   vim.env.EDITOR = "neovide"
+  vim.g.neovide_fullscreen = true
+  vim.g.neovide_cursor_hack = true
 end

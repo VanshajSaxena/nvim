@@ -139,6 +139,7 @@ return {
 
   {
     "mini.surround",
+    url = "git@github.com:echasnovski/mini.surround.git",
     opts = {
       search_method = "cover_or_next",
     },

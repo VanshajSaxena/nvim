@@ -29,7 +29,9 @@ return {
             or { "sourcekit-lsp" },
         },
         clangd = { mason = not Termux },
-        groovyls = {},
+        groovyls = {
+          mason = false,
+        },
         gradle_ls = {},
         lemminx = {},
         lua_ls = {
@@ -64,6 +66,7 @@ return {
           filetypes = { "yaml.openapi", "json.openapi" },
         },
         spectral = {
+          mason = false,
           filetypes = { "yaml.openapi", "json.openapi" },
         },
         jsonls = {
