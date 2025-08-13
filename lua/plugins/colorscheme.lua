@@ -52,4 +52,45 @@ return {
       end,
     },
   },
+
+  {
+    "rebelot/kanagawa.nvim",
+    opts = {
+      compile = false, -- enable compiling the colorscheme
+      undercurl = true, -- enable undercurls
+      commentStyle = { italic = true },
+      functionStyle = {},
+      keywordStyle = { italic = true },
+      statementStyle = { bold = true },
+      typeStyle = {},
+      transparent = false, -- do not set background color
+      dimInactive = false, -- dim inactive window `:h hl-NormalNC`
+      terminalColors = true, -- define vim.g.terminal_color_{0,17}
+      colors = { -- add/modify theme and palette colors
+        palette = {},
+        theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
+      },
+
+      overrides = function(colors)
+        return {
+          Pmenu = { bg = "none" },
+          PmenuSel = { bg = "#393836" },
+          BlinkCmpMenuBorder = { bg = "none", fg = "#827b71" },
+          BlinkCmpDoc = { link = "Pmenu" },
+          BlinkCmpDocBorder = { link = "BlinkCmpMenuBorder" },
+          BlinkCmpSignatureHelp = { link = "Pmenu" },
+          BlinkCmpSignatureHelpBorder = { link = "BlinkCmpMenuBorder" },
+          HoverBorder = { link = "BlinkCmpMenuBorder" },
+          HoverNormal = { link = "Pmenu" },
+          SagaBorder = { link = "BlinkCmpMenuBorder" },
+          SagaNormal = { link = "Pmenu" },
+        }
+      end,
+      theme = "dragon", -- Load "wave" theme
+      background = { -- map the value of 'background' option to a theme
+        dark = "dragon", -- try "dragon" !
+        light = "lotus",
+      },
+    },
+  },
 }
