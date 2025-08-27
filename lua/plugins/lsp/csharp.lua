@@ -17,9 +17,7 @@ return {
     },
     init = function()
       vim.lsp.config("roslyn", {
-        on_attach = function()
-          print("Roslyn on_attach ran.")
-        end,
+        on_attach = function() end,
         settings = {
           -- https://github.com/dotnet/vscode-csharp/blob/main/test/lsptoolshost/unitTests/configurationMiddleware.test.ts
           ["csharp|inlay_hints"] = {
