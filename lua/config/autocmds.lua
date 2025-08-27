@@ -23,19 +23,19 @@ vim.api.nvim_create_autocmd({ "bufreadpost", "bufnewfile" }, {
   desc = "touchegg files are xml types",
 })
 
-vim.api.nvim_create_autocmd("filetype", {
-  group = augroup("formatoptions"),
-  pattern = "*",
-  command = "set formatoptions+=t | set formatoptions-=cro",
-  desc = "set formatoptions to avoid ambiguous comment behavior",
-})
+-- vim.api.nvim_create_autocmd("filetype", {
+--   group = augroup("formatoptions"),
+--   pattern = "*",
+--   command = "set formatoptions+=t | set formatoptions-=cro",
+--   desc = "set formatoptions to avoid ambiguous comment behavior",
+-- })
 
-vim.api.nvim_create_autocmd("filetype", {
+vim.api.nvim_create_autocmd("bufreadpost", {
   group = augroup("setwrap"),
   pattern = { "*.swift", "*.norg" },
   callback = function()
-    vim.o.wrap = true
-    vim.o.spell = true
+    vim.opt.wrap = true
+    vim.opt.spell = true
   end,
   desc = "set wrap and spell for swift and norg",
 })
