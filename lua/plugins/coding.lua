@@ -33,7 +33,7 @@ return {
   },
 
   {
-    "echasnovski/mini.ai",
+    "nvim-mini/mini.ai",
     url = "git@github.com:echasnovski/mini.ai",
   },
 
