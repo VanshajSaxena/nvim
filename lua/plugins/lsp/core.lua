@@ -1,16 +1,17 @@
 return {
   {
     "neovim/nvim-lspconfig",
-    init = function()
-      local keys = require("lazyvim.plugins.lsp.keymaps").get()
-      keys[#keys + 1] = { "K", false }
-      keys[#keys + 1] = { "gd", false }
-    end,
     opts = {
       codelens = {
         enabled = true,
       },
       servers = {
+        ["*"] = {
+          keys = {
+            { "K", false, has = "definition" },
+            { "gd", false, has = "definition" },
+          },
+        },
         sourcekit = {
           cmd = vim.uv.os_uname().sysname == "Darwin"
               and {
