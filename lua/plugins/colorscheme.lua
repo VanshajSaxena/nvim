@@ -1,4 +1,21 @@
 return {
+  {
+    "LazyVim",
+    opts = {
+      colorscheme = function()
+        if Termux then
+          vim.cmd("colorscheme default")
+          vim.cmd("hi Normal guibg=NONE")
+          vim.cmd("hi NormalFloat guibg=NONE")
+        elseif vim.g.neovide or vim.env.EDITOR == "neovide" then
+          vim.cmd("colorscheme kanagawa")
+        else
+          vim.cmd("colorscheme kanagawa")
+        end
+      end,
+    },
+  },
+
   -- add gruvbox
   {
     "ellisonleao/gruvbox.nvim",
@@ -63,7 +80,7 @@ return {
       keywordStyle = { italic = true },
       statementStyle = { bold = true },
       typeStyle = {},
-      transparent = false, -- do not set background color
+      transparent = true, -- do not set background color
       dimInactive = false, -- dim inactive window `:h hl-NormalNC`
       terminalColors = true, -- define vim.g.terminal_color_{0,17}
       colors = { -- add/modify theme and palette colors
