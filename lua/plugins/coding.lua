@@ -71,6 +71,9 @@ return {
           show_documentation = true,
         },
       },
+      cmdline = {
+        completion = { menu = { auto_show = false } },
+      },
     },
   },
 
