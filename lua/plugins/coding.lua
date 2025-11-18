@@ -4,14 +4,26 @@ return {
     "Seghen/blink.cmp",
     url = "git@github.com:Saghen/blink.cmp",
     opts = {
-      fuzzy = { implementation = "prefer_rust_with_warning" },
+      fuzzy = {
+        implementation = "prefer_rust_with_warning",
+        sorts = {
+          "score",
+          "sort_text",
+          "label",
+          "kind",
+        },
+      },
       completion = {
+        keyword = {
+          range = "full",
+        },
+        trigger = {},
         menu = {
           border = "rounded",
           winblend = 0,
           draw = {
             columns = {
-              { "label", "label_description", gap = 5 },
+              { "label", gap = 1 },
               vim.g.started_by_firenvim and { "kind" } or { "kind_icon", "kind" },
             },
             components = {
@@ -50,9 +62,13 @@ return {
       },
       signature = {
         enabled = true,
+        trigger = {
+          enabled = true,
+          show_on_insert = true,
+        },
         window = {
           border = "rounded",
-          show_documentation = false,
+          show_documentation = true,
         },
       },
     },
