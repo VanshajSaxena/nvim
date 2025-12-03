@@ -1,4 +1,21 @@
 return {
+  {
+    "LazyVim",
+    opts = {
+      colorscheme = function()
+        if Termux then
+          vim.cmd("colorscheme default")
+          vim.cmd("hi Normal guibg=NONE")
+          vim.cmd("hi NormalFloat guibg=NONE")
+        elseif vim.g.neovide or vim.env.EDITOR == "neovide" then
+          vim.cmd("colorscheme kanagawa")
+        else
+          vim.cmd("colorscheme kanagawa")
+        end
+      end,
+    },
+  },
+
   -- add gruvbox
   {
     "ellisonleao/gruvbox.nvim",
