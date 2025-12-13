@@ -8,9 +8,9 @@ return {
           vim.cmd("hi Normal guibg=NONE")
           vim.cmd("hi NormalFloat guibg=NONE")
         elseif vim.g.neovide or vim.env.EDITOR == "neovide" then
-          vim.cmd("colorscheme kanagawa")
+          vim.cmd("colorscheme kanso")
         else
-          vim.cmd("colorscheme kanagawa")
+          vim.cmd("colorscheme kanso")
         end
       end,
     },
