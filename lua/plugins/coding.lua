@@ -4,6 +4,15 @@ return {
     "Seghen/blink.cmp",
     url = "git@github.com:Saghen/blink.cmp",
     opts = {
+      sources = {
+        default = { "lsp", "path", "snippets", "buffer", "html-css" },
+        providers = {
+          ["html-css"] = {
+            name = "html-css",
+            module = "blink.compat.source",
+          },
+        },
+      },
       fuzzy = {
         implementation = "prefer_rust_with_warning",
         sorts = {
