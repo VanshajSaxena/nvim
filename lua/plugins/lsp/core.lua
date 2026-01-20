@@ -76,20 +76,20 @@ return {
         yamlls = {
           filetypes = { "yaml", "yaml.openapi" },
         },
-        basedpyright = {
-          settings = {
-            basedpyright = {
-              analysis = {
-                diagnosticMode = "workspace", -- "openFilesOnly"
-                -- exclude = { "**/venv", "**/.*venv" }, -- This would match any 'venv' or '.venv' directory anywhere
-                ignore = { "**/venv", "**/.*venv" },
-                inlayHints = {
-                  genericTypes = true,
-                },
-              },
-            },
-          },
-        },
+        -- basedpyright = {
+        --   settings = {
+        --     basedpyright = {
+        --       analysis = {
+        --         diagnosticMode = "workspace", -- "openFilesOnly"
+        --         -- exclude = { "**/venv", "**/.*venv" }, -- This would match any 'venv' or '.venv' directory anywhere
+        --         ignore = { "**/venv", "**/.*venv" },
+        --         inlayHints = {
+        --           genericTypes = true,
+        --         },
+        --       },
+        --     },
+        --   },
+        -- },
       },
     },
   },

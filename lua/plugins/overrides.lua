@@ -1,4 +1,22 @@
 return {
+  -- Configure LazyVim to load gruvbox
+  {
+    "LazyVim",
+    opts = {
+      colorscheme = function()
+        if Termux then
+          vim.cmd("colorscheme default")
+          vim.cmd("hi Normal guibg=NONE")
+          vim.cmd("hi NormalFloat guibg=NONE")
+        elseif vim.g.neovide or vim.env.EDITOR == "neovide" then
+          vim.cmd("colorscheme kanso")
+        else
+          vim.cmd("colorscheme kanso")
+        end
+      end,
+    },
+  },
+
   {
     "rcarriga/nvim-dap-ui",
     -- stylua: ignore

@@ -54,3 +54,20 @@ vim.filetype.add({
     ["openapi.*%.json"] = "json.openapi",
   },
 })
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+vim.lsp.config("html", {
+  capabilities = capabilities,
+})
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+vim.lsp.config("cssls", {
+  capabilities = capabilities,
+})
+
+vim.lsp.enable("html")
+vim.lsp.enable("cssls")
