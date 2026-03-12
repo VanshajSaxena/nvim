@@ -107,6 +107,8 @@ return {
         csharp = false,
         typescript = false,
         javascript = false,
+        typescriptreact = false,
+        javascriptreact = false,
       },
     },
     keys = {
